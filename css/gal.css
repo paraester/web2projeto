@@ -24,7 +24,7 @@
 #selecionouEstaFoto {
     position: absolute;
     top: 10%;
-    left: 90%;
+    left: 10%;
     -webkit-transform: translate3d(-50%, -50%, 0);
     -moz-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
