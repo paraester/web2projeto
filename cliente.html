@@ -16,6 +16,7 @@
     <link href="css/galeria.css" rel="stylesheet">
     <link href="css/gal.css" rel="stylesheet">
     <script src="js/modernizr.custom.js"></script>
+    <script src="js/cliente/galeria-cliente.js"></script>
 
 </head>
 
@@ -44,7 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h1>Galeria Seleção de fotos</h1>
+                        <h1>Galeria para Seleção de fotos</h1>
                     </div>
                 </div>
             </div>
@@ -54,30 +55,41 @@
     <div id="galeria">
         <div class="container">
             <div class="row mt">
-                <ul class="grid effect-3" id="grid">
-                    <li><img src="img/clients/cliente/1.jpg"></li>
-                    <li><img src="img/clients/cliente/2.jpg"></li>
-                    <li><img src="img/clients/cliente/20.jpg"></li>
-                    <li><img src="img/clients/cliente/3.jpg"></li>
-                    <li><img src="img/clients/cliente/4.jpg"></li>
-                    <li><img src="img/clients/cliente/5.jpg"></li>
-                    <li><img src="img/clients/cliente/20.jpg"></li>
-                    <li><img src="img/clients/cliente/6.jpg"></li>
-                    <li><img src="img/clients/cliente/8.jpg"></li>
-                    <li><img src="img/clients/cliente/9.jpg"></li>
-                    <li><img src="img/clients/cliente/10.jpg"></li>
-                    <li><img src="img/clients/cliente/11.jpg"></li>
-                    <li><img src="img/clients/cliente/12.jpg"></li>
-                    <li><img src="img/clients/cliente/13.jpg"></li>
-                    <li><img src="img/clients/cliente/14.jpg"></li>
-                    <li><img src="img/clients/cliente/15.jpg"></li>
-                    <li><img src="img/clients/cliente/16.jpg"></li>
-                    <li><img src="img/clients/cliente/17.jpg"></li>
-                    <li><img src="img/clients/cliente/18.jpg"></li>
-                    <li><img src="img/clients/cliente/19.jpg"></li>
-                </ul>
+                <div class="thumbnail media">
+                    <ul class="grid effect-3 attribute-value" id="grid">
+                        <li>
+                            <div class="caption img-wrapper" onmouseover="showBotao();" onmouseout="escondeBotao();" style="position:relative;">
+                                <img src="img/clients/cliente/1.jpg">
+
+                                <button id="botao" style='display:none'>Selecionar</button>
+
+                            </div>
+                        </li>
+
+
+                        <li><img src="img/clients/cliente/2.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/20.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/3.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/4.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/5.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/20.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/6.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/8.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/9.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/10.jpg" style="position:relative;"></li>
+                        <li><img src="img/clients/cliente/11.jpg"></li>
+                        <li><img src="img/clients/cliente/12.jpg"></li>
+                        <li><img src="img/clients/cliente/13.jpg"></li>
+                        <li><img src="img/clients/cliente/14.jpg"></li>
+                        <li><img src="img/clients/cliente/15.jpg"></li>
+                        <li><img src="img/clients/cliente/16.jpg"></li>
+                        <li><img src="img/clients/cliente/17.jpg"></li>
+                        <li><img src="img/clients/cliente/18.jpg"></li>
+                        <li><img src="img/clients/cliente/19.jpg"></li>
+                    </ul>
+                </div>
             </div>
-            <!-- row -->
+
         </div>
 
         <!-- container -->
