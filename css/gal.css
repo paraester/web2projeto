@@ -12,6 +12,24 @@
     transform: translate3d(-50%, -50%, 0);
 }
 
+#retirar {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+#selecionouEstaFoto {
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
 bt-selecionar {
     top: 7px;
     left: 12px;
