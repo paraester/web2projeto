@@ -32,6 +32,7 @@ function escondeBotaoRetirar() {
     }
 }
 
+
 function ativaRetirar() { //cliente voltou na foto e quer retirar a foto que estava selecionada
     var retirar = document.getElementById("retirar");
     if (retirar.style.display === "none") {
