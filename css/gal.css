@@ -23,11 +23,16 @@
 
 #selecionouEstaFoto {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 10%;
     -webkit-transform: translate3d(-50%, -50%, 0);
     -moz-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
+}
+
+.glyphicon:before {
+    color: limegreen;
+    font-size: 39px;
 }
 
 bt-selecionar {
