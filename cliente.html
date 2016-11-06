@@ -59,33 +59,7 @@
             <div class="row mt">
                 <div class="thumbnail media">
                     <ul class="grid effect-3 attribute-value" id="grid">
-                        <li>
-                            <div class="caption img-wrapper" onmouseover="showBotao();" onmouseout="escondeBotaoSelecionar();" style="position:relative;">
-                                <img src="img/clients/cliente/1.jpg">
-                                <div id="selecionouEstaFoto" style='display:none'><span class="glyphicon glyphicon-ok"></span></div>
-                                <button id="botao" style='display:none' class="btn btn-success " onclick="clienteSelecionou();">Selecionar</button>
-                                <button id="retirar" style='display:none' class="btn btn-warning " onclick="escondeBotaoRetirar();">Retirar</button>
-                            </div>
-                        </li>
-                        <li><img src="img/clients/cliente/2.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/20.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/3.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/4.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/5.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/20.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/6.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/8.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/9.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/10.jpg" style="position:relative;"></li>
-                        <li><img src="img/clients/cliente/11.jpg"></li>
-                        <li><img src="img/clients/cliente/12.jpg"></li>
-                        <li><img src="img/clients/cliente/13.jpg"></li>
-                        <li><img src="img/clients/cliente/14.jpg"></li>
-                        <li><img src="img/clients/cliente/15.jpg"></li>
-                        <li><img src="img/clients/cliente/16.jpg"></li>
-                        <li><img src="img/clients/cliente/17.jpg"></li>
-                        <li><img src="img/clients/cliente/18.jpg"></li>
-                        <li><img src="img/clients/cliente/19.jpg"></li>
+
                     </ul>
                 </div>
             </div>
@@ -135,10 +109,16 @@
     <script src="js/classie.js"></script>
     <script src="js/AnimOnScroll.js"></script>
     <script>
-        new AnimOnScroll(document.getElementById('grid'), {
-            minDuration: 0.4,
-            maxDuration: 0.7,
-            viewportFactor: 0.2
+        $(document).ready(function () {
+            console.log("pronto carregada a página! Vamos trabalhar js");
+            exibirFotosAoIniciar();
+
+            new AnimOnScroll(document.getElementById('grid'), {
+                minDuration: 0.4,
+                maxDuration: 0.7,
+                viewportFactor: 0.2
+            });
+
         });
     </script>
 </body>
