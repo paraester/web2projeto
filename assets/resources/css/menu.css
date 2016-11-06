@@ -1,0 +1,401 @@
+/*** RESET ***/
+
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+/********************************************************/
+
+
+/**********                BASE              ************/
+
+
+/********************************************************/
+
+
+/*** LINKS ***/
+
+a:focus {
+    outline: thin dotted;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+    text-decoration: none;
+}
+
+
+/*** FONTS ***/
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/*** SOMBRAS DE FONTS ***/
+
+html,
+html a {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/*** DISPLAY ***/
+
+article,
+footer,
+header,
+section {
+    display: block;
+}
+
+
+/*** PADRÃO DE MENUS ***/
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+    text-decoration: none;
+}
+
+
+/**********       CLASSE GLOBAIS       ************/
+
+
+/* -------> 
+Conteúdos 
+<---------*/
+
+.contents-white {
+    width: 100%;
+    background-color: #fff;
+}
+
+.contents-blue {
+    width: 100%;
+    background-color: #0f3524;
+}
+
+
+/* -------> 
+Configuração de padding 0  
+<---------*/
+
+.noPadding {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-center {
+    text-align: center;
+    margin: 50px;
+}
+
+
+/* -------> 
+Textos 
+<---------*/
+
+.text-color-white {
+    color: #fff;
+}
+
+.text-color-blue {
+    color: rgb(11, 38, 64);
+}
+
+.text-color-blue2 {
+    color: rgb(34, 114, 191);
+}
+
+.text-color-black {
+    color: #000;
+}
+
+
+/* -------> 
+Backgrounds 
+<---------*/
+
+.background-white {
+    background-color: #fff;
+}
+
+.background-green {
+    background: #0f3524;
+}
+
+.background-blue72 {
+    background-color: #1a4a72;
+}
+
+.background-cadetblue {
+    background-color: cadetblue;
+}
+
+.btn {
+    color: white;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: 2px solid white;
+    padding: 15px;
+}
+
+.btn:hover {
+    background-color: cadetblue;
+    color: aquamarine;
+    transition: 0.4s;
+}
+
+#conteiner-header {
+    min-height: 677px;
+    background: rgba(34, 114, 191, 0.3);
+}
+
+
+/**********       ESTILO DO MENU       ************/
+
+#conteiner-menu {
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid rgba(46, 139, 87, 1);
+    box-shadow: 2px 3px 2px rgba(11, 38, 64, 0.4);
+}
+
+
+/*** CONFIG OVERLAY ***/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*** ESTILO MENU ***/
+
+.overlay nav {
+    position: relative;
+    top: 50%;
+    height: 60%;
+    text-align: center;
+    font-size: 54px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.overlay ul {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.overlay ul li {
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+.overlay ul li:last-child {
+    margin-right: 0;
+}
+
+.overlay ul li i {
+    /* <----- tamanho do icons */
+    display: block;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.overlay ul li a {
+    display: block;
+    padding: 50px 0;
+    min-width: 190px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #2E8B57;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 15px;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+    border-color: #73d0da;
+    color: #73d0da;
+}
+
+
+/*** CONFIG NAVEGAÇÃO ***/
+
+.nav-toggle {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    z-index: 999999;
+    padding: 10px 35px 16px 0px;
+    cursor: pointer;
+}
+
+.nav-toggle:focus {
+    outline: none;
+}
+
+.nav-toggle span,
+.nav-toggle span:before,
+.nav-toggle span:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 5px;
+    border-radius: 1px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.nav-toggle span:before {
+    top: -10px;
+}
+
+.nav-toggle span:after {
+    bottom: -10px;
+}
+
+.nav-toggle span,
+.nav-toggle span:before,
+.nav-toggle span:after {
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.nav-toggle.active span {
+    background-color: transparent;
+}
+
+.nav-toggle.active span:before,
+.nav-toggle.active span:after {
+    top: 0;
+}
+
+.nav-toggle.active span:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active span:after {
+    top: 10px;
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    -ms-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+/*** ESTILO DO ICONE ***/
+
+.navicon {
+    position: relative;
+    float: center;
+    width: 95%;
+    padding: 5px;
+    margin: 25px;
+    height: 26px;
+}
+
+.navicon p {
+    margin: 1px 50px 0 0;
+}
+
+.navicon-fixed {
+    position: fixed;
+    top: 59px;
+    right: 143px;
+}
+
+
+/*** EFEITOS MENU ***/
+
+.menu-overlay {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.menu-overlay.open {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+.menu-overlay nav ul li {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -80px, 0);
+    transform: translate3d(0, -80px, 0);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.menu-overlay.open nav ul:first-child li:first-child {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+}
+
+.menu-overlay.open nav ul:first-child li:nth-child(2) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.menu-overlay.open nav ul:nth-child(2) li:first-child {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+}
+
+.menu-overlay.open nav ul:nth-child(2) li:nth-child(2) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.menu-overlay.open nav ul li {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
