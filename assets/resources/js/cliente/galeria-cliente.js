@@ -159,3 +159,4 @@ uso de seletores CSS - tag, id
 function enviarFotosSelecionadas() {
     //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
 }
+//teste
