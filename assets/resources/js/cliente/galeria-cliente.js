@@ -9,6 +9,8 @@ function showBotao(i) {
     */
     var div = $("#botao" + i); //uso de seletores CSS por id
     var verRetirar = $("#retirar" + i);
+    var zoomfoto = $("#zoomEstaFoto" + i);
+    zoomfoto.show();
     if (div.is(":visible") || verRetirar.is(":visible")) {
         return;
     } else {
@@ -25,6 +27,8 @@ function escondeBotaoSelecionar(i) {
         /* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão selecionar para: mostra */
         div.style.display = "none";
     }
+    var zoomfoto = $("#zoomEstaFoto" + i);
+    zoomfoto.hide();
 }
 
 
@@ -112,9 +116,17 @@ var jsonClienteX = {
 }
 
 function zoomFotoLinha(i) {
+    // objeto global do cliente da base de dados na variavel jsonClienteX
+    var htmlZoomEstaFoto = "";
+    htmlZoomEstaFoto += '<img src="';
+    htmlZoomEstaFoto += jsonClienteX.pasta + jsonClienteX.fotos[i].arquivo + jsonClienteX.extensao;
+    htmlZoomEstaFoto += '"><label id="fotonome' + i + '" class="control-label col-sm-10">';
+    htmlZoomEstaFoto += jsonClienteX.fotos[i].arquivo + jsonClienteX.extensao; //nome do arquivo
+    htmlZoomEstaFoto += '</label>';
 
-
-
+    var zoomFotos = $("#zoomdafotoselecionada"); //colocando no html
+    zoomFotos.html(htmlZoomEstaFoto);
+    console.log(htmlZoomEstaFoto);
 }
 
 function alternarEscolhaDaFoto(i) {
@@ -142,14 +154,14 @@ function exibirFotosAoIniciar() {
     for (var i = 0; i < jsonClienteX.fotos.length; i++) {
         htmlInner += '<li>\n<div class = "caption img-wrapper" onmouseover="showBotao(' + i + ');" onmouseout="escondeBotaoSelecionar(' + i + ');" style="position:relative;">\n<img src="';
         htmlInner += jsonClienteX.pasta + jsonClienteX.fotos[i].arquivo + jsonClienteX.extensao;
-        htmlInner += '">\n<div class="selecionouEstaFoto" id="selecionouEstaFoto' + i + '" style="display:none"><span class="glyphicon glyphicon-ok"> </span></div>\n <div id="zoomEstaFoto" style="display:block"> <span class="glyphicon glyphicon-zoom-in"> </span></div >\n<button id="botao' + i + '" style="display:none" class="btn btn-success" onclick="alternarEscolhaDaFoto(' + i + ');">Selecionar</button></div>\n</li>';
+        htmlInner += '">\n<div class="selecionouEstaFoto" id="selecionouEstaFoto' + i + '" style="display:none"><span class="glyphicon glyphicon-ok"> </span></div>\n <div class="zoomEstaFoto" id="zoomEstaFoto' + i + '" style="display:none"><a href="#" data-toggle="modal" data-target="#myModal" onclick=zoomFotoLinha(' + i + '); <span class="glyphicon glyphicon-zoom-in"> </span></a></div >\n<button id="botao' + i + '" style="display:none" class="btn btn-success" onclick="alternarEscolhaDaFoto(' + i + ');">Selecionar</button></div>\n</li>';
 
         //<a href="#" data-toggle="modal" data-target="#myModal" onclick=zoomFotoLinha(i);>lupinha</a>
 
     }
     //var galeriaCliente = $("#grid");
     //galeriaCliente.html(htmlInner);
-    document.getElementById("grid").innerHTML = htmlInner; //pra matar o requisito mas as linhas acima são mais bonitas
+    document.getElementById("grid").innerHTML = htmlInner; //pra matar o requisito mas as linhas acima são mais bonita
 }
 
 /*
