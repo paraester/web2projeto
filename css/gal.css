@@ -12,7 +12,7 @@
     transform: translate3d(-50%, -50%, 0);
 }
 
-#retirar {
+.retirar {
     position: absolute;
     top: 85%;
     left: 50%;
@@ -21,7 +21,7 @@
     transform: translate3d(-50%, -50%, 0);
 }
 
-#selecionouEstaFoto {
+.selecionouEstaFoto {
     position: absolute;
     top: 15%;
     left: 10%;
