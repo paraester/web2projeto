@@ -21,7 +21,9 @@
     transform: translate3d(-50%, -50%, 0);
 }
 
-#selecionouEstaFoto {
+.selecionouEstaFoto .glyphicon {
+    color: limegreen;
+    font-size: 39px;
     position: absolute;
     top: 15%;
     left: 10%;
@@ -30,9 +32,15 @@
     transform: translate3d(-50%, -50%, 0);
 }
 
-.glyphicon:before {
-    color: limegreen;
-    font-size: 39px;
+#zoomEstaFoto .glyphicon-zoom-in {
+    position: absolute;
+    top: 15%;
+    left: 90%;
+    color: black;
+    font-size: 20px;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
 }
 
 bt-selecionar {

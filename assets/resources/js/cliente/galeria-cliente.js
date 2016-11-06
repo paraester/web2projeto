@@ -29,7 +29,7 @@ function escondeBotaoSelecionar(i) {
 
 
 var jsonClienteX = {
-    pasta: "img/clients/cliente/",
+    pasta: "assets/resources/img/clients/cliente/",
     extensao: ".jpg",
     fotos: [
         {
@@ -142,7 +142,7 @@ function exibirFotosAoIniciar() {
     for (var i = 0; i < jsonClienteX.fotos.length; i++) {
         htmlInner += '<li>\n<div class = "caption img-wrapper" onmouseover="showBotao(' + i + ');" onmouseout="escondeBotaoSelecionar(' + i + ');" style="position:relative;">\n<img src="';
         htmlInner += jsonClienteX.pasta + jsonClienteX.fotos[i].arquivo + jsonClienteX.extensao;
-        htmlInner += '">\n<div class="selecionouEstaFoto" id="selecionouEstaFoto' + i + '" style="display:none"><span class="glyphicon glyphicon-ok"> </span></div>\n<button id="botao' + i + '" style="display:none" class="btn btn-success" onclick="alternarEscolhaDaFoto(' + i + ');">Selecionar</button></div>\n</li>';
+        htmlInner += '">\n<div class="selecionouEstaFoto" id="selecionouEstaFoto' + i + '" style="display:none"><span class="glyphicon glyphicon-ok"> </span></div>\n <div id="zoomEstaFoto" style="display:block"> <span class="glyphicon glyphicon-zoom-in"> </span></div >\n<button id="botao' + i + '" style="display:none" class="btn btn-success" onclick="alternarEscolhaDaFoto(' + i + ');">Selecionar</button></div>\n</li>';
 
         //<a href="#" data-toggle="modal" data-target="#myModal" onclick=zoomFotoLinha(i);>lupinha</a>
 
