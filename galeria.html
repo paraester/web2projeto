@@ -8,34 +8,41 @@
     <link rel="shortcut icon" href="codigos/ico/favicon.png">
     <title>StudioE - Galeria</title>
 
-
-    <link href="css/principal.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap-->
-    <link href="css/galeria.css" rel="stylesheet">
-    <script src="js/modernizr.custom.js"></script>
+    <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="assets/resources/css/principal.css" rel="stylesheet">
+    <link href="assets/resources/css/animated.css" rel="stylesheet">
+    <link href="assets/resources/css/galeria.css" rel="stylesheet">
+    <script src="assets/resources/js/modernizr.custom.js"></script>
 
 </head>
 
 <body>
-
     <!-- Menu -->
-    <nav class="menu" id="theMenu">
-        <div class="menu-wrap">
-            <h1 class="logo"><a href="index.html#home">StudioE</a></h1>
-            <i class="fa fa-arrow-right menu-close"></i>
-            <a href="index.html">Home</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="about.html">Sobre</a>
-            <a href="contato.html">Contato</a>
-            <a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-envelope"></i></a>
-        </div>
+    <nav id="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index1.html">StudioE</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li role="presentation" class="active"><a href="index.html">HOME</a></li>
+                <li role="presentation"><a href="galeria.html">GALERIA</a></li>
+                <li role="presentation"><a href="cliente.html">CLIENTES</a></li>
+                <li role="presentation"><a href="contato.html">CONTATO</a></li>
+                <li role="presentation"><a href="sobre.html">SOBRE</a></li>
 
-        <!-- Menu button -->
-        <div id="menuToggle"><i class="fa fa-bars"></i></div>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a></li>
+                <li role="presentation"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li role="presentation"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+            </ul>
+        </div>
     </nav>
+    <!-- Menu -->
     <!-- WELCOME SECTION -->
     <div class="layout-fixed">
         <header class="entry-header">
@@ -53,26 +60,26 @@
         <div class="container">
             <div class="row mt">
                 <ul class="grid effect-4" id="grid">
-                    <li><img src="img/portfolio/1.jpg"></li>
-                    <li><img src="img/portfolio/2.jpg"></li>
-                    <li><img src="img/portfolio/20.jpg"></li>
-                    <li><img src="img/portfolio/3.jpg"></li>
-                    <li><img src="img/portfolio/4.jpg"></li>
-                    <li><img src="img/portfolio/5.jpg"></li>
-                    <li><img src="img/portfolio/20.jpg"></li>
-                    <li><img src="img/portfolio/6.jpg"></li>
-                    <li><img src="img/portfolio/8.jpg"></li>
-                    <li><img src="img/portfolio/9.jpg"></li>
-                    <li><img src="img/portfolio/10.jpg"></li>
-                    <li><img src="img/portfolio/11.jpg"></li>
-                    <li><img src="img/portfolio/12.jpg"></li>
-                    <li><img src="img/portfolio/13.jpg"></li>
-                    <li><img src="img/portfolio/14.jpg"></li>
-                    <li><img src="img/portfolio/15.jpg"></li>
-                    <li><img src="img/portfolio/16.jpg"></li>
-                    <li><img src="img/portfolio/17.jpg"></li>
-                    <li><img src="img/portfolio/18.jpg"></li>
-                    <li><img src="img/portfolio/19.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/1.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/2.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/20.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/3.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/4.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/5.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/20.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/6.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/8.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/9.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/10.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/11.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/12.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/13.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/14.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/15.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/16.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/17.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/18.jpg"></li>
+                    <li><img src="assets/resources/img/clients/cliente/19.jpg"></li>
                 </ul>
             </div>
             <!-- row -->
@@ -116,12 +123,12 @@
     <!-- Bootstrap JavaScript blblba-->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- necessario -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/imagesloaded.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/AnimOnScroll.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/resources/js/main.js"></script>//menu barrinha
+    <script src="assets/resources/js/masonry.pkgd.min.js"></script>
+    <script src="assets/resources/js/imagesloaded.js"></script>
+    <script src="assets/resources/js/classie.js"></script>
+    <script src="assets/resources/js/AnimOnScroll.js"></script>
     <script>
         new AnimOnScroll(document.getElementById('grid'), {
             minDuration: 0.4,

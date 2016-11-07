@@ -5,13 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="codigos/ico/favicon.png">
     <title>StudioE - Galeria</title>
     <link href="assets/resources/css/principal.css" rel="stylesheet">
     <!-- Bootstrap-->
     <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="assets/resources/css/galeria.css" rel="stylesheet">
     <link href="assets/resources/css/gal.css" rel="stylesheet">
     <link href="assets/resources/css/animated.css" rel="stylesheet">
@@ -23,23 +21,29 @@
 </head>
 
 <body>
-
     <!-- Menu -->
-    <nav class="menu" id="theMenu">
-        <div class="menu-wrap">
-            <h1 class="logo"><a href="index.html#home">StudioE</a></h1>
-            <i class="fa fa-arrow-right menu-close"></i>
-            <a href="index.html">Home</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="about.html">Sobre</a>
-            <a href="contato.html">Contato</a>
-            <a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-envelope"></i></a>
+    <nav id="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index1.html">StudioE</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li role="presentation" class="active"><a href="index.html">HOME</a></li>
+                <li role="presentation"><a href="galeria.html">GALERIA</a></li>
+                <li role="presentation"><a href="cliente.html">CLIENTES</a></li>
+                <li role="presentation"><a href="contato.html">CONTATO</a></li>
+                <li role="presentation"><a href="sobre.html">SOBRE</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a></li>
+                <li role="presentation"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li role="presentation"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+            </ul>
         </div>
-        <!-- Menu button -->
-        <div id="menuToggle"><i class="fa fa-bars"></i></div>
     </nav>
+    <!-- Menu -->
     <!-- WELCOME SECTION -->
     <div class="layout-fixed">
         <header class="entry-header">
