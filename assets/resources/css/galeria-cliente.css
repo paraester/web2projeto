@@ -62,14 +62,14 @@
 }
 
 #cssmenu > ul li.has-sub > a {
-    background-image: url('images/caret.png');
+    background-image: url('assets/resources/img/menu/seta-pra-baixo.png');
     background-repeat: no-repeat;
     background-position: 90% -95%;
 }
 
 #cssmenu > ul li.has-sub > a.active,
 #cssmenu > ul li.has-sub > a:hover {
-    background: #d80041 url('images/caret.png') no-repeat;
+    background: #00bf85 url('assets/resources/img/menu/seta-pra-baixo.png') no-repeat;
     background-position: 90% 195%;
 }
 
@@ -83,9 +83,8 @@
 
 #cssmenu > ul li a.active,
 #cssmenu > ul li a:hover {
-    background: #d80041;
-    color: #fff;
-    text-shadow: 0px 1px 0px #000;
+    background: #00bf85;
+    color: #000;
 }
 
 @media (max-width: 600px) {
@@ -95,12 +94,8 @@
     #cssmenu > ul li#responsive-tab {
         display: block;
     }
-    #cssmenu > ul li#responsive-tab a {
-        background: url('images/menu.png') no-repeat;
-        background-position: 95% -35%;
-    }
     #cssmenu > ul li#responsive-tab a:hover {
-        background-color: #d80041;
+        background-color: #00bf85;
         background-position: 95% 135%;
     }
     #cssmenu > ul li {
@@ -132,7 +127,7 @@
 }
 
 
-/* Make sure they show even if hidden in mobile view by JS */
+/* mobile view by JS */
 
 @media (min-width: 600px) {
     #cssmenu > ul > li.collapsed {
