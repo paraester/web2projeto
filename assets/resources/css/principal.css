@@ -96,13 +96,13 @@ h6 {
     font-weight: 300;
     color: #333;
 }
+
 .animated {
     font-family: Raleway;
     font-weight: 300;
     color: #333;
     text-align: left;
 }
-
 
 p {
     line-height: 28px;
@@ -551,6 +551,16 @@ div.radio span.checked:before {
     -webkit-animation: moveUp .70s ease forwards;
     -moz-animation: moveUp .70s ease forwards;
     animation: moveUp .70s ease forwards;
+}
+
+
+/* sobreescrever do bootstrap */
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .site-main {
