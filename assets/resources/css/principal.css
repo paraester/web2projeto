@@ -71,10 +71,6 @@ img {
     max-width: 100%;
 }
 
-img:not(.no-auto-height) {
-    height: auto;
-}
-
 
 /* tratar seleções de texto*/
 
@@ -100,6 +96,13 @@ h6 {
     font-weight: 300;
     color: #333;
 }
+.animated {
+    font-family: Raleway;
+    font-weight: 300;
+    color: #333;
+    text-align: left;
+}
+
 
 p {
     line-height: 28px;
@@ -507,14 +510,14 @@ div.radio span.checked:before {
 .grid {
     max-width: 100%;
     list-style: none;
-    margin: 5px auto;
+    margin: 0px auto;
     padding: 0;
 }
 
 .grid li {
     display: block;
     float: left;
-    padding: 10px;
+    padding: 0px;
     width: 20%;
     opacity: 1;
 }
@@ -1072,66 +1075,4 @@ a.button.big i {
     color: #fff;
     background: #333;
     border-color: transparent;
-}
-
-.me {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-.me-menusocial:before {
-    content: "\f081"
-}
-
-.menusocial {
-    padding: 0;
-    margin: 2em 0 4em 0;
-    list-style: none;
-}
-
-.menusocial li {
-    display: inline-block;
-    padding: 0;
-    margin-bottom: -3px;
-}
-
-.menusocial li a {
-    display: block;
-    float: left;
-    margin: 0 .1em .2em 0;
-    text-align: center;
-    font-size: 15px;
-    width: 38px;
-    line-height: 34px;
-    color: #000;
-    background: #eff;
-    border: 0px solid #555;
-    border-radius: 10%;
-}
-
-.mesocial li a:hover {
-    color: #fff;
-    background: #333;
-    border-color: transparent;
-}
-
-.menu-social {
-    text-align: center;
-    margin: 1.6em 0 0;
-    min-height: 22px;
-}
-
-.menu-social .social {
-    margin: 0;
-}
-
-.menu-social .social li a {
-    width: 34px;
-    line-height: 30px;
-    font-size: 12px;
 }

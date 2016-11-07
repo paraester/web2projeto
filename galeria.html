@@ -11,11 +11,12 @@
     <!-- Bootstrap-->
     <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
     <link href="assets/resources/css/principal.css" rel="stylesheet">
     <link href="assets/resources/css/animated.css" rel="stylesheet">
-    <link href="assets/resources/css/galeria.css" rel="stylesheet">
+    <link href="assets/resources/css/galeria-portfolio.css" rel="stylesheet">
     <script src="assets/resources/js/modernizr.custom.js"></script>
+    <script src="assets/resources/js/portfolio/galeria-portfolio.js"></script>
+
 
 </head>
 
@@ -49,7 +50,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h1>Galeria</h1>
+                        <h1 class="animated slideInRight">FOTOS AUTORAIS</h1>
+                        <!--<h1>Galeria</h1>-->
                     </div>
                 </div>
             </div>
@@ -57,34 +59,16 @@
     </div>
     <!-- PORTFOLIO SECTION -->
     <div id="galeria">
+        <!-- container -->
         <div class="container">
             <div class="row mt">
-                <ul class="grid effect-4" id="grid">
-                    <li><img src="assets/resources/img/clients/cliente/1.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/2.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/20.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/3.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/4.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/5.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/20.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/6.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/8.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/9.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/10.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/11.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/12.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/13.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/14.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/15.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/16.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/17.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/18.jpg"></li>
-                    <li><img src="assets/resources/img/clients/cliente/19.jpg"></li>
-                </ul>
-            </div>
-            <!-- row -->
-        </div>
+                <div class="thumbnail media">
+                    <ul class="grid effect-3 attribute-value" id="grid">
 
+                    </ul>
+                </div>
+            </div>
+        </div>
         <!-- container -->
 
 
@@ -124,16 +108,21 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- necessario -->
     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/resources/js/main.js"></script>//menu barrinha
+    <script src="assets/resources/js/main.js"></script>
+    <!--menu barrinha-->
     <script src="assets/resources/js/masonry.pkgd.min.js"></script>
     <script src="assets/resources/js/imagesloaded.js"></script>
     <script src="assets/resources/js/classie.js"></script>
     <script src="assets/resources/js/AnimOnScroll.js"></script>
     <script>
-        new AnimOnScroll(document.getElementById('grid'), {
-            minDuration: 0.4,
-            maxDuration: 0.7,
-            viewportFactor: 0.2
+        $(document).ready(function () {
+            console.log("pronto carregada a página portfolio! Vamos trabalhar js ");
+            exibirFotosAoIniciar();
+            new AnimOnScroll(document.getElementById('grid'), {
+                minDuration: 0.4,
+                maxDuration: 0.7,
+                viewportFactor: 0.2
+            });
         });
     </script>
 </body>
