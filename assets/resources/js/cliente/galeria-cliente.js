@@ -1,3 +1,5 @@
+//quando mouseover na foto selecionar o botão seleciona e a lupinha devem aparecer
+//
 function showBotao(i) {
     /*    var div = document.getElementById("botao" + i);
         var verRetirar = document.getElementById("retirar" + i);
@@ -7,24 +9,23 @@ function showBotao(i) {
             div.style.display = "block";
         }
     */
-    var div = $("#botao" + i); //uso de seletores CSS por id
+    var div = $("#botao" + i); //vamos usar abaixo seletores CSS por id
     var verRetirar = $("#retirar" + i);
     var zoomfoto = $("#zoomEstaFoto" + i);
     zoomfoto.show();
-    if (div.is(":visible") || verRetirar.is(":visible")) {
+    if (div.is(":visible") || verRetirar.is(":visible")) { //se o botão retirar estiver visivel nao faz nada
         return;
     } else {
         div.css('display', 'block'); //uso de seletores CSS por id
-        div.css('color', 'white'); //uso de seletores CSS por id
+        div.css('color', 'white');
         div.show();
     }
 }
 
 function escondeBotaoSelecionar(i) {
     var div = document.getElementById("botao" + i);
-    /* se conteúdo está escondido, mostra e troca o valor do botão para: esconde */
+
     if (div.style.display === "block") {
-        /* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão selecionar para: mostra */
         div.style.display = "none";
     }
     var zoomfoto = $("#zoomEstaFoto" + i);
