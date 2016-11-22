@@ -1,0 +1,430 @@
+\chapter{CONFIGURAÇÕES}
+\section{Classe Screen}
+
+\begin{lstlisting}
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.JOptionPane;
+public class Screen extends Applet implements ActionListener {
+    private Button botaoAdicionaRainha;
+    private Button botaoRemoveRainha;
+    private Button botaoLimpar;
+	private TabuleiroGrafico tabuleiro;    
+    private TextField coordenadaLinha;
+    private TextField coordenadaColuna;
+    private String colunas[] = {"-", "a","b","c","d","e","f","g","h"};
+    private Graphics gr;
+    public void Screen() {
+        init();
+    }
+    @Override 
+    public void init() {
+        gr = this.getGraphics();
+        botaoAdicionaRainha = new Button("adiciona");
+        botaoRemoveRainha = new Button("remove");
+        botaoLimpar = new Button("Limpar");
+        tabuleiro = new TabuleiroGrafico();
+        coordenadaLinha = new TextField(5);
+        coordenadaColuna = new TextField(5);  
+        setLayout(new BorderLayout());
+        setSize(800, 600);
+        setBackground(Color.white);
+        add("Center", tabuleiro);   
+        Panel bPanel = new Panel();
+        add("South", bPanel);  
+        bPanel.setLayout(new GridLayout(1,6));
+        bPanel.add(new Label(" Coluna de a - h"));
+        bPanel.add(coordenadaLinha);    
+        bPanel.add(new Label(" Linha de 1-8"));
+        bPanel.add(coordenadaColuna);   
+        bPanel.add(botaoAdicionaRainha);
+        bPanel.add(botaoRemoveRainha);
+        bPanel.add(new Label(" "));
+        bPanel.add(botaoLimpar);
+        bPanel.setBackground(Color.BLACK);
+        bPanel.setForeground(Color.YELLOW);
+        botaoRemoveRainha.addActionListener(this);
+        botaoAdicionaRainha.addActionListener(this);
+        botaoLimpar.addActionListener(this);
+        JOptionPane.showMessageDialog(null, "Oito  Rainhas desafio logico de dispor oito peças em um tabuleiro de forma que nenhuma seja atacada por outra. \n + Assim, faz-se necessário que duas rainhas quaisquer não estejam numa mesma linha, coluna ou diagonal.\n");        
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) { 
+        String linha = coordenadaLinha.getText();
+        String coluna = coordenadaColuna.getText();
+        coordenadaLinha.setText("");
+        coordenadaColuna.setText(""); 
+        int x = coordX(linha);
+        int y = coordY(coluna);
+        if (e.getSource() == botaoLimpar) { 
+            showDialog(tabuleiro.botaoLimpar());
+            
+        } else if (e.getSource() == botaoAdicionaRainha) {             
+            showDialog(tabuleiro.botaoAdiciona(x, y));
+
+        } else if (e.getSource() == botaoRemoveRainha) {                   
+            showDialog(tabuleiro.botaoRemove(x, y));
+        }
+    }
+    private void showDialog(Mensagem mensagens) {
+        if (mensagens.getText().equals("ok"))
+        {
+            return;
+        }
+        JOptionPane.showMessageDialog(null, mensagens.getText());    
+    }
+    public int coordX(String linha){
+        switch( linha )
+        {
+            case "a": return 0;
+            case "b": return 1;
+            case "c": return 2;
+            case "d": return 3;
+            case "e": return 4;
+            case "f": return 5;
+            case "g": return 6;
+            case "h": return 7;
+            default: return -1;
+        }    
+
+    }
+      public int coordY(String coluna){
+        switch( coluna )
+        {
+            case "8": return 0;
+            case "7": return 1;
+            case "6": return 2;
+            case "5": return 3;
+            case "4": return 4;
+            case "3": return 5;
+            case "2": return 6;
+            case "1": return 7;
+            default: return -1;
+        } 
+    }
+}
+\end{lstlisting}
+\newpage
+\section{Classe TabuleiroGrafico}
+
+\begin{lstlisting}
+import java.awt.*;
+public class TabuleiroGrafico extends Canvas 
+{
+    private Graphics parteGrafica;
+    private Tabuleiro tabuleiroLogico;
+    private int larguracasinha;
+    private int alturacasinha; 
+    public TabuleiroGrafico()
+    {
+        this.tabuleiroLogico = new Tabuleiro();
+        this.parteGrafica = this.getGraphics();
+    }
+    @Override
+    public void paint(Graphics g) {
+        pintarTabuleiro(g);
+    }   
+    public void pintarTabuleiro(Graphics g) {
+        parteGrafica = g;
+        larguracasinha = getBounds().width/10;
+        alturacasinha = getBounds().height/10;
+        String colunas[] = {"-", "a","b","c","d","e","f","g","h"};
+        String linhas[] = {"-","8","7","6","5","4","3","2","1"};
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                desenhaCasinha(i,j);
+            }
+        }
+        parteGrafica.setColor(Color.black);
+        int deslocar = alturacasinha/4;
+        for (int i = 1; i < 9; i++) { 
+            parteGrafica.drawString(colunas[i], i*larguracasinha + larguracasinha/2, alturacasinha/2 + deslocar);
+            parteGrafica.drawString(colunas[i], i*larguracasinha + larguracasinha/2, alturacasinha/2  + alturacasinha * 9);
+            parteGrafica.drawString(linhas[i], larguracasinha/2 + deslocar, i*alturacasinha + alturacasinha/2 );
+            parteGrafica.drawString(linhas[i], larguracasinha/2 -deslocar*2 + larguracasinha * 9, i*alturacasinha + alturacasinha/2 );
+        }
+    }
+    private void desenhaCasinha(int x, int y) {
+        int coresAlternadas = 0;
+        parteGrafica.setColor(Color.yellow);
+        parteGrafica.drawRect((x+1)*larguracasinha, (y+1)*alturacasinha, larguracasinha, alturacasinha); //(y+1) para transladar
+        if ((x + y) % 2 == 0) {    
+            coresAlternadas = 10;
+        }     
+        switch (tabuleiroLogico.getValor(x, y)) {
+            case 0:
+                parteGrafica.setColor(new Color(230+coresAlternadas, 230+coresAlternadas, 230+coresAlternadas)); 
+                break;
+            case 1:
+                parteGrafica.setColor(new Color(230+coresAlternadas, 230+coresAlternadas, 230+coresAlternadas)); 
+              //parteGrafica.setColor(new Color(160,110,110)); //se quiser ver as dicas
+                break;
+            case 2:
+                parteGrafica.setColor(new Color(0,0,0));
+                break;
+        }
+        parteGrafica.fillRect((x+1)*larguracasinha+1, (y+1)*alturacasinha+1, larguracasinha-1, alturacasinha-1);
+        insereCoroa(x, y);
+    }
+    private void insereCoroa(int x, int y)
+    {
+        if (tabuleiroLogico.getValor(x, y) != 2) {
+            return;
+        }
+        Dimension xy = getSize(); //Dimensoes padrão são 800 por 569 pra exibir coroa
+        parteGrafica.setColor(Color.red);
+        if (xy.width < 569 || xy.height < 569) {
+            int coordx = (x+1)*larguracasinha + (larguracasinha-6)/2;
+            int coordy = (y+1)*alturacasinha + (alturacasinha+6)/2;
+            parteGrafica.drawString("W", coordx, coordy);                                            
+            return;
+        }
+        int mediaa = (larguracasinha - 50)/2; 
+        int mediab = (alturacasinha - 50)/2;
+        int a = (x+1)*larguracasinha + mediaa;
+        int b = (y+1)*alturacasinha + mediab;
+        parteGrafica.drawLine(a+5, b+45, a+45, b+45);
+        parteGrafica.drawLine(a+5, b+45, a+5, b+5);
+        parteGrafica.drawLine(a+45, b+45, a+45, b+5);
+        parteGrafica.drawLine(a+5, b+35, a+45, b+35);
+        parteGrafica.drawLine(a+5, b+5, a+15, b+20);
+        parteGrafica.drawLine(a+15, b+20, a+25, b+5);
+        parteGrafica.drawLine(a+25, b+5, a+35, b+20);
+        parteGrafica.drawLine(a+35, b+20, a+45, b+5);
+        parteGrafica.drawOval(a+20, b+20, 10, 10);
+    }
+    public Mensagem botaoLimpar() { 
+        parteGrafica = this.getGraphics();
+        tabuleiroLogico.iniciarTabuleiro();
+        pintarTabuleiro(parteGrafica);
+        return new Mensagem(0,0,0); 
+    }
+    public Mensagem botaoRemove(int x, int y) {
+        parteGrafica = this.getGraphics();
+        if (x < 0 || y < 0) {
+            return new Mensagem(99,0,0);  
+        }
+        if (tabuleiroLogico.temRainha(x, y)) {
+            tabuleiroLogico.removeRainha(x, y);
+            pintarTabuleiro(parteGrafica);
+        } else {
+            return new Mensagem(5,x,y);
+        }            
+        return new Mensagem(0,0,0);
+    }
+    public Mensagem botaoAdiciona(int x, int y) {
+        parteGrafica = this.getGraphics();
+        if (x < 0 || y < 0) {
+            return new Mensagem(99,0,0); 
+        }   
+        if (tabuleiroLogico.aceitaRainha(x, y)){
+            tabuleiroLogico.adicionaRainha(x, y);         
+            pintarTabuleiro(parteGrafica);
+            if ( tabuleiroLogico.fimDeJogo() ) {
+                return new Mensagem(100,0,0);
+            }
+        } else {
+           return tabuleiroLogico.rainhaAtaca(x,y);
+        }
+        return new Mensagem(0,0,0);
+    }
+}
+
+\end{lstlisting}
+\newpage
+\section{Classe Tabuleiro}
+
+\begin{lstlisting}
+public class Tabuleiro {
+    private int larguracasinha;
+    private int alturacasinha;
+    private int quantidadeRainhas = 0;
+    private int[][] casasTabuleiro = new int[8][8];
+    private String colunas[] = {"-", "a","b","c","d","e","f","g","h"};
+    public Tabuleiro() {
+        iniciarTabuleiro();   
+        imprimeTabuleiro();
+    }
+    public void iniciarTabuleiro(){
+        quantidadeRainhas = 0;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                casasTabuleiro[i][j] = 0;
+            }
+        }
+    }
+    public int getValor(int x, int y) {
+        if (dentroTabuleiro(x,y)) {
+            return casasTabuleiro[x][y];
+        }
+        return -1;
+    }
+    public boolean temRainha(int x, int y)
+    {
+        if (dentroTabuleiro(x,y) && casasTabuleiro[x][y] == 2)
+        {
+            return true;           
+        }
+        return false;
+    }
+    public boolean aceitaRainha(int x, int y)
+    {
+        if (dentroTabuleiro(x,y) && casasTabuleiro[x][y] == 0)
+        {
+           return true;
+        }
+       return false;
+    }
+    private boolean dentroTabuleiro(int x, int y) {
+        return (x >= 0 && x < 8 && y >= 0 && y < 8);
+    }
+    public void adicionaRainha(int x, int y) {
+        quantidadeRainhas++;
+        casasTabuleiro[x][y] = 2;
+        administraTabuleiro(x,y,true);     
+        imprimeTabuleiro();
+    }
+    public void removeRainha(int x, int y) {
+        casasTabuleiro[x][y] = 0;
+        administraTabuleiro(x,y,false);
+        quantidadeRainhas = 0; 
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (casasTabuleiro[i][j] == 2) {
+                    adicionaRainha(i,j);
+                }
+            }
+        }
+        imprimeTabuleiro();
+    }
+    public void administraTabuleiro(int x, int y, boolean adicionaRemove){
+        int i, valor;
+        if (adicionaRemove){
+            valor = 1;
+        } else {
+            valor = 0;
+        }
+        for (i = 0; i < 8; i++) {
+            if (i != y && casasTabuleiro[x][i] != 2) {
+                casasTabuleiro[x][i] = valor;
+            }
+            if (i != x && casasTabuleiro[i][y] != 2) {    
+            casasTabuleiro[i][y] = valor;
+            }
+        }
+        for (i=1; dentroTabuleiro(x-i,y+i); i++) {
+                casasTabuleiro[x-i][y+i] = valor;
+        }
+        for (i=1; dentroTabuleiro(x-i,y-i); i++) {
+            casasTabuleiro[x-i][y-i] = valor;
+        }
+        for (i=1; dentroTabuleiro(x+i,y+i); i++) {
+            casasTabuleiro[x+i][y+i] = valor;
+        }
+        for (i=1; dentroTabuleiro(x+i,y-i); i++) {
+            casasTabuleiro[x+i][y-i] = valor;
+        }
+    }
+    public Mensagem rainhaAtaca(int x, int y){
+        int limitesupi = x;
+        int limitesupj = y;
+        int i = x; 
+        int j = y; 
+        if (dentroTabuleiro(x,y) && casasTabuleiro[x][y] == 2)
+        {
+            return new Mensagem(1, x, y);
+        }
+        for (int d = 1; d < 8; d++) {
+            i--;
+            j--;
+            limitesupi++;
+            limitesupj++;
+            for (int z = i; z <= limitesupi; z++) {
+                for (int w = j; w <= limitesupj; w++) {
+                    if (dentroTabuleiro(z,w) && casasTabuleiro[z][w] == 2 && constataAtaque(x,y,z,w)){
+                        return new Mensagem(2, z, w);
+                    }
+                }
+            }
+        }
+        return new Mensagem(2, x, y);
+    }
+    private boolean constataAtaque(int x, int y, int a, int b)
+    { 
+      if (x == a || y == b )  {
+          return true;
+      }
+      if ((x-a) == (y - b)){ 
+          return true;
+      }
+      if ((-1)*(x-a) == (y -b)){ 
+          return true; 
+      }
+      return false;
+    }
+    public boolean fimDeJogo(){
+        return quantidadeRainhas == 8;
+    }
+    private void imprimeTabuleiro()
+    {
+        //System.out.println("Agora estamos com " + quantidadeRainhas + " rainha(s) no tabuleiro");
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                //System.out.print(casasTabuleiro[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+    }   
+}
+
+\end{lstlisting}
+\newpage
+\section{Classe Mensagem}
+
+\begin{lstlisting}
+public class Mensagem {
+    private final int erro;
+    private final int coordx;
+    private final int coordy;   
+    public Mensagem(int e, int x, int y){
+        this.coordx = x;
+        this.coordy = y;
+        this.erro = e;  
+    }
+    private int getErro(){
+        return this.erro;
+    }
+    private int getX(){
+        return this.coordx;
+    }
+    private int getY(){
+        return this.coordy;
+    }
+    public String getText() {
+        int e, x, y;
+        e = getErro();
+        x = getX();
+        y = getY();
+        String colunas[] = {"-", "a","b","c","d","e","f","g","h"};
+        switch( e ) {
+            case 0: 
+              return "ok";
+            case 1:
+                return "Ja existe uma Rainha na coluna '" + colunas[x+1] + "' e na linha '" +  (8-y) +"'!";                  
+            case 2:
+                return "Existe conflito! Sofre ataque da Rainha da coluna '" + colunas[x+1] + "' e da linha '" +  (8-y) +"'";                  
+            case 3: 
+                return "Existe conflito na linha '" + colunas[x+1]  + "' e coluna '" + (8-y) + "' mas nao achamos com qual rainha ";                  
+            case 5: 
+                return "Nao existe rainha na coluna '" + colunas[x+1] + "' e linha '" + (8-y) + "'";                  
+            case 99: 
+                return "Valores invalidos para coluna ou linha!"; 
+            case 100: 
+               return "Parabens Voce conseguiu colocar as 8 rainhas!!"; 
+            default:
+               return "Valores invalidos!";
+        }         
+    }   
+}
+\end{lstlisting}
