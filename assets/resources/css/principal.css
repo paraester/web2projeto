@@ -1,3 +1,4 @@
+Skip to content This repository Pull requests Issues Gist @paraester 1 0 1 paraester/web2projeto Code Issues 0 Pull requests 0 Projects 0 Wiki Pulse Graphs Settings web2projeto/assets/resources/css/principal.css e2844ff 15 days ago @paraester paraester . @paraester @MarcusViniciusCavalcanti 1089 lines (901 sloc) 17.7 KB
 /* --------------------------------------------
 	
 	conteúdo:
@@ -16,7 +17,6 @@
 	3 . Rodapé
 		* rodapé com social
 		* social
-
    -------------------------------------------- */
 
 html {
@@ -414,19 +414,21 @@ div.radio span.checked:before {
 
 #menuToggle {
     position: absolute;
-    top: 10px;
+    top: 3px;
     left: 0;
     z-index: 11;
     display: block;
+    opacity: 1;
     text-align: center;
-    font-size: 14px;
+    font-size: 25px;
     color: #fff;
     width: 30px;
     height: 20px;
-    line-height: 19px;
+    line-height: 30px;
+    padding: -10px;
     cursor: pointer;
-    background: rgba(15, 64, 25, 0.8);
     -webkit-transition: all .1s ease-in-out;
+    transition: opacity 0.5s;
     -moz-transition: all .1s ease-in-out;
     -ms-transition: all .1s ease-in-out;
     -o-transition: all .1s ease-in-out;
@@ -435,12 +437,20 @@ div.radio span.checked:before {
 
 #menuToggle:hover {
     color: #fff;
-    background: rgba(15, 64, 25, 0.5);
     -webkit-transition: all .1s ease-in-out;
     -moz-transition: all .1s ease-in-out;
     -ms-transition: all .1s ease-in-out;
     -o-transition: all .1s ease-in-out;
     transition: all .1s ease-in-out;
+}
+
+.navicon {
+    position: relative;
+    float: center;
+    width: 95%;
+    padding: 5px;
+    margin: 25px;
+    height: 26px;
 }
 
 
@@ -1086,3 +1096,6 @@ a.button.big i {
     background: #333;
     border-color: transparent;
 }
+
+Contact GitHub API Training Shop Blog About © 2016 GitHub,
+Inc. Terms Privacy Security Status Help
