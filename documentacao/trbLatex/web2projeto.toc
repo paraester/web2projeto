@@ -43,36 +43,38 @@
 \contentsline {section}{\numberline {3.6}\MakeUppercase {Tratadores de Evento}}{13}
 \contentsline {subsection}{\numberline {3.6.1}Evento inline}{13}
 \contentsline {subsection}{\numberline {3.6.2}Modo tradicional}{13}
-\contentsline {subsection}{\numberline {3.6.3}addEventListener}{13}
-\contentsline {subsection}{\numberline {3.6.4}Operador this}{13}
-\contentsline {subsection}{\numberline {3.6.5}\IeC {\textbullet }}{13}
-\contentsline {section}{\numberline {3.7}\MakeUppercase {Formul\IeC {\'a}rio}}{13}
+\contentsline {subsection}{\numberline {3.6.3}addEventListener}{14}
+\contentsline {subsection}{\numberline {3.6.4}Operador this}{14}
+\contentsline {section}{\numberline {3.7}\MakeUppercase {Formul\IeC {\'a}rio}}{14}
 \contentsline {subsection}{\numberline {3.7.1}Valida\IeC {\c c}\IeC {\~a}o}{14}
-\contentsline {subsection}{\numberline {3.7.2}Propriedade Value}{14}
-\contentsline {subsection}{\numberline {3.7.3}innerHtml}{14}
+\contentsline {subsection}{\numberline {3.7.2}Propriedade Value}{15}
+\contentsline {subsection}{\numberline {3.7.3}innerHtml}{15}
 \contentsline {subsection}{\numberline {3.7.4}checkbox, radio ou select}{15}
 \contentsline {subsection}{\numberline {3.7.5}Acesso via hierarquia}{15}
 \contentsline {section}{\numberline {3.8}\MakeUppercase {Objetos Nativos }}{15}
 \contentsline {subsection}{\numberline {3.8.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{15}
-\contentsline {subsection}{\numberline {3.8.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{15}
-\contentsline {section}{\numberline {3.9}\MakeUppercase {Objetos Nativos}}{15}
-\contentsline {subsection}{\numberline {3.9.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{15}
-\contentsline {subsection}{\numberline {3.9.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{15}
+\contentsline {subsection}{\numberline {3.8.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{16}
+\contentsline {section}{\numberline {3.9}\MakeUppercase {Objetos Nativos}}{16}
+\contentsline {subsection}{\numberline {3.9.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{16}
+\contentsline {subsection}{\numberline {3.9.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{16}
 \contentsline {section}{\numberline {3.10}\MakeUppercase {Objetos}}{16}
 \contentsline {subsection}{\numberline {3.10.1}Criar objeto}{16}
 \contentsline {subsection}{\numberline {3.10.2}Heran\IeC {\c c}a}{16}
 \contentsline {section}{\numberline {3.11}\MakeUppercase {jQuery}}{16}
 \contentsline {subsection}{\numberline {3.11.1}Seletores CSS}{16}
-\contentsline {subsection}{\numberline {3.11.2}Seletores hierarquicos}{16}
-\contentsline {subsection}{\numberline {3.11.3}Efeitos fade ou slide}{16}
-\contentsline {subsection}{\numberline {3.11.4}Tratador de algum evento}{16}
-\contentsline {subsection}{\numberline {3.11.5}Manipula\IeC {\c c}\IeC {\~a}o CSS}{16}
-\contentsline {subsection}{\numberline {3.11.6}Manipula\IeC {\c c}\IeC {\~a}o do conte\IeC {\'u}do}{17}
-\contentsline {section}{\numberline {3.12}\MakeUppercase {Web Storage }}{17}
-\contentsline {subsection}{\numberline {3.12.1}LocalStorage e SessionStorage}{17}
-\contentsline {subsection}{\numberline {3.12.2}Leitura e escrita de dados simples}{17}
-\contentsline {subsection}{\numberline {3.12.3}Leitura e escrita de JSON}{17}
-\contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{18}
-\contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{18}
-\contentsline {chapter}{Bibliography}{19}
-\contentsline {chapter}{REFER\^ENCIAS}{19}
+\contentsline {subsection}{\numberline {3.11.2}ID}{16}
+\contentsline {subsection}{\numberline {3.11.3}classe}{17}
+\contentsline {subsection}{\numberline {3.11.4}tag}{17}
+\contentsline {subsection}{\numberline {3.11.5}Seletores hierarquicos}{17}
+\contentsline {subsection}{\numberline {3.11.6}Efeitos fade ou slide}{17}
+\contentsline {subsection}{\numberline {3.11.7}Tratador de algum evento}{17}
+\contentsline {subsection}{\numberline {3.11.8}Manipula\IeC {\c c}\IeC {\~a}o CSS}{17}
+\contentsline {subsection}{\numberline {3.11.9}Manipula\IeC {\c c}\IeC {\~a}o do conte\IeC {\'u}do}{18}
+\contentsline {section}{\numberline {3.12}\MakeUppercase {Web Storage }}{18}
+\contentsline {subsection}{\numberline {3.12.1}LocalStorage e SessionStorage}{18}
+\contentsline {subsection}{\numberline {3.12.2}Leitura e escrita de dados simples}{18}
+\contentsline {subsection}{\numberline {3.12.3}Leitura e escrita de JSON}{18}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{19}
+\contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{19}
+\contentsline {chapter}{Bibliography}{20}
+\contentsline {chapter}{REFER\^ENCIAS}{20}

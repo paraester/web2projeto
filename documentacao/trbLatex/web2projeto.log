@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  23 NOV 2016 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  23 NOV 2016 21:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1104,17 +1104,11 @@ Overfull \hbox (2.28001pt too wide) in paragraph at lines 352--352
 ] (./web2projeto.toc [2
 
 
-]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 48.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-))
+])
 \tf@toc=\write4
 \openout4 = `web2projeto.toc'.
 
- [3]
-(./src/capitulo1.tex
+ [3] (./src/capitulo1.tex
 Cap\'{\i }tulo 1.
 ) (./src/capitulo2.tex [5
 
@@ -1190,7 +1184,7 @@ File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [10
 
 ]
-Overfull \hbox (26.6063pt too wide) in paragraph at lines 52--53
+Overfull \hbox (26.6063pt too wide) in paragraph at lines 56--57
 []\OT1/ptm/m/n/12 No ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 c
 ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
  com nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$
@@ -1198,11 +1192,17 @@ ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [11] [12] [13]
+) [11] [12]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-Overfull \hbox (5.94174pt too wide) in paragraph at lines 143--144
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [13]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Overfull \hbox (5.94174pt too wide) in paragraph at lines 167--168
 []\OT1/ptm/m/n/12 O ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 ch
 a-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cont[]em a fun[][]ao com
  nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$\OT1/ptm/m/n/12 : 
@@ -1210,23 +1210,29 @@ a-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cont[]em a fun[][]ao com
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [14]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [15] [16])
-(./src/capitulo4.tex [17]
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [15]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [16]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [17])
+(./src/capitulo4.tex [18]
 Cap\'{\i }tulo 4.
-) [18
+) [19
 
-] (./web2projeto.bbl [19
+] (./web2projeto.bbl [20
 
 
-] [20]) 
+] [21]) 
 AED: lastpage setting LastPage
-[21]
+[22]
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
@@ -1237,25 +1243,26 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 10024 strings out of 493029
- 140413 string characters out of 6136234
+ 10026 strings out of 493029
+ 140757 string characters out of 6136234
  348619 words of memory out of 5000000
- 13243 multiletter control sequences out of 15000+600000
- 43352 words of font info for 108 fonts, out of 8000000 for 9000
+ 13239 multiletter control sequences out of 15000+600000
+ 43460 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,8n,58p,1068b,2411s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texli
 ve/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on web2projeto.pdf (22 pages, 768671 bytes).
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on web2projeto.pdf (23 pages, 783202 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 114 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

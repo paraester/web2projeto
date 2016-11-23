@@ -291,9 +291,32 @@ Efeito fadeOut ver cliente.html
 \subsection{Tratador de algum evento}
 Espeficar o tratador de algum evento via jQuery
 \subsection{Manipulação CSS}
-Manipulação do CSS via função css() e addClass()/removeClass()
+	Objetivo: manipulação do CSS via função $css()$ e $addClass()$/$removeClass()$
 
-Manipulação do CSS addClass removeClasse ver function alternarEscolhaDaFoto(i) em cliente.html
+	Utilizamos $addClass$ e $removeClass$ na função $alternarEscolhaDaFoto(i)$ do arquivo $galeria-cliente.js$. 
+	Descrição da função: quando um cliente realizar a seleção de uma foto o botão irá mudar de cor, ficando disponível a opção para desmarcar a foto que acabou de ser selecionada, na função, veja a linha $8$. O inverso irá acontecer quando o cliente desmarcar a foto que havia sido selecionada, linha $13$.
+	
+
+\begin{lstlisting}
+function alternarEscolhaDaFoto(i) {
+    var div = $("#botao" + i);
+    console.log("valor que continha " + div.html());
+    if (div.html() == "Selecionar") {
+        div.toggle('slow').toggle('slow');
+        div.html("Retirar");
+        jsonClienteX.fotos[i].escolhido = true;
+        div.removeClass('btn-success').addClass('btn-warning');
+        $("#selecionouEstaFoto" + i).toggle('slow');
+        div.fadeOut(500);
+    } else {
+        div.html("Selecionar");
+        jsonClienteX.fotos[i].escolhido = false;
+        div.removeClass('btn-warning').addClass('btn-success');
+        $("#selecionouEstaFoto" + i).toggle('slow');
+    }
+}
+\end{lstlisting}
+
 
 
 \subsection{Manipulação do conteúdo}
