@@ -250,44 +250,6 @@
     .site-navigation {
         display: block;
     }
-    
-    .nav-menu {
-        display: block;
-        text-align: center;
-    }
-    
-    .nav-menu ul {
-        display: block;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-transform: uppercase;
-    }
-    
-    .nav-menu ul li {
-        position: relative;
-        display: block;
-        padding: 0;
-        margin: 0;
-        line-height: 1;
-        font-size: 12px;
-        font-weight: 300;
-    }
-    
-    .nav-menu ul li a {
-        display: block;
-        padding: 0.9em 22px;
-    }
-    
-    .nav-menu ul li,
-    .nav-menu ul li a {
-        color: #333;
-    }
-    
-    .nav-menu ul li a:hover,
-    .nav-menu ul li a.selected {
-        color: #C9B69B;
-    }
     /* menu principal único  */
     
     .fa-arrow-right:before {
@@ -404,13 +366,13 @@
         position: absolute;
         top: 3px;
         left: 0;
+        right: 10;
         z-index: 11;
-        display: block;
         opacity: 1;
         text-align: center;
-        font-size: 25px;
-        color: #fff;
-        width: 30px;
+        font-size: 30px;
+        color: #000;
+        width: 20px;
         height: 20px;
         line-height: 30px;
         padding: -10px;
@@ -424,7 +386,7 @@
     }
     
     #menuToggle:hover {
-        color: #fff;
+        color: #ccc;
         -webkit-transition: all .1s ease-in-out;
         -moz-transition: all .1s ease-in-out;
         -ms-transition: all .1s ease-in-out;
