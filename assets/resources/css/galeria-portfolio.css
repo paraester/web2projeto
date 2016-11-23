@@ -1,113 +1,13 @@
-body {
-    background-color: #f2f2f2;
-    font-family: Lato;
-    font-weight: 300;
-    font-size: 16px;
-    color: #555;
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Raleway;
-    font-weight: 300;
-    color: #333;
-}
-
-p {
-    line-height: 28px;
-    margin-bottom: 25px;
-    font-size: 18px;
-}
-
 .centered {
     text-align: center;
 }
 
-.goright {
-    text-align: right;
-}
-
 .mt {
-    padding-top: 25px;
-}
-
-a {
-    color: #16a085;
-    word-wrap: break-word;
-    -webkit-transition: color .1s ease-in, background .1s ease-in;
-    -moz-transition: color .1s ease-in, background .1s ease-in;
-    -ms-transition: color .1s ease-in, background .1s ease-in;
-    -o-transition: color .1s ease-in, background .1s ease-in;
-    transition: color .1s ease-in, background .1s ease-in;
-}
-
-a:hover,
-a:focus {
-    color: #7b7b7b;
-    text-decoration: none;
-    outline: 0;
-}
-
-a:before,
-a:after {
-    -webkit-transition: color .1s ease-in, background .1s ease-in;
-    -moz-transition: color .1s ease-in, background .1s ease-in;
-    -ms-transition: color .1s ease-in, background .1s ease-in;
-    -o-transition: color .1s ease-in, background .1s ease-in;
-    transition: color .1s ease-in, background .1s ease-in;
-}
-
-#headerwrap {
-    background: url(../img/header-bg1.jpg) no-repeat center top;
-    margin-top: -10px;
-    padding-top: 20px;
-    text-align: center;
-    background-attachment: relative;
-    background-position: center center;
-    min-height: 750px;
-    width: 100%;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-#headerwrap h1 {
-    margin-top: 130px;
-    color: #fff;
-    font-size: 100px;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-#headerwrap h2 {
-    color: #fff;
-    font-size: 50px;
-    font-weight: 100;
-    letter-spacing: 2px;
-}
-
-#headerwrap i {
-    font-size: 35px;
-    color: #fff;
-}
-
-#headerwrap .spacer {
-    margin-top: 220px;
+    padding-top: 0px;
 }
 
 #galeria {
-    width: 100%
+    width: 100%;
 }
 
 @-webkit-keyframes moveUp {
@@ -132,16 +32,13 @@ a:after {
 }
 
 .grid {
-    max-width: 69em;
     list-style: none;
-    margin: 30px auto;
-    padding: 0;
+    background-color: rgba(0, 0, 0, 0.0);
 }
 
 .grid li {
     display: block;
     float: left;
-    padding: 7px;
     width: 50%;
     opacity: 0;
 }
@@ -155,7 +52,7 @@ a:after {
 .grid li a,
 .grid li img {
     outline: none;
-    border: none;
+    border: 0px;
     display: block;
     max-width: 100%;
 }
@@ -211,55 +108,6 @@ a:after {
 }
 
 
-/* Effect 1: opacity */
-
-.grid.effect-1 li.animate {
-    -webkit-animation: fadeIn 0.65s ease forwards;
-    animation: fadeIn 0.65s ease forwards;
-}
-
-@-webkit-keyframes fadeIn {
-    0% {}
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    0% {}
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/* Effect 2: Move Up */
-
-.grid.effect-2 li.animate {
-    -webkit-transform: translateY(200px);
-    transform: translateY(200px);
-    -webkit-animation: moveUp 0.65s ease forwards;
-    animation: moveUp 0.65s ease forwards;
-}
-
-@-webkit-keyframes moveUp {
-    0% {}
-    100% {
-        -webkit-transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes moveUp {
-    0% {}
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-
 /* Effect 3: Scale up */
 
 .grid.effect-3 li.animate {
@@ -286,200 +134,9 @@ a:after {
     }
 }
 
-
-/* Effect 4: fall perspective */
-
-.grid.effect-4 {
-    -webkit-perspective: 1300px;
-    perspective: 1300px;
-}
-
-.grid.effect-4 li.animate {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: translateZ(400px) translateY(300px) rotateX(-90deg);
-    transform: translateZ(400px) translateY(300px) rotateX(-90deg);
-    -webkit-animation: fallPerspective .8s ease-in-out forwards;
-    animation: fallPerspective .8s ease-in-out forwards;
-}
-
-@-webkit-keyframes fallPerspective {
-    0% {}
-    100% {
-        -webkit-transform: translateZ(0px) translateY(0px) rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-@keyframes fallPerspective {
-    0% {}
-    100% {
-        -webkit-transform: translateZ(0px) translateY(0px) rotateX(0deg);
-        transform: translateZ(0px) translateY(0px) rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-
-/* Effect 5: fly (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
-
-.grid.effect-5 {
-    -webkit-perspective: 1300px;
-    perspective: 1300px;
-}
-
-.grid.effect-5 li.animate {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform-origin: 50% 50% -300px;
-    transform-origin: 50% 50% -300px;
-    -webkit-transform: rotateX(-180deg);
-    transform: rotateX(-180deg);
-    -webkit-animation: fly .8s ease-in-out forwards;
-    animation: fly .8s ease-in-out forwards;
-}
-
-@-webkit-keyframes fly {
-    0% {}
-    100% {
-        -webkit-transform: rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-@keyframes fly {
-    0% {}
-    100% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-
-/* Effect 6: flip (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
-
-.grid.effect-6 {
-    -webkit-perspective: 1300px;
-    perspective: 1300px;
-}
-
-.grid.effect-6 li.animate {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    -webkit-transform: rotateX(-80deg);
-    transform: rotateX(-80deg);
-    -webkit-animation: flip .8s ease-in-out forwards;
-    animation: flip .8s ease-in-out forwards;
-}
-
-@-webkit-keyframes flip {
-    0% {}
-    100% {
-        -webkit-transform: rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-@keyframes flip {
-    0% {}
-    100% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-
-/* Effect 7: helix (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
-
-.grid.effect-7 {
-    -webkit-perspective: 1300px;
-    perspective: 1300px;
-}
-
-.grid.effect-7 li.animate {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    -webkit-animation: helix .8s ease-in-out forwards;
-    animation: helix .8s ease-in-out forwards;
-}
-
-@-webkit-keyframes helix {
-    0% {}
-    100% {
-        -webkit-transform: rotateY(0deg);
-        opacity: 1;
-    }
-}
-
-@keyframes helix {
-    0% {}
-    100% {
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-        opacity: 1;
-    }
-}
-
-
-/* Effect 8:  */
-
-.grid.effect-8 {
-    -webkit-perspective: 1300px;
-    perspective: 1300px;
-}
-
-.grid.effect-8 li.animate {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: scale(0.4);
-    transform: scale(0.4);
-    -webkit-animation: popUp .8s ease-in forwards;
-    animation: popUp .8s ease-in forwards;
-}
-
-@-webkit-keyframes popUp {
-    0% {}
-    70% {
-        -webkit-transform: scale(1.1);
-        opacity: .8;
-        -webkit-animation-timing-function: ease-out;
-    }
-    100% {
-        -webkit-transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes popUp {
-    0% {}
-    70% {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-        opacity: .8;
-        -webkit-animation-timing-function: ease-out;
-        animation-timing-function: ease-out;
-    }
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .grid li {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .grid li {
-        width: 100%;
-    }
+.site-footer {
+    position: relative;
+    z-index: 200;
+    bottom: 0;
+    width: 100%;
 }

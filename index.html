@@ -9,8 +9,8 @@
     <!-- Bootstrap-->
     <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="assets/resources/css/principal.css" rel="stylesheet">
+    <link href="assets/resources/css/home.css" rel="stylesheet">
     <link href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
 </head>
 
@@ -21,92 +21,91 @@
         <div class="menu-wrap">
             <h1 class="logo"><a href="index.html#home">StudioE</a></h1>
             <i class="fa fa-arrow-right menu-close"></i>
-            <a href="index.html">Home</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="cliente.html">Cliente Selecionar </a>
-            <a href="about.html">Sobre</a>
-            <a href="contato.html">Contato</a>
+            <a href="index.html"><span>HOME</span></a>
+            <a href="galeria.html"><span>AUTORAIS</span></a>
+            <a href="cliente.html"><span>CLIENTES</span></a>
+            <a href="contato.html"><span>ORÇAMENTOS</span></a>
+            <a href="contato.html"><span>CONTATO</span></a>
+            <a href="about.html">INFORMAÇÕES</a>
             <a href="#" data-toggle="modal" data-target="#myModal">login</a>
             <a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-envelope"></i></a>
         </div>
-
         <!-- Menu button -->
         <div id="menuToggle"><i class="fa fa-bars navicon img-responsive"></i></div>
     </nav>
-
+    <!-- Menu -->
     <!-- imagem abertura -->
-    <div id="cabecalho">
-        <div class="container">
-            <!-- container - do bootstrap  -->
-            <div class="row mt">
-                <!-- row - do bootstrap  -->
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- col-lg-8 e col-lg-offset-2 - do bootstrap  -->
-                    <h2>studioE</h2>
-                </div>
-            </div>
+
+    <div class="container crossfade">
+
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+
+        <!-- container - do bootstrap  -->
+        <div class="row mt">
             <!-- row - do bootstrap  -->
+            <div class="col-lg-8 col-lg-offset-2">
+                <!-- col-lg-8 e col-lg-offset-2 - do bootstrap  -->
+                <h2></h2>
+            </div>
+
         </div>
-        <!-- /container -->
+        <!-- row - do bootstrap  -->
     </div>
-    <div class="container">
-        <!-- modal - do bootstrap  -->
+    <!-- /container -->
 
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content contact-form">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">LOGIN</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal validate-form" method="post" action="logar.php">
-                            <div class="form-group">
-                                <label class="control-label col-sm-2" for="email">Email:</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="email" placeholder="Digite seu email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2" for="pwd">Senha:</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="pwd" placeholder="Digite sua senha">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> lembrar</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="submit-label">Enviar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="submit-label" data-dismiss="modal">Fechar</button>
-                    </div>
+<div class="container">
+    <!-- modal - do bootstrap  -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content contact-form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">LOGIN</h4>
                 </div>
-
+                <div class="modal-body">
+                    <form class="form-horizontal validate-form" method="post" action="logar.php">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="pwd">Senha:</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="pwd" placeholder="Digite sua senha">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> lembrar</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="submit-label">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="submit-label" data-dismiss="modal">Fechar</button>
+                </div>
             </div>
         </div>
-
-
-
-
-
-
-
     </div>
+</div>
     <footer id="colophon" class="site-footer" role="contentinfo">
         <div class="layout-medium">
             <div class="footer-social">
@@ -123,7 +122,7 @@
                 </ul>
             </div>
             <div class="site-info">
-                <p>Copyright © 2016 Ester Campos</p>
+                <p>Copyright © 2016 StudioE</p>
             </div>
         </div>
     </footer>
