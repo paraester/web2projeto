@@ -16,7 +16,7 @@ function showBotao(i) {
     if (div.is(":visible") || verRetirar.is(":visible")) { //se o botão retirar estiver visivel nao faz nada
         return;
     } else {
-        div.css('display', 'block'); //uso de seletores CSS por id
+        div.css('display', 'block'); //uso de seletores CSS por 
         div.css('color', 'white');
         div.show();
     }

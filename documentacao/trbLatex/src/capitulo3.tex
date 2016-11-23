@@ -46,9 +46,13 @@ function validaContato() {
 
 \section{Funções}
 \subsection{Função anônima com argumento}
+
 \subsection{Função anônima sem argumento}
+
 \subsection{Função anônima auto-executável}
+
 \subsection{Função com nome}
+
 	No arquivo $JavaScript$ chamado $contato.js$ criamos uma função com nome $validaContato()$ conforme segue abaixo para melhor visualização:
 \begin{lstlisting}
 function validaContato() {
@@ -72,9 +76,11 @@ function validaContato() {
 	Esta função está relacionada a validação dos campos do formulário.
 
 \subsection{Função aninhada/interna}
+
 \subsection{Passagem de uma função como parâmetro}
 
 \section{Eventos}
+
 \subsection{Evento de carregamento do documento}
 
 
@@ -95,10 +101,19 @@ Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
 \subsection{Propagação de eventos no modelo bolha}
 
 \section{Acesso aos elementos DOM do HTML }
-\subsection{Via acesso direto}
- Pelo id do elemento HTML
-\subsection{Via getElementByID()}
 
+\subsection{Via acesso direto}
+
+ Pelo id do elemento HTML
+ 
+\subsection{Via getElementByID()}
+	Ver arquivo $contato.html$ a função $enviadoContato()$, conforme código abaixo:
+	
+\begin{lstlisting}
+function enviadoContato() {
+    document.getElementById("contact-form").innerHTML = ("REGISTROS ENVIADOS");
+}
+\end{lstlisting}
 
 \subsection{Via getElementsByName()}
 
@@ -117,16 +132,25 @@ Objetivo: especificar o tratador de evento inline
 
 tratador de eventos inline - onmouseover, onmouseout, onclick
 
+$onclick$ - Ver no arquivo $galeria-cliente.js$ a seguinte linha:
 
+\begin{lstlisting}
+<button id="botao' + i + '" style="display:none" class="btn btn-success" onclick="alternarEscolhaDaFoto(' + i + ');">Selecionar</button>
+\end{lstlisting}
+
+	Esta linha irá criar o botão Selecionar. Nela é mostrado uma ação para $onclick$ que chama a função $alternarEscolhaDaFoto(i)$ - I $i$ é um parâmetro referente a foto que estará sendo mostrada.
 
 \subsection{Modo tradicional}
 Objetivo: especificar o tratador de evento no carregamento da página HTML no modo tradicional.
+
+
 \subsection{addEventListener}
  Objetivo: especificar o tratador de evento no carregamento da página HTML com a função addEventListener.
  
 \subsection{Operador this}
  Objetivo: usar o operador this em funções tratadoras de eventos.
-\subsection{•}
+ 
+ 
 
 
 \section{Formulário}
@@ -167,6 +191,7 @@ function validaContato() {
 
 \subsection{Propriedade Value}
 	Objetivo: ler e escrever em elementos $input$ com a propriedade $value$
+	
 \begin{lstlisting}
 $(document).ready(function () {
     $('input').val('Informacoes enviadas')
@@ -227,8 +252,33 @@ Usar herança prototipal
 \section{jQuery}
 \subsection{Seletores CSS}
 Uso de seletores CSS - id, classe e tag
+\subsection{ID}
+	Observa abaixo que na linha 2 do arquivo $galeria-cliente.js$ temos o uso de seletor $CSS$ por $id$.
 	
-	ver página cliente.html
+\begin{lstlisting}
+function alternarEscolhaDaFoto(i) {
+    var div = $("#botao" + i);
+    console.log("valor que continha " + div.html());
+    if (div.html() == "Selecionar") {
+        div.toggle('slow').toggle('slow');
+        div.html("Retirar");
+        jsonClienteX.fotos[i].escolhido = true;
+        div.removeClass('btn-success').addClass('btn-warning');
+        $("#selecionouEstaFoto" + i).toggle('slow');
+        div.fadeOut(500);
+    } else {
+        div.html("Selecionar");
+        jsonClienteX.fotos[i].escolhido = false;
+        div.removeClass('btn-warning').addClass('btn-success');
+        $("#selecionouEstaFoto" + i).toggle('slow');
+    }
+}
+\end{lstlisting}
+\subsection{classe}
+
+
+\subsection{tag}
+
 
 
 \subsection{Seletores hierarquicos}
@@ -241,7 +291,7 @@ Efeito fadeOut ver cliente.html
 \subsection{Tratador de algum evento}
 Espeficar o tratador de algum evento via jQuery
 \subsection{Manipulação CSS}
-Manipulação do CSS via função css() e addClass()/remoceClass()
+Manipulação do CSS via função css() e addClass()/removeClass()
 
 Manipulação do CSS addClass removeClasse ver function alternarEscolhaDaFoto(i) em cliente.html
 

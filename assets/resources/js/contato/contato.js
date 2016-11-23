@@ -21,7 +21,6 @@ function validaContato() {
     }
     enviadoContato();
     return true;
-
 }
 
 $(document).ready(function () {
