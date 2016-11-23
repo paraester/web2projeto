@@ -9,10 +9,10 @@
 
     <!-- Bootstrap-->
     <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-
     <link href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/resources/css/animated.css" rel="stylesheet">
     <link href="assets/resources/css/principal.css" rel="stylesheet">
+    <script src="assets/resources/js/contato/contato.js"></script>
 </head>
 
 <body>
@@ -27,7 +27,6 @@
             <a href="contato.html"><span>ORÇAMENTOS</span></a>
             <a href="contato.html"><span>CONTATO</span></a>
             <a href="about.html">INFORMAÇÕES</a>
-            <a href="#" data-toggle="modal" data-target="#myModal">login</a>
             <a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-envelope"></i></a>
@@ -55,7 +54,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
                         <div class="contact-form">
-                            <form id="contact-form" class="validate-form" method="post" action="enviar_email.php">
+                            <form id="contact-form" class="validate-form" method="post" onsubmit="return validaContato()">
                                 <input type="hidden" name="subject" id="subject" value="studioecontato">
                                 <label for="nome">NOME</label>
                                 <input type="text" name="name" id="name" class="required">
@@ -63,10 +62,9 @@
                                 <input type="text" name="email" id="email" class="required email">
                                 <label for="mensagem">MENSAGEM</label>
                                 <textarea name="message" id="message" class="required"></textarea>
-                                <button class="submit button"><span class="submit-label">ENVIAR</span></button>
+                                <input type="submit" name="btnEnviar" value="enviar" class="submit button" />
                             </form>
                         </div>
-
                     </div>
                     <div class="container">
                         <div class="col-xs-5 col-md-5">
@@ -103,14 +101,14 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap JavaScript <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+    <script src="assets/libs/jquery/jquery-3.1.1.min.js"></script>
     <!-- necessario no menu js/main.js-->
     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
     <!-- necessario no menu -->
     <script src="assets/resources/js/main.js"></script>
     <!-- necessario no formulario -->
-    <script src="assets/resources/js/contato.js"></script>
+
 
     <!-- necessario no menu -->
 
