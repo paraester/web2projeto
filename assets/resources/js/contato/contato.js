@@ -19,5 +19,16 @@ function validaContato() {
 
         return false;
     }
+    enviadoContato();
     return true;
+
+}
+
+$(document).ready(function () {
+    $('input').val('Informações enviadas')
+})
+
+
+function enviadoContato() {
+    document.getElementById("contact-form").innerHTML = ("REGISTROS ENVIADOS");
 }

@@ -20,6 +20,28 @@
 
 \subsection{alert}
 
+	No arquivo $JavaScript$ chamado $contato.js$ criamos uma função com nome $validaContato()$ conforme segue abaixo para melhor visualização:
+\begin{lstlisting}
+function validaContato() {
+    var nome = $$("name").value;
+    console.log("nome" + nome);
+    var email = $$("email").value;
+    var message = $$("message").value;
+    if ((nome == null) || (nome == "")) {
+        alert("Preencha o campo nome");
+        return false;
+    } else if ((email == null) || (email == "")) {
+        alert("Preencha o campo email");
+        return false;
+    } else if ((message == null) || (message == "")) {
+        alert("Preencha o campo mensagem");
+        return false;
+    }
+    return true;
+}
+\end{lstlisting}
+	Esta função está relacionada a validação dos campos do formulário. E dentro dela utilizamos $alert$ para enviar uma mensagem ao visitante da página.
+
 \subsection{confirm}
 
 \section{Funções}
@@ -27,6 +49,28 @@
 \subsection{Função anônima sem argumento}
 \subsection{Função anônima auto-executável}
 \subsection{Função com nome}
+	No arquivo $JavaScript$ chamado $contato.js$ criamos uma função com nome $validaContato()$ conforme segue abaixo para melhor visualização:
+\begin{lstlisting}
+function validaContato() {
+    var nome = $$("name").value;
+    console.log("nome" + nome);
+    var email = $$("email").value;
+    var message = $$("message").value;
+    if ((nome == null) || (nome == "")) {
+        alert("Preencha o campo nome");
+        return false;
+    } else if ((email == null) || (email == "")) {
+        alert("Preencha o campo email");
+        return false;
+    } else if ((message == null) || (message == "")) {
+        alert("Preencha o campo mensagem");
+        return false;
+    }
+    return true;
+}
+\end{lstlisting}
+	Esta função está relacionada a validação dos campos do formulário.
+
 \subsection{Função aninhada/interna}
 \subsection{Passagem de uma função como parâmetro}
 
@@ -86,19 +130,61 @@ Objetivo: especificar o tratador de evento no carregamento da página HTML no mo
 
 
 \section{Formulário}
+	Foi criado a página $contato.html$. Nesta página temos um formulário com $3$ campos de preenchimento obrigatórios.
+	
 \subsection{Validação}
-Validação de formulário com onsubmit usando os métodos tradicionais
+	Objetivo: validação de formulário com onsubmit usando os métodos tradicionais.
+	
+	Para cumprir o objetivo o formulário $contato.html$ faz uso da seguinte maneira:
+\begin{lstlisting}
+<form id="contact-form" class="validate-form" method="post" onsubmit="return validaContato()">
+\end{lstlisting}
 
+	O arquivo $JavaScript$ chamado $contato.js$ contém a função com nome $validaContato()$:
+\begin{lstlisting}
+function validaContato() {
+    var nome = $$("name").value;
+    console.log("nome" + nome);
+    var email = $$("email").value;
+    var message = $$("message").value;
+    if ((nome == null) || (nome == "")) {
+        alert("Preencha o campo nome");
+        return false;
+    } else if ((email == null) || (email == "")) {
+        alert("Preencha o campo email");
+
+        return false;
+    } else if ((message == null) || (message == "")) {
+        alert("Preencha o campo mensagem");
+
+        return false;
+    }
+    enviadoContato();
+    return true;
+}
+\end{lstlisting}
+	
 
 \subsection{Propriedade Value}
-Ler e escrever em elementos input com a propriedade value
-
+	Objetivo: ler e escrever em elementos $input$ com a propriedade $value$
+\begin{lstlisting}
+$(document).ready(function () {
+    $('input').val('Informacoes enviadas')
+})
+\end{lstlisting}
 
 
 \subsection{innerHtml}
-Alterar o conteúdo de elementos div ou p com a propriedade innerHTML
+	Objetivo: alterar o conteúdo de elementos $div$ ou $p$com a propriedade $innerHTML$
+	
+	Para este item escolhemos alterar o elemento $div$ do formulário de $contatos$ pois assim que o visitante enviar uma mensagem de contato a estrutura do formulário será substituída por uma frase, conforme código abaixo, definido pela função.
 
-Alterando propriedade innerhtml <ul> document.getElementById("grid").innerHTML = htmlInner; 
+\begin{lstlisting}
+function enviadoContato() {
+    document.getElementById("contact-form").innerHTML = ("REGISTROS ENVIADOS");
+}
+\end{lstlisting}
+
 
 \subsection{checkbox, radio ou select}
 Manipulação de elemento de listagem, como checkbox, radio ou select
