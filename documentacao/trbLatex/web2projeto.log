@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  23 NOV 2016 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  23 NOV 2016 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1166,8 +1166,61 @@ Package pdftex.def Info: ./img/6.png used on input line 127.
 )
 (./src/capitulo3.tex [9 <./img/1.png> <./img/6.png>]
 Cap\'{\i }tulo 3.
+<./img/hint1.png, id=41, 1007.765pt x 676.5275pt>
+File: ./img/hint1.png Graphic file (type png)
+ <use ./img/hint1.png>
+Package pdftex.def Info: ./img/hint1.png used on input line 17.
+(pdftex.def)             Requested size: 204.85846pt x 137.52254pt.
 
-Overfull \hbox (26.6063pt too wide) in paragraph at lines 23--24
+<./img/hint1-arrumado.png, id=42, 808.01875pt x 661.47125pt>
+File: ./img/hint1-arrumado.png Graphic file (type png)
+
+<use ./img/hint1-arrumado.png>
+Package pdftex.def Info: ./img/hint1-arrumado.png used on input line 22.
+(pdftex.def)             Requested size: 159.33473pt x 130.43475pt.
+
+<./img/hint2.png, id=43, 896.34875pt x 383.4325pt>
+File: ./img/hint2.png Graphic file (type png)
+ <use ./img/hint2.png>
+Package pdftex.def Info: ./img/hint2.png used on input line 33.
+(pdftex.def)             Requested size: 204.85846pt x 87.63179pt.
+
+<./img/hint2-arrumado.png, id=44, 911.405pt x 459.7175pt>
+File: ./img/hint2-arrumado.png Graphic file (type png)
+
+<use ./img/hint2-arrumado.png>
+Package pdftex.def Info: ./img/hint2-arrumado.png used on input line 38.
+(pdftex.def)             Requested size: 159.33473pt x 80.36758pt.
+
+<./img/hint3.png, id=45, 888.31876pt x 658.46pt>
+File: ./img/hint3.png Graphic file (type png)
+ <use ./img/hint3.png>
+Package pdftex.def Info: ./img/hint3.png used on input line 50.
+(pdftex.def)             Requested size: 204.85846pt x 151.8445pt.
+
+<./img/hint3-arrumado.png, id=46, 888.31876pt x 658.46pt>
+File: ./img/hint3-arrumado.png Graphic file (type png)
+
+<use ./img/hint3-arrumado.png>
+Package pdftex.def Info: ./img/hint3-arrumado.png used on input line 55.
+(pdftex.def)             Requested size: 159.33473pt x 118.10574pt.
+ <./img/hint4.png, id=47, 891.33pt x 654.445pt>
+File: ./img/hint4.png Graphic file (type png)
+
+<use ./img/hint4.png>
+Package pdftex.def Info: ./img/hint4.png used on input line 66.
+(pdftex.def)             Requested size: 204.85846pt x 150.40933pt.
+
+<./img/hint4-arrumado.png, id=48, 861.2175pt x 403.5075pt>
+File: ./img/hint4-arrumado.png Graphic file (type png)
+
+<use ./img/hint4-arrumado.png>
+Package pdftex.def Info: ./img/hint4-arrumado.png used on input line 71.
+(pdftex.def)             Requested size: 159.33473pt x 74.65387pt.
+ [10
+
+ <./img/hint1.png> <./img/hint1-arrumado.png>]
+Overfull \hbox (26.6063pt too wide) in paragraph at lines 82--83
 []\OT1/ptm/m/n/12 No ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 c
 ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
  com nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$
@@ -1175,16 +1228,15 @@ ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 26.
+) [11 <./img/hint2.png> <./img/hint2-arrumado.png> <./img/hint3.png> <./img/hin
+t3-arrumado.png> <./img/hint4.png> <./img/hint4-arrumado.png>]
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 85.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [10
-
-]
-Overfull \hbox (26.6063pt too wide) in paragraph at lines 56--57
+)
+Overfull \hbox (26.6063pt too wide) in paragraph at lines 115--116
 []\OT1/ptm/m/n/12 No ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 c
 ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
  com nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$
@@ -1192,17 +1244,17 @@ ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [11] [12]
+) [12] [13]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [13]
+) [14]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-Overfull \hbox (5.94174pt too wide) in paragraph at lines 167--168
+Overfull \hbox (5.94174pt too wide) in paragraph at lines 226--227
 []\OT1/ptm/m/n/12 O ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 ch
 a-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cont[]em a fun[][]ao com
  nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$\OT1/ptm/m/n/12 : 
@@ -1210,29 +1262,29 @@ a-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cont[]em a fun[][]ao com
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [14]
+) [15]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [15]
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [16]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [17])
-(./src/capitulo4.tex [18]
+) [17]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [18])
+(./src/capitulo4.tex [19]
 Cap\'{\i }tulo 4.
-) [19
+) [20
 
-] (./web2projeto.bbl [20
+] (./web2projeto.bbl [21
 
 
-] [21]) 
+] [22]) 
 AED: lastpage setting LastPage
-[22]
+[23]
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
@@ -1241,15 +1293,18 @@ AED: lastpage setting LastPage
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 10026 strings out of 493029
- 140757 string characters out of 6136234
+ 10066 strings out of 493029
+ 141641 string characters out of 6136234
  348619 words of memory out of 5000000
- 13239 multiletter control sequences out of 15000+600000
+ 13271 multiletter control sequences out of 15000+600000
  43460 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,8n,58p,1068b,2411s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,9n,58p,1068b,2387s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texli
 ve/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
@@ -1259,10 +1314,10 @@ ts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on web2projeto.pdf (23 pages, 783202 bytes).
+Output written on web2projeto.pdf (24 pages, 1158095 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
