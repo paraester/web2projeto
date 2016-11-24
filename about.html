@@ -5,89 +5,63 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="codigos/ico/favicon.png">
-    <title>StudioE - Sobre</title>
+    <title>StudioE</title>
 
     <!-- Bootstrap-->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/galeria.css" rel="stylesheet">
-
+    <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/resources/css/animated.css" rel="stylesheet">
+    <link href="assets/resources/css/principal.css" rel="stylesheet">
+    <script src="assets/resources/js/contato/contato.js"></script>
 </head>
 
 <body>
-
     <!-- Menu -->
     <nav class="menu" id="theMenu">
         <div class="menu-wrap">
             <h1 class="logo"><a href="index.html#home">StudioE</a></h1>
             <i class="fa fa-arrow-right menu-close"></i>
-            <a href="index.html">Home</a>
-
-            <a href="galeria.html">Galeria</a>
-            <a href="about.html">Sobre</a>
-            <a href="#contact">Contato</a>
+            <a href="index.html"><span>HOME</span></a>
+            <a href="galeria.html"><span>AUTORAIS</span></a>
+            <a href="contato.html"><span>ORÇAMENTOS</span></a>
+            <a href="contato.html"><span>CONTATO</span></a>
+            <a href="about.html">INFORMAÇÕES</a>
             <a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-envelope"></i></a>
         </div>
-
         <!-- Menu button -->
-        <div id="menuToggle"><i class="fa fa-bars"></i></div>
+        <div id="menuToggle"><i class="fa fa-bars navicon img-responsive"></i></div>
     </nav>
-    <!-- WELCOME SECTION -->
+    <!-- Menu -->
+
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <h1>Fotografias do Portfólio</h1>
-                <p></p>
-            </div>
+        <article>
+            <header class="entry-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
 
-        </div>
+                            <h1 class="animated slideInRight">Informações</h1>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- PORTFOLIO SECTION -->
-        <div id="galeria">
+            </header>
             <div class="container">
-                <div class="row mt">
-                    <ul class="grid effect-4" id="grid">
-                        <li><img src="img/portfolio/1.jpg"></li>
-                        <li><img src="img/portfolio/2.jpg"></li>
-                        <li><img src="img/portfolio/20.jpg"></li>
-                        <li><img src="img/portfolio/3.jpg"></li>
-                        <li><img src="img/portfolio/4.jpg"></li>
-                        <li><img src="img/portfolio/5.jpg"></li>
-                        <li><img src="img/portfolio/20.jpg"></li>
-                        <li><img src="img/portfolio/6.jpg"></li>
-                        <li><img src="img/portfolio/8.jpg"></li>
-                        <li><img src="img/portfolio/9.jpg"></li>
-                        <li><img src="img/portfolio/10.jpg"></li>
-                        <li><img src="img/portfolio/11.jpg"></li>
-                        <li><img src="img/portfolio/12.jpg"></li>
-                        <li><img src="img/portfolio/13.jpg"></li>
-                        <li><img src="img/portfolio/14.jpg"></li>
-                        <li><img src="img/portfolio/15.jpg"></li>
-                        <li><img src="img/portfolio/16.jpg"></li>
-                        <li><img src="img/portfolio/17.jpg"></li>
-                        <li><img src="img/portfolio/18.jpg"></li>
-                        <li><img src="img/portfolio/19.jpg"></li>
-                    </ul>
+                <div class="row">
+                    <div class="col-xs-5 col-md-5">
+                        <br/>
+                        <br/> "A natureza é muito poderosa e muito forte. Capturar sua essência não é fácil e seu trabalho se torna uma dança com a luz e o tempo. Ela leva você a um lugar dentro de si mesmo. Uma coisa que você vê nas minhas fotos é que eu não estava com medo de me apaixonar por essas pessoas. Deve haver uma razão para os fotógrafos não serem muito bons em comunicação verbal. Eu acho que eles ficam com preguiça. Quando você é mais jovem a câmera é como um amigo e você pode ir a lugares e sentir como se estivesse com alguém. Quando você vai para tirar uma foto de alguém, a primeira coisa que eles dizem é: o que você quer que eu faça? Todo mundo é muito estranho". Annie Leibovitz
+
+                    </div>
                 </div>
             </div>
-            <!-- row -->
-        </div>
-        <!-- container -->
+        </article>
+
+
     </div>
 
-    <div class="container">
-        <div class="row mt">
-            <div class="col-lg-12">
-                <h1>Esteja conectado</h1>
-                <p>Junte-se a nos nas redes sociais</p>
-                <br>
-            </div>
-            <!-- col-lg-12 -->
-        </div>
-        <!-- row -->
-    </div>
     <footer id="colophon" class="site-footer" role="contentinfo">
         <div class="layout-medium">
             <div class="footer-social">
@@ -109,22 +83,15 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
+    <!-- Bootstrap JavaScript <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
     <script src="assets/libs/jquery/jquery-3.1.1.min.js"></script>
-    <!-- necessario -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/imagesloaded.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/AnimOnScroll.js"></script>
-    <script>
-        new AnimOnScroll(document.getElementById('grid'), {
-            minDuration: 0.4,
-            maxDuration: 0.7,
-            viewportFactor: 0.2
-        });
-    </script>
+    <!-- necessario no menu js/main.js-->
+    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- necessario no menu -->
+    <script src="assets/resources/js/main.js"></script>
+    <!-- necessario no formulario -->
+    <!-- necessario no menu -->
+
 </body>
 
 </html>

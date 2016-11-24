@@ -1,8 +1,4 @@
-"globals": {
-    "console": false
-}
 //quando mouseover na foto selecionar o botão seleciona e a lupinha devem aparecer
-//
 function showBotao(i) {
 
     /*    var div = document.getElementById("botao" + i);
@@ -154,7 +150,7 @@ function alternarEscolhaDaFoto(i) {
 
 function exibirFotosAoIniciar() {
     // objeto global do cliente da base de dados na variavel jsonClienteX
-
+    verSeLogado();
     var htmlInner = "";
     for (var i = 0; i < jsonClienteX.fotos.length; i++) {
         htmlInner += '<li>\n<div class = "caption img-wrapper" onmouseover="showBotao(' + i + ');" onmouseout="escondeBotaoSelecionar(' + i + ');" style="position:relative;">\n<img src="';
@@ -177,3 +173,15 @@ function enviarFotosSelecionadas() {
     //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
 }
 //teste
+function verSeLogado() {
+    var estaLogado = sessionStorage.getItem('logou');
+    //localStorage.setItem("logou", "231");
+    if (estaLogado !== 1267) {
+        alert("Você precisa fazer o login.");
+        window.location = "index.html";
+    }
+}
+
+function deslogar() {
+    sessionStorage.removeItem("logou");
+}
