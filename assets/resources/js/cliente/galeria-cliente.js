@@ -1,6 +1,10 @@
+"globals": {
+    "console": false
+}
 //quando mouseover na foto selecionar o botão seleciona e a lupinha devem aparecer
 //
 function showBotao(i) {
+
     /*    var div = document.getElementById("botao" + i);
         var verRetirar = document.getElementById("retirar" + i);
         // se conteúdo está escondido, mostra e troca o valor do botão selecionar para: esconde

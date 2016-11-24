@@ -3,30 +3,22 @@ var $$ = function (id) {
 }
 
 function validaContato() {
-    var nome = $$("name").value;
-    console.log("nome" + nome);
-    var email = $$("email").value;
-    var message = $$("message").value;
-    if ((nome == null) || (nome == "")) {
-        alert("Preencha o campo nome");
+    var nome == $$("name").value;
+    var email == $$("email").value;
+    var message == $$("message").value;
+    if ((nome === null) || (nome === "")) {
+        document.alert("Preencha o campo nome");
         return false;
-    } else if ((email == null) || (email == "")) {
-        alert("Preencha o campo email");
-
+    } else if ((email === null) || (email === "")) {
+        document.alert("Preencha o campo email");
         return false;
-    } else if ((message == null) || (message == "")) {
-        alert("Preencha o campo mensagem");
-
+    } else if ((message === null) || (message === "")) {
+        document.alert("Preencha o campo mensagem");
         return false;
     }
     enviadoContato();
     return true;
 }
-
-$(document).ready(function () {
-    $('input').val('Informações enviadas')
-})
-
 
 function enviadoContato() {
     document.getElementById("contact-form").innerHTML = ("REGISTROS ENVIADOS");

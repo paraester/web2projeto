@@ -71,7 +71,6 @@
             <!-- modal - do bootstrap  -->
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-
                     <!-- Modal content-->
                     <div class="modal-content form">
                         <div class="modal-header">
@@ -80,8 +79,12 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <div class="col-sm-offset-1 col-sm-10" id="zoomdafotoselecionada">
-                                </div>
+                                <!--<div class="contact-form" id="contact-form">-->
+                                <form id="contact-form" class="validate-form" method="post" onsubmit="return validaSelecionadas()">
+                                    <div class="col-sm-offset-1 col-sm-10" id="zoomdafotoselecionada">
+                                    </div>
+                                    <input type="submit" name="btnEnviar" value="enviar" class="submit button" />
+                                </form>
                             </div>
                         </div>
                     </div>
