@@ -149,8 +149,11 @@ function alternarEscolhaDaFoto(i) {
 }
 
 function exibirFotosAoIniciar() {
+    var logou = verSeLogado();
+    if (!logou) {
+        return;
+    }
     // objeto global do cliente da base de dados na variavel jsonClienteX
-    verSeLogado();
     var htmlInner = "";
     for (var i = 0; i < jsonClienteX.fotos.length; i++) {
         htmlInner += '<li>\n<div class = "caption img-wrapper" onmouseover="showBotao(' + i + ');" onmouseout="escondeBotaoSelecionar(' + i + ');" style="position:relative;">\n<img src="';
@@ -176,12 +179,20 @@ function enviarFotosSelecionadas() {
 function verSeLogado() {
     var estaLogado = sessionStorage.getItem('logou');
     //localStorage.setItem("logou", "231");
-    if (estaLogado !== 1267) {
+    console.log("esta logado " + estaLogado);
+    if (estaLogado == '1267') {
+
+        return true;
+    } else {
         alert("Você precisa fazer o login.");
+        // deslogar(); //pra este caso limpar Pra dar certo qdo logar 
         window.location = "index.html";
+        return false;
     }
+    return false;
 }
 
 function deslogar() {
     sessionStorage.removeItem("logou");
+    window.location = "index.html";
 }

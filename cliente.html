@@ -13,7 +13,6 @@
     <link href="assets/resources/css/principal.css" rel="stylesheet">
     <link href="assets/resources/css/animated.css" rel="stylesheet">
     <link href="assets/resources/css/galeria-cliente.css" rel="stylesheet">
-
     <link href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="assets/resources/js/modernizr.custom.js"></script>
     <script src="assets/resources/js/cliente/galeria_cliente.js"></script>
@@ -23,51 +22,64 @@
 
 <body>
     <!-- Menu -->
-    <nav class="menu" id="theMenu">
-        <div class="menu-wrap">
-            <h1 class="logo"><a href="index.html#home">StudioE</a></h1>
-            <i class="fa fa-arrow-right menu-close"></i>
-            <a href="index.html"><span>HOME</span></a>
-            <a href="galeria.html"><span>AUTORAIS</span></a>
-            <a href="cliente.html"><span>CLIENTES</span></a>
-            <a href="contato.html"><span>ORÇAMENTOS</span></a>
-            <a href="contato.html"><span>CONTATO</span></a>
-            <a href="about.html">INFORMAÇÕES</a>
-            <a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-envelope"></i></a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html"><span>HOME</span></a></li>
+                    <li><a href="galeria.html"><span>AUTORAIS</span></a></li>
+                    <li><a href="cliente.html"><span>CLIENTES</span></a></li>
+                    <li><a href="contato.html"><span>ORÇAMENTOS</span></a></li>
+                    <li><a href="contato.html"><span>CONTATO</span></a></li>
+                    <li><a href="about.html">INFORMAÇÕES</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://www.facebook.com/estercamposfotografia"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
         </div>
-        <!-- Menu button -->
-        <div id="menuToggle"><i class="fa fa-bars navicon img-responsive"></i></div>
     </nav>
     <!-- Menu -->
     <!-- WELCOME SECTION -->
 
     <article>
         <div class="container">
-            <header class="entry-header">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h1 class="animated slideInRight">Galeria para Seleção de fotos</h1>
-                            <!-- <h1>Galeria para Seleção de fotos</h1>-->
-                        </div>
+            <header>
+                <div class="col-xs-12">
+                    <div class="jumbotron text-center">
+                        <h1>Seleção de fotos</h1>
+                        <p class="lead">Olá, a curiosidade acabou agora você poderá escolher suas fotos!
+                        </p>
+                    </div>
+                    <div>
+
                     </div>
                 </div>
             </header>
         </div>
-
         <!-- PORTFOLIO SECTION -->
         <div id="galeria">
             <div class="container">
                 <div class="row mt">
-                    <div class="thumbnail media">
-                        <ul class="grid effect-3 attribute-value" id="grid">
-
-                        </ul>
-                    </div>
+                    <form id="grid-form" class="validate-form" method="post">
+                        <a class="btn btn-default btn-lg btn-sm" href="#" role="button" onclick="deslogar()" onclick="return enviarFotosSelecionadas()"><span class="glyphicon glyphicon-send"></span> ENVIAR </a>
+                        <div class="thumbnail media">
+                            <ul class="grid effect-3 attribute-value" id="grid">
+                            </ul>
+                        </div>
+                    </form>
                 </div>
             </div>
+
             <!-- modal - do bootstrap  -->
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -80,12 +92,13 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <!--<div class="contact-form" id="contact-form">-->
-                                <form id="contact-form" class="validate-form" method="post" onsubmit="return validaSelecionadas()">
-                                    <div class="col-sm-offset-1 col-sm-10" id="zoomdafotoselecionada">
-                                    </div>
-                                    <input type="submit" name="btnEnviar" value="enviar" class="submit button" />
-                                </form>
+
+                                <div class="col-sm-offset-1 col-sm-10" id="zoomdafotoselecionada">
+                                </div>
+
+
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -122,7 +135,7 @@
                 </ul>
             </div>
             <div class="site-info ">
-                <p>Copyright © 2016 Ester Campos</p>
+                <p>Copyright © 2016 StudioE</p>
             </div>
         </div>
     </footer>
@@ -139,7 +152,6 @@
         $(document).ready(function () {
             exibirFotosAoIniciar();
             console.log("pronto carregada a página! Vamos trabalhar js ");
-
             new AnimOnScroll(document.getElementById('grid'), {
                 minDuration: 0.4,
                 maxDuration: 0.7,

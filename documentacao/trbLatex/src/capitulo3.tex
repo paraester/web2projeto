@@ -146,16 +146,21 @@ function validaContato() {
 
 \subsection{Função aninhada/interna}
 
+	Esta função está relacionada a construção de uma $grid$ de fotos do cliente, uma galeria de fotos. A função  $exibirFotosAoIniciar()$ é chamada quando a página é carregada, ela sempre irá  verificar antes se o cliente está logado, pois do contrário não poderemos mostrar ao visitante as fotos, isto é a galeria não será carregada. 
+	
 \begin{lstlisting}
 function exibirFotosAoIniciar() {
-    verSeLogado();
+    var logou = verSeLogado();
+    if (!logou) {
+        return;
+    }
     var htmlInner = "";
     for (var i = 0; i < jsonClienteX.fotos.length; i++) {
         htmlInner += '<li>\n<div class = "caption img-wrapper" onmouseover="showBotao(' + i + ');" onmouseout="escondeBotaoSelecionar(' + i + ');" style="position:relative;">\n<img src="';
         htmlInner += jsonClienteX.pasta + jsonClienteX.fotos[i].arquivo + jsonClienteX.extensao;
         htmlInner += '">\n<div class="selecionouEstaFoto" id="selecionouEstaFoto' + i + '" style="display:none"><span class="glyphicon glyphicon-ok"> </span></div>\n <div class="zoomEstaFoto" id="zoomEstaFoto' + i + '" style="display:none"><a href="#" data-toggle="modal" data-target="#myModal" onclick=zoomFotoLinha(' + i + '); <span class="glyphicon glyphicon-zoom-in"> </span></a></div >\n<button id="botao' + i + '" style="display:none" class="btn btn-success" onclick="alternarEscolhaDaFoto(' + i + ');">Selecionar</button></div>\n</li>';
     }
-    document.getElementById("grid").innerHTML = htmlInner; /
+    document.getElementById("grid").innerHTML = htmlInner;
 }
 \end{lstlisting}
 
@@ -406,7 +411,7 @@ function alternarEscolhaDaFoto(i) {
 \section{Web Storage }
 \subsection{LocalStorage}
 
-\subsubsection{SessionStorage}
+\subsection{SessionStorage}
 
 	Utilizamos no arquivo $login.js$ para armazenar a chave $logou$, está chave será testada posteriormente no arquivo $galeria_clientes.js$ com a finalidade de verificar se o cliente está logado. Pois somente um cliente só terá acesso a página $cliente.html$ se ele tiver feito $login$ anteriormente. 
 	
@@ -424,15 +429,27 @@ arquivo $galeria_clientes.js$
 \begin{lstlisting}
 function verSeLogado() {
     var estaLogado = sessionStorage.getItem('logou');
-    //localStorage.setItem("logou", "231");
-    if (estaLogado !== 1267) {
+    console.log("esta logado " + estaLogado);
+    if (estaLogado == '1267') {
+
+        return true;
+    } else {
         alert("Você precisa fazer o login.");
+        // deslogar(); //pra este caso limpar Pra dar certo qdo logar 
         window.location = "index.html";
+        return false;
     }
+    return false;
 }
 \end{lstlisting}
 
-	A função $function verSeLogado()$ será chamada dentro da função $verSeLogado();$ função está que é carregada ao carregar o $html$.
-
+	A função $function verSeLogado()$ será chamada dentro da função $exibirFotosAoIniciar();$ função está que é carregada ao carregar o $html$.
+	
+\begin{lstlisting}
+	function deslogar() {
+    sessionStorage.removeItem("logou");
+    window.location = "index.html";
+}
+\end{lstlisting}
 \subsection{Leitura e escrita de dados simples}
 \subsection{Leitura e escrita de JSON}
