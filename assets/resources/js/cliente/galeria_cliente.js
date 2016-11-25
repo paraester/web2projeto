@@ -131,21 +131,38 @@ function zoomFotoLinha(i) {
 }
 
 function alternarEscolhaDaFoto(i) {
-    var div = $("#botao" + i); //uso de seletores CSS por id
     console.log("valor que continha " + div.html());
     if (div.html() == "Selecionar") {
-        div.toggle('slow').toggle('slow');
-        div.html("Retirar");
-        jsonClienteX.fotos[i].escolhido = true;
-        div.removeClass('btn-success').addClass('btn-warning');
-        $("#selecionouEstaFoto" + i).toggle('slow');
-        div.fadeOut(500);
+        selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
     } else {
-        div.html("Selecionar");
-        jsonClienteX.fotos[i].escolhido = false;
-        div.removeClass('btn-warning').addClass('btn-success');
-        $("#selecionouEstaFoto" + i).toggle('slow');
+        selecionaOuRetiraFoto(i, deselecionarFoto);
     }
+    //salvando cada as fotos selecionada
+    var chaveCliente = sessionStorage.getItem("logou");
+
+    localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
+    // console.log("foi salvo " + div.html());
+}
+var selecionaOuRetiraFoto = function (i, executar) {
+    executar(i);
+}
+
+function selecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.toggle('slow').toggle('slow');
+    div.html("Retirar");
+    jsonClienteX.fotos[i].escolhido = true;
+    div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+    div.fadeOut(500);
+}
+
+function deselecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.html("Selecionar");
+    jsonClienteX.fotos[i].escolhido = false;
+    div.removeClass('btn-warning').addClass('btn-success');
+    $("#selecionouEstaFoto" + i).toggle('slow');
 }
 
 function exibirFotosAoIniciar() {
@@ -153,6 +170,8 @@ function exibirFotosAoIniciar() {
     if (!logou) {
         return;
     }
+
+
     // objeto global do cliente da base de dados na variavel jsonClienteX
     var htmlInner = "";
     for (var i = 0; i < jsonClienteX.fotos.length; i++) {
@@ -166,14 +185,62 @@ function exibirFotosAoIniciar() {
     //var galeriaCliente = $("#grid");
     //galeriaCliente.html(htmlInner);
     document.getElementById("grid").innerHTML = htmlInner; //pra matar o requisito mas as linhas acima são mais bonita
+    exibirComFotosMarcadasAnteriormente();
 }
 
+function exibirComFotosMarcadasAnteriormente() {
+    //pra carregar com eventuais fotos selecionadass anteriormente
+    var chaveCliente = sessionStorage.getItem("logou");
+    if (!localStorage.getItem(chaveCliente)) {
+        //não existe nada no localstorage deste cliente
+        return;
+    }
+    var jsonClienteXTmp = JSON.parse(localStorage.getItem(chaveCliente));
+    for (var i = 0; i < jsonClienteXTmp.fotos.length; i++) {
+        if (jsonClienteXTmp.fotos[i].escolhido == true) {
+            console.log("foto" + i + "estava marcada no localstorage");
+            var div = $("#botao" + i); //uso de seletores CSS por id
+            div.html("Retirar");
+            jsonClienteX.fotos[i].escolhido = true;
+            div.removeClass('btn-success').addClass('btn-warning');
+            $("#selecionouEstaFoto" + i).toggle();
+        }
+    }
+    console.log("exibirComFotosMarcadasAnteriormente" + i + "fim");
+}
 /*
 para enviar msg de alerta mudando a tag <> de h2 quantidades fotos enviadas para <h1> voce precisa escolher ao menos uma foto
 uso de seletores CSS - tag, id
 */
 function enviarFotosSelecionadas() {
-    //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+    var confirma = confirm("Confirmar o envio das fotos?!");
+    if (confirma == true) {
+        var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
+        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+        var fotosenviadas = { //comecamos armazenando email do cliente
+            email: email
+        };
+        for (var i = 0; i < jsonClienteX.fotos.length; i++) {
+            if (jsonClienteX.fotos[i].escolhido == true) {
+                fotosenviadas[i] = jsonClienteX.fotos[i].arquivo; //armazenando todos os nomes dos arquivos
+                console.log("enviando fotos" + i + "estava marcada no localstorage");
+            }
+        }
+        var chaveParaAdmin = "FotosSalvasDe" + sessionStorage.getItem("logou"); //id do cliente sessionStorage.getItem("logou")
+        //for (chave in localStorage){
+        //if (chave.indexOf("FotosSalvasDe") >= 0));//esta é a chave de um cliente que enviou fotos
+        //}
+
+        localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
+        //apagar do localstorage do cliente ou apenas após 5 dias
+        localStorage.removeItem(sessionStorage.getItem("logou"));
+
+        alert("Suas fotos foram enviadas Você será redirecionado para o inicio");
+        deslogar();
+
+    } else {
+        return;
+    }
 }
 //teste
 function verSeLogado() {
@@ -181,7 +248,6 @@ function verSeLogado() {
     //localStorage.setItem("logou", "231");
     console.log("esta logado " + estaLogado);
     if (estaLogado == '1267') {
-
         return true;
     } else {
         alert("Você precisa fazer o login.");

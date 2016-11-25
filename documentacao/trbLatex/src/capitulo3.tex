@@ -77,9 +77,40 @@ Problema 4
 
 \subsection{prompt}
 
+	Ver arquivo $galeria_cliente.js$
+	
+\begin{lstlisting}
+
+function enviarFotosSelecionadas() {
+    var confirma = confirm("Confirmar o envio das fotos?!");
+    if (confirma == true) {
+        var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
+        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+        var fotosenviadas = { //comecamos armazenando email do cliente
+            email: email
+        };
+        for (var i = 0; i < jsonClienteX.fotos.length; i++) {
+            if (jsonClienteX.fotos[i].escolhido == true) {
+                fotosenviadas[i] = jsonClienteX.fotos[i].arquivo; //armazenando todos os nomes dos arquivos
+                console.log("enviando fotos" + i + "estava marcada no localstorage");
+            }
+        }
+        var chaveParaAdmin = "FotosSalvasDe" + sessionStorage.getItem("logou");
+        localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
+        localStorage.removeItem(sessionStorage.getItem("logou"));
+        alert("Suas fotos foram enviadas Você será redirecionado para o inicio");
+        deslogar();
+
+    } else {
+        return;
+    }
+}
+\end{lstlisting}
+
 \subsection{alert}
 
 	No arquivo $JavaScript$ chamado $contato.js$ criamos uma função com nome $validaContato()$ conforme segue abaixo para melhor visualização:
+	
 \begin{lstlisting}
 function validaContato() {
     var nome = $$("name").value;
@@ -102,6 +133,39 @@ function validaContato() {
 	Esta função está relacionada a validação dos campos do formulário. E dentro dela utilizamos $alert$ para enviar uma mensagem ao visitante da página.
 
 \subsection{confirm}
+	No arquivo $JavaScript$ chamado $galeria$\_$cliente.js$.
+	Criamos uma função com nome $enviarFotosSelecionadas()$ conforme segue abaixo para melhor visualização:
+	
+\begin{lstlisting}
+function enviarFotosSelecionadas() {
+    var confirma = confirm("Confirmar o envio das fotos?!");
+    if (confirma == true) {
+        var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
+        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+        var fotosenviadas = { //comecamos armazenando email do cliente
+            email: email
+        };
+        for (var i = 0; i < jsonClienteX.fotos.length; i++) {
+            if (jsonClienteX.fotos[i].escolhido == true) {
+                fotosenviadas[i] = jsonClienteX.fotos[i].arquivo; //armazenando todos os nomes dos arquivos
+                console.log("enviando fotos" + i + "estava marcada no localstorage");
+            }
+        }
+        var chaveParaAdmin = "FotosSalvasDe" + sessionStorage.getItem("logou"); //id do cliente sessionStorage.getItem("logou")
+       
+        localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
+
+        localStorage.removeItem(sessionStorage.getItem("logou"));
+
+        alert("Suas fotos foram enviadas Você será redirecionado para o inicio");
+        deslogar();
+
+    } else {
+        return;
+    }
+}
+\end{lstlisting}
+	Observe que na segunda linha da função temos o solicitado.
 
 \section{Funções}
 \subsection{Função anônima com argumento}
@@ -166,12 +230,73 @@ function exibirFotosAoIniciar() {
 
 
 \subsection{Passagem de uma função como parâmetro}
+	Para este item consideremos no arquivo $javascript$ da galeria do cliente a função $alternarEscolhaDaFoto(i)$, dentro dela veja a linha $4$.	
+	
+\begin{lstlisting}	
+function alternarEscolhaDaFoto(i) {
+    console.log("valor que continha " + div.html());
+    if (div.html() == "Selecionar") {
+        selecionaOuRetiraFoto(i, selecionarFoto);
+    } else {
+        selecionaOuRetiraFoto(i, deselecionarFoto);
+    }
+    //salvando cada as fotos selecionada
+    var chaveCliente = sessionStorage.getItem("logou");
+    localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
+}
+var selecionaOuRetiraFoto = function (i, executar) {
+    executar(i);
+}
+
+\end{lstlisting}
+	Na linha $4$ temos a função solicitada que recebe por parâmetro a função $selecionarFoto$ dentro dela aplica o prâmetro $i$ também recebido. Abaixo temos o código da função $selecionarFoto(i)$.
+	
+\begin{lstlisting}
+function selecionarFoto(i) {
+    var div = $("#botao" + i);
+    div.toggle('slow').toggle('slow');
+    div.html("Retirar");
+    jsonClienteX.fotos[i].escolhido = true;
+    div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+    div.fadeOut(500);
+}
+
+function deselecionarFoto(i) {
+    var div = $("#botao" + i);
+    div.html("Selecionar");
+    jsonClienteX.fotos[i].escolhido = false;
+    div.removeClass('btn-warning').addClass('btn-success');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+}	
+	\end{lstlisting}
 
 \section{Eventos}
 
 \subsection{Evento de carregamento do documento}
-
-
+	Para este item verificar no arquivo $cliente.html$ as seguintes linhas:
+	\begin{lstlisting}
+	    <script>
+        $(document).ready(function () {
+            exibirFotosAoIniciar();
+            $(window).scroll(function () {
+                set = $(document).scrollTop() + "px";
+                jQuery('#float-banner').animate({
+                    top: set
+                }, {
+                    duration: 1000,
+                    queue: false
+                });
+            });
+            console.log("pronto carregada a página! Vamos trabalhar js ");
+            new AnimOnScroll(document.getElementById('grid'), {
+                minDuration: 0.4,
+                maxDuration: 0.7,
+                viewportFactor: 0.2
+            });
+        });
+    </script>
+	\end{lstlisting}
 \subsection{Evento de movimento do mouse}
 
 
@@ -212,15 +337,48 @@ function enviadoContato() {
 
 
 \subsection{Via seletores CSS}
-  Usados na função querySelector() ou jQuery
+	O botão enviar da página $cliente.html$ é um $banner$ que fica seguinto a ação de rolar a página. Para isto adicionamos no arquivo $cliente.html$ algumas linhas, dentre elas temos esta:
+		\begin{lstlisting}	
+	jQuery('#float-banner').animate({
+		\end{lstlisting}
+		Este $selector$ irá se referir ao $id="float-banner"$, que no arquivo $HTML$ está representado com as linhas abaixo:
+\begin{lstlisting}
+<div id="float-banner">
+     <a class="btn btn-default btn-lg btn-sm" href="#" role="button" onclick="return enviarFotosSelecionadas()"><span class="glyphicon glyphicon-send"></span> ENVIAR </a>
+</div>
+\end{lstlisting}
+
+	Abaixo seguem todas as linhas da função do $JQuery$ $(document).ready(function$ $()$ que utilizamos por ser parecida com o $window.onload$, exceto que no $JQuery$ não precisamos esperar o carregamento de imagens como no $window.onload$ (nesta página isto será útil pois temos muitas fotos).
+	
+		\begin{lstlisting}
+	    <script>
+        $(document).ready(function () {
+            exibirFotosAoIniciar();
+            $(window).scroll(function () {
+                set = $(document).scrollTop() + "px";
+                jQuery('#float-banner').animate({
+                    top: set
+                }, {
+                    duration: 1000,
+                    queue: false
+                });
+            });
+            console.log("pronto carregada a página! Vamos trabalhar js ");
+            new AnimOnScroll(document.getElementById('grid'), {
+                minDuration: 0.4,
+                maxDuration: 0.7,
+                viewportFactor: 0.2
+            });
+        });
+    </script>
+	\end{lstlisting} 
+  
   
 \section{Tratadores de Evento}
 \subsection{Evento inline}
-Objetivo: especificar o tratador de evento inline
+Objetivo: especificar o tratador de evento inline. Tratador de eventos inline - onmouseover, onmouseout ou onclick. Neste item escolhemos utilizar $onclick$
 
-tratador de eventos inline - onmouseover, onmouseout, onclick
-
-$onclick$ - Ver no arquivo $galeria-cliente.js$ a seguinte linha:
+$onclick$ - Ver no arquivo $galeria$\_$cliente.js$ a seguinte linha:
 
 \begin{lstlisting}
 <button id="botao' + i + '" style="display:none" class="btn btn-success" onclick="alternarEscolhaDaFoto(' + i + ');">Selecionar</button>
@@ -314,24 +472,93 @@ Usar métodos para manipulação de array
 \subsection{Manipulação de string}
 Usar métodos para manipulação de string
 
-\section{Objetos Nativos}
-\subsection{Manipulação de array}
-Usar métodos para manipulação de array
-
-jsonClienteX na funcao alternarEscolhaDaFoto no arquivo cliente.html
-
-
-
-\subsection{Manipulação de string}
-
-
-Usar métodos para manipulação de string
-
-
 \section{Objetos}
 \subsection{Criar objeto}
-Criar objeto usando função construtora ou notação literal
-
+	Criar objeto usando função construtora ou notação literal
+\begin{lstlisting}	
+	var jsonClienteX = {
+    pasta: "assets/resources/img/clients/cliente/",
+    extensao: ".jpg",
+    fotos: [
+        {
+            arquivo: '2',
+            escolhido: false
+        },
+        {
+            arquivo: '20',
+            escolhido: false
+        },
+        {
+            arquivo: '3',
+            escolhido: false
+        },
+        {
+            arquivo: '4',
+            escolhido: false
+        },
+        {
+            arquivo: '5',
+            escolhido: false
+        },
+        {
+            arquivo: '20',
+            escolhido: false
+        },
+        {
+            arquivo: '6',
+            escolhido: false
+        },
+        {
+            arquivo: '8',
+            escolhido: false
+        },
+        {
+            arquivo: '9',
+            escolhido: false
+        },
+        {
+            arquivo: '10',
+            escolhido: false
+        },
+        {
+            arquivo: '11',
+            escolhido: false
+        },
+        {
+            arquivo: '12',
+            escolhido: false
+        },
+        {
+            arquivo: '13',
+            escolhido: false
+        },
+        {
+            arquivo: '14',
+            escolhido: false
+        },
+        {
+            arquivo: '15',
+            escolhido: false
+        },
+        {
+            arquivo: '16',
+            escolhido: false
+        },
+        {
+            arquivo: '17',
+            escolhido: false
+        },
+        {
+            arquivo: '18',
+            escolhido: false
+        },
+        {
+            arquivo: '19',
+            escolhido: false
+        },
+	],
+}
+\end{lstlisting}
 
 \subsection{Herança}
 Usar herança prototipal
@@ -339,42 +566,65 @@ Usar herança prototipal
 
 \section{jQuery}
 \subsection{Seletores CSS}
-Uso de seletores CSS - id, classe e tag
-\subsection{ID}
-	Observa abaixo que na linha 2 do arquivo $galeria-cliente.js$ temos o uso de seletor $CSS$ por $id$.
+	Uso de seletores CSS - id, classe e tag
+\subsubsection{id}
+	Verificar a linha $6$ abaixo:
+		\begin{lstlisting}
+	    <script>
+        $(document).ready(function () {
+            exibirFotosAoIniciar();
+            $(window).scroll(function () {
+                set = $(document).scrollTop() + "px";
+                jQuery('#float-banner').animate({
+                    top: set
+                }, {
+                    duration: 1000,
+                    queue: false
+                });
+            });
+            console.log("pronto carregada a página! Vamos trabalhar js ");
+            new AnimOnScroll(document.getElementById('grid'), {
+                minDuration: 0.4,
+                maxDuration: 0.7,
+                viewportFactor: 0.2
+            });
+        });
+    </script>
+	\end{lstlisting}
+
+	Observar também abaixo que na linha 2 do arquivo $galeria$\_$cliente.js$ temos o uso de seletor $CSS$ por $id$.
 	
 \begin{lstlisting}
-function alternarEscolhaDaFoto(i) {
-    var div = $("#botao" + i);
-    console.log("valor que continha " + div.html());
-    if (div.html() == "Selecionar") {
-        div.toggle('slow').toggle('slow');
-        div.html("Retirar");
-        jsonClienteX.fotos[i].escolhido = true;
-        div.removeClass('btn-success').addClass('btn-warning');
-        $("#selecionouEstaFoto" + i).toggle('slow');
-        div.fadeOut(500);
-    } else {
-        div.html("Selecionar");
-        jsonClienteX.fotos[i].escolhido = false;
-        div.removeClass('btn-warning').addClass('btn-success');
-        $("#selecionouEstaFoto" + i).toggle('slow');
-    }
+function deselecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.html("Selecionar");
+    jsonClienteX.fotos[i].escolhido = false;
+    div.removeClass('btn-warning').addClass('btn-success');
+    $("#selecionouEstaFoto" + i).toggle('slow');
 }
 \end{lstlisting}
-\subsection{classe}
 
-
-\subsection{tag}
-
-
+\subsubsection{classe}
+\subsubsection{tag}
 
 \subsection{Seletores hierarquicos}
 Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo
 \subsection{Efeitos fade ou slide}
 
-Efeito fadeOut ver cliente.html
-
+	Efeito utilizado $fadeout$.
+	Observe na linha $8$ da função $selecionarFoto(i)$ do arquivo $galeria$\_$cliente.js$.
+	
+\begin{lstlisting}	
+function selecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.toggle('slow').toggle('slow');
+    div.html("Retirar");
+    jsonClienteX.fotos[i].escolhido = true;
+    div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+    div.fadeOut(500);
+}
+\end{lstlisting}
 
 \subsection{Tratador de algum evento}
 Espeficar o tratador de algum evento via jQuery
@@ -387,21 +637,17 @@ Espeficar o tratador de algum evento via jQuery
 
 \begin{lstlisting}
 function alternarEscolhaDaFoto(i) {
-    var div = $("#botao" + i);
     console.log("valor que continha " + div.html());
     if (div.html() == "Selecionar") {
-        div.toggle('slow').toggle('slow');
-        div.html("Retirar");
-        jsonClienteX.fotos[i].escolhido = true;
-        div.removeClass('btn-success').addClass('btn-warning');
-        $("#selecionouEstaFoto" + i).toggle('slow');
-        div.fadeOut(500);
+        selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
     } else {
-        div.html("Selecionar");
-        jsonClienteX.fotos[i].escolhido = false;
-        div.removeClass('btn-warning').addClass('btn-success');
-        $("#selecionouEstaFoto" + i).toggle('slow');
+        selecionaOuRetiraFoto(i, deselecionarFoto);
     }
+    //salvando cada as fotos selecionada
+    var chaveCliente = sessionStorage.getItem("logou");
+
+    localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
+    // console.log("foi salvo " + div.html());
 }
 \end{lstlisting}
 
@@ -410,10 +656,80 @@ function alternarEscolhaDaFoto(i) {
 
 \section{Web Storage }
 \subsection{LocalStorage}
+	Fazemos uso de $localstorage$ na função $alternarEscolhaDaFoto$ do arquivo $galeria$\_$cliente.js$. Conforme observamos nas linhas de código abaixo:
+	
+\begin{lstlisting}
+	function alternarEscolhaDaFoto(i) {
+    console.log("valor que continha " + div.html());
+    if (div.html() == "Selecionar") {
+        selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
+    } else {
+        selecionaOuRetiraFoto(i, deselecionarFoto);
+    }
+    //salvando cada as fotos selecionada
+    var chaveCliente = sessionStorage.getItem("logou");
 
+    localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
+}
+	\end{lstlisting}
+	Uma chave do cliente, $chaveCliente$ foi armazenada juntamente com as fotos que o cliente selecionou.
+	
+	A função $exibirComFotosMarcadasAnteriormente$ faz uso do localstorage também. Desta forma com a finalidade de recuperar os dados armazenados:
+\begin{lstlisting}	
+	
+	function exibirComFotosMarcadasAnteriormente() {
+    //pra carregar com eventuais fotos selecionadass anteriormente
+    var chaveCliente = sessionStorage.getItem("logou");
+    if (!localStorage.getItem(chaveCliente)) {
+        //não existe nada no localstorage deste cliente
+        return;
+    }
+    var jsonClienteXTmp = JSON.parse(localStorage.getItem(chaveCliente));
+    for (var i = 0; i < jsonClienteXTmp.fotos.length; i++) {
+        if (jsonClienteXTmp.fotos[i].escolhido == true) {
+            console.log("foto" + i + "estava marcada no localstorage");
+            var div = $("#botao" + i); //uso de seletores CSS por id
+            div.html("Retirar");
+            jsonClienteX.fotos[i].escolhido = true;
+            div.removeClass('btn-success').addClass('btn-warning');
+            $("#selecionouEstaFoto" + i).toggle();
+        }
+    }
+    console.log("exibirComFotosMarcadasAnteriormente" + i + "fim");
+}
+
+	\end{lstlisting}
+	
+	Já na função podemos observar a remoção dos itens salvos, isto é resumidamente quando o cliente $clicar$ em enviar os dados selecionados vão passar para outra chave e os dados anteriores serão removidos:
+	\begin{lstlisting}	
+	function enviarFotosSelecionadas() {
+    var confirma = confirm("Confirmar o envio das fotos?!");
+    if (confirma == true) {
+        var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
+        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+        var fotosenviadas = { //comecamos armazenando email do cliente
+            email: email
+        };
+        for (var i = 0; i < jsonClienteX.fotos.length; i++) {
+            if (jsonClienteX.fotos[i].escolhido == true) {
+                fotosenviadas[i] = jsonClienteX.fotos[i].arquivo; //armazenando todos os nomes dos arquivos
+                console.log("enviando fotos" + i + "estava marcada no localstorage");
+            }
+        }
+        var chaveParaAdmin = "FotosSalvasDe" + sessionStorage.getItem("logou"); //id do cliente sessionStorage.getItem("logou")
+        
+        localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
+        localStorage.removeItem(sessionStorage.getItem("logou"));
+        alert("Suas fotos foram enviadas Voce sera redirecionado para o inicio");
+        deslogar();
+    } else {
+        return;
+    }
+}	
+		\end{lstlisting}
 \subsection{SessionStorage}
 
-	Utilizamos no arquivo $login.js$ para armazenar a chave $logou$, está chave será testada posteriormente no arquivo $galeria_clientes.js$ com a finalidade de verificar se o cliente está logado. Pois somente um cliente só terá acesso a página $cliente.html$ se ele tiver feito $login$ anteriormente. 
+	Utilizamos no arquivo $login.js$ para armazenar a chave $logou$, está chave será testada posteriormente no arquivo $galeria$\_$clientes.js$ com a finalidade de verificar se o cliente está logado. Pois somente um cliente só terá acesso a página $cliente.html$ se ele tiver feito $login$ anteriormente. 
 	
 \begin{lstlisting}
 var naoLogou = function (i) {
@@ -453,3 +769,30 @@ function verSeLogado() {
 \end{lstlisting}
 \subsection{Leitura e escrita de dados simples}
 \subsection{Leitura e escrita de JSON}
+	Observe (linha $9$) que na função $enviarFotosSelecionadas$ temos a escrita e leitura de JSON:
+	
+		\begin{lstlisting}	
+	function enviarFotosSelecionadas() {
+    var confirma = confirm("Confirmar o envio das fotos?!");
+    if (confirma == true) {
+        var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
+        var fotosenviadas = { 
+            email: email
+        };
+        for (var i = 0; i < jsonClienteX.fotos.length; i++) {
+            if (jsonClienteX.fotos[i].escolhido == true) {
+                fotosenviadas[i] = jsonClienteX.fotos[i].arquivo; //armazenando todos os nomes dos arquivos
+                console.log("enviando fotos" + i + "estava marcada no localstorage");
+            }
+        }
+        var chaveParaAdmin = "FotosSalvasDe" + sessionStorage.getItem("logou"); //id do cliente sessionStorage.getItem("logou")
+        
+        localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
+        localStorage.removeItem(sessionStorage.getItem("logou"));
+        alert("Suas fotos foram enviadas Voce sera redirecionado para o inicio");
+        deslogar();
+    } else {
+        return;
+    }
+}	
+		\end{lstlisting}

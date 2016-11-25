@@ -951,7 +951,7 @@
     /* rodapé com social*/
     
     .site-footer {
-        position: relative;
+        position: absolute;
         z-index: 200;
         bottom: 0;
         width: 100%;

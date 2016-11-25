@@ -16,64 +16,61 @@
 \contentsline {subsection}{\numberline {3.1.1}Hint}{10}
 \contentsline {section}{\numberline {3.2}\MakeUppercase {Caixas de Di\IeC {\'a}logo}}{11}
 \contentsline {subsection}{\numberline {3.2.1}prompt}{11}
-\contentsline {subsection}{\numberline {3.2.2}alert}{11}
-\contentsline {subsection}{\numberline {3.2.3}confirm}{12}
-\contentsline {section}{\numberline {3.3}\MakeUppercase {Fun\IeC {\c c}\IeC {\~o}es}}{12}
-\contentsline {subsection}{\numberline {3.3.1}Fun\IeC {\c c}\IeC {\~a}o an\IeC {\^o}nima com argumento}{12}
-\contentsline {subsection}{\numberline {3.3.2}Fun\IeC {\c c}\IeC {\~a}o an\IeC {\^o}nima sem argumento}{13}
-\contentsline {subsection}{\numberline {3.3.3}Fun\IeC {\c c}\IeC {\~a}o an\IeC {\^o}nima auto-execut\IeC {\'a}vel}{13}
-\contentsline {subsection}{\numberline {3.3.4}Fun\IeC {\c c}\IeC {\~a}o com nome}{13}
-\contentsline {subsection}{\numberline {3.3.5}Fun\IeC {\c c}\IeC {\~a}o aninhada/interna}{13}
-\contentsline {subsection}{\numberline {3.3.6}Passagem de uma fun\IeC {\c c}\IeC {\~a}o como par\IeC {\^a}metro}{14}
-\contentsline {section}{\numberline {3.4}\MakeUppercase {Eventos}}{14}
-\contentsline {subsection}{\numberline {3.4.1}Evento de carregamento do documento}{14}
-\contentsline {subsection}{\numberline {3.4.2}Evento de movimento do mouse}{14}
-\contentsline {subsection}{\numberline {3.4.3}Evento de teclado}{14}
-\contentsline {subsection}{\numberline {3.4.4}Eventos de formul\IeC {\'a}rio}{14}
-\contentsline {subsection}{\numberline {3.4.5}objeto event}{14}
-\contentsline {subsection}{\numberline {3.4.6}Propaga\IeC {\c c}\IeC {\~a}o de eventos no modelo bolha}{15}
-\contentsline {section}{\numberline {3.5}\MakeUppercase {Acesso aos elementos DOM do HTML }}{15}
-\contentsline {subsection}{\numberline {3.5.1}Via acesso direto}{15}
-\contentsline {subsection}{\numberline {3.5.2}Via getElementByID()}{15}
-\contentsline {subsection}{\numberline {3.5.3}Via getElementsByName()}{15}
-\contentsline {subsection}{\numberline {3.5.4}Via getElementsByTagName()}{15}
-\contentsline {subsection}{\numberline {3.5.5}Via seletores CSS}{15}
-\contentsline {section}{\numberline {3.6}\MakeUppercase {Tratadores de Evento}}{15}
-\contentsline {subsection}{\numberline {3.6.1}Evento inline}{15}
-\contentsline {subsection}{\numberline {3.6.2}Modo tradicional}{16}
-\contentsline {subsection}{\numberline {3.6.3}addEventListener}{16}
-\contentsline {subsection}{\numberline {3.6.4}Operador this}{16}
-\contentsline {section}{\numberline {3.7}\MakeUppercase {Formul\IeC {\'a}rio}}{16}
-\contentsline {subsection}{\numberline {3.7.1}Valida\IeC {\c c}\IeC {\~a}o}{16}
-\contentsline {subsection}{\numberline {3.7.2}Propriedade Value}{17}
-\contentsline {subsection}{\numberline {3.7.3}innerHtml}{17}
-\contentsline {subsection}{\numberline {3.7.4}checkbox, radio ou select}{17}
-\contentsline {subsection}{\numberline {3.7.5}Acesso via hierarquia}{17}
-\contentsline {section}{\numberline {3.8}\MakeUppercase {Objetos Nativos }}{18}
-\contentsline {subsection}{\numberline {3.8.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{18}
-\contentsline {subsection}{\numberline {3.8.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{18}
-\contentsline {section}{\numberline {3.9}\MakeUppercase {Objetos Nativos}}{18}
-\contentsline {subsection}{\numberline {3.9.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{18}
-\contentsline {subsection}{\numberline {3.9.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{18}
-\contentsline {section}{\numberline {3.10}\MakeUppercase {Objetos}}{18}
-\contentsline {subsection}{\numberline {3.10.1}Criar objeto}{18}
-\contentsline {subsection}{\numberline {3.10.2}Heran\IeC {\c c}a}{18}
-\contentsline {section}{\numberline {3.11}\MakeUppercase {jQuery}}{18}
-\contentsline {subsection}{\numberline {3.11.1}Seletores CSS}{18}
-\contentsline {subsection}{\numberline {3.11.2}ID}{19}
-\contentsline {subsection}{\numberline {3.11.3}classe}{19}
-\contentsline {subsection}{\numberline {3.11.4}tag}{19}
-\contentsline {subsection}{\numberline {3.11.5}Seletores hierarquicos}{19}
-\contentsline {subsection}{\numberline {3.11.6}Efeitos fade ou slide}{19}
-\contentsline {subsection}{\numberline {3.11.7}Tratador de algum evento}{19}
-\contentsline {subsection}{\numberline {3.11.8}Manipula\IeC {\c c}\IeC {\~a}o CSS}{20}
-\contentsline {subsection}{\numberline {3.11.9}Manipula\IeC {\c c}\IeC {\~a}o do conte\IeC {\'u}do}{20}
-\contentsline {section}{\numberline {3.12}\MakeUppercase {Web Storage }}{20}
-\contentsline {subsection}{\numberline {3.12.1}LocalStorage}{20}
-\contentsline {subsection}{\numberline {3.12.2}SessionStorage}{20}
-\contentsline {subsection}{\numberline {3.12.3}Leitura e escrita de dados simples}{21}
-\contentsline {subsection}{\numberline {3.12.4}Leitura e escrita de JSON}{21}
-\contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{22}
-\contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{22}
-\contentsline {chapter}{Bibliography}{23}
-\contentsline {chapter}{REFER\^ENCIAS}{23}
+\contentsline {subsection}{\numberline {3.2.2}alert}{12}
+\contentsline {subsection}{\numberline {3.2.3}confirm}{13}
+\contentsline {section}{\numberline {3.3}\MakeUppercase {Fun\IeC {\c c}\IeC {\~o}es}}{14}
+\contentsline {subsection}{\numberline {3.3.1}Fun\IeC {\c c}\IeC {\~a}o an\IeC {\^o}nima com argumento}{14}
+\contentsline {subsection}{\numberline {3.3.2}Fun\IeC {\c c}\IeC {\~a}o an\IeC {\^o}nima sem argumento}{14}
+\contentsline {subsection}{\numberline {3.3.3}Fun\IeC {\c c}\IeC {\~a}o an\IeC {\^o}nima auto-execut\IeC {\'a}vel}{14}
+\contentsline {subsection}{\numberline {3.3.4}Fun\IeC {\c c}\IeC {\~a}o com nome}{14}
+\contentsline {subsection}{\numberline {3.3.5}Fun\IeC {\c c}\IeC {\~a}o aninhada/interna}{15}
+\contentsline {subsection}{\numberline {3.3.6}Passagem de uma fun\IeC {\c c}\IeC {\~a}o como par\IeC {\^a}metro}{16}
+\contentsline {section}{\numberline {3.4}\MakeUppercase {Eventos}}{17}
+\contentsline {subsection}{\numberline {3.4.1}Evento de carregamento do documento}{17}
+\contentsline {subsection}{\numberline {3.4.2}Evento de movimento do mouse}{17}
+\contentsline {subsection}{\numberline {3.4.3}Evento de teclado}{17}
+\contentsline {subsection}{\numberline {3.4.4}Eventos de formul\IeC {\'a}rio}{17}
+\contentsline {subsection}{\numberline {3.4.5}objeto event}{17}
+\contentsline {subsection}{\numberline {3.4.6}Propaga\IeC {\c c}\IeC {\~a}o de eventos no modelo bolha}{18}
+\contentsline {section}{\numberline {3.5}\MakeUppercase {Acesso aos elementos DOM do HTML }}{18}
+\contentsline {subsection}{\numberline {3.5.1}Via acesso direto}{18}
+\contentsline {subsection}{\numberline {3.5.2}Via getElementByID()}{18}
+\contentsline {subsection}{\numberline {3.5.3}Via getElementsByName()}{18}
+\contentsline {subsection}{\numberline {3.5.4}Via getElementsByTagName()}{18}
+\contentsline {subsection}{\numberline {3.5.5}Via seletores CSS}{18}
+\contentsline {section}{\numberline {3.6}\MakeUppercase {Tratadores de Evento}}{19}
+\contentsline {subsection}{\numberline {3.6.1}Evento inline}{19}
+\contentsline {subsection}{\numberline {3.6.2}Modo tradicional}{19}
+\contentsline {subsection}{\numberline {3.6.3}addEventListener}{20}
+\contentsline {subsection}{\numberline {3.6.4}Operador this}{20}
+\contentsline {section}{\numberline {3.7}\MakeUppercase {Formul\IeC {\'a}rio}}{20}
+\contentsline {subsection}{\numberline {3.7.1}Valida\IeC {\c c}\IeC {\~a}o}{20}
+\contentsline {subsection}{\numberline {3.7.2}Propriedade Value}{21}
+\contentsline {subsection}{\numberline {3.7.3}innerHtml}{21}
+\contentsline {subsection}{\numberline {3.7.4}checkbox, radio ou select}{21}
+\contentsline {subsection}{\numberline {3.7.5}Acesso via hierarquia}{21}
+\contentsline {section}{\numberline {3.8}\MakeUppercase {Objetos Nativos }}{21}
+\contentsline {subsection}{\numberline {3.8.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{21}
+\contentsline {subsection}{\numberline {3.8.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{22}
+\contentsline {section}{\numberline {3.9}\MakeUppercase {Objetos}}{22}
+\contentsline {subsection}{\numberline {3.9.1}Criar objeto}{22}
+\contentsline {subsection}{\numberline {3.9.2}Heran\IeC {\c c}a}{24}
+\contentsline {section}{\numberline {3.10}\MakeUppercase {jQuery}}{24}
+\contentsline {subsection}{\numberline {3.10.1}Seletores CSS}{24}
+\contentsline {subsubsection}{\numberline {3.10.1.1}id}{24}
+\contentsline {subsubsection}{\numberline {3.10.1.2}classe}{25}
+\contentsline {subsubsection}{\numberline {3.10.1.3}tag}{25}
+\contentsline {subsection}{\numberline {3.10.2}Seletores hierarquicos}{25}
+\contentsline {subsection}{\numberline {3.10.3}Efeitos fade ou slide}{25}
+\contentsline {subsection}{\numberline {3.10.4}Tratador de algum evento}{25}
+\contentsline {subsection}{\numberline {3.10.5}Manipula\IeC {\c c}\IeC {\~a}o CSS}{25}
+\contentsline {subsection}{\numberline {3.10.6}Manipula\IeC {\c c}\IeC {\~a}o do conte\IeC {\'u}do}{26}
+\contentsline {section}{\numberline {3.11}\MakeUppercase {Web Storage }}{26}
+\contentsline {subsection}{\numberline {3.11.1}LocalStorage}{26}
+\contentsline {subsection}{\numberline {3.11.2}SessionStorage}{28}
+\contentsline {subsection}{\numberline {3.11.3}Leitura e escrita de dados simples}{29}
+\contentsline {subsection}{\numberline {3.11.4}Leitura e escrita de JSON}{29}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{31}
+\contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{31}
+\contentsline {chapter}{Bibliography}{32}
+\contentsline {chapter}{REFER\^ENCIAS}{32}

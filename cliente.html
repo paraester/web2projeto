@@ -23,6 +23,7 @@
 <body>
     <!-- Menu -->
     <nav class="navbar navbar-inverse">
+
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -47,6 +48,8 @@
                 </ul>
             </div>
         </div>
+
+
     </nav>
     <!-- Menu -->
     <!-- WELCOME SECTION -->
@@ -67,16 +70,15 @@
             </header>
         </div>
         <!-- PORTFOLIO SECTION -->
+
         <div id="galeria">
             <div class="container">
                 <div class="row mt">
-                    <form id="grid-form" class="validate-form" method="post">
-                        <a class="btn btn-default btn-lg btn-sm" href="#" role="button" onclick="deslogar()" onclick="return enviarFotosSelecionadas()"><span class="glyphicon glyphicon-send"></span> ENVIAR </a>
-                        <div class="thumbnail media">
-                            <ul class="grid effect-3 attribute-value" id="grid">
-                            </ul>
-                        </div>
-                    </form>
+                    <div class="thumbnail media">
+                        <ul class="grid effect-3 attribute-value" id="grid">
+                            <!-- grid com as fotos -->
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -95,8 +97,6 @@
 
                                 <div class="col-sm-offset-1 col-sm-10" id="zoomdafotoselecionada">
                                 </div>
-
-
                             </div>
 
                         </div>
@@ -105,7 +105,9 @@
             </div>
         </div>
     </article>
-
+    <div id="float-banner" class="float-banner">
+        <a class="btn btn-default btn-lg btn-sm" href="#" role="button" onclick="return enviarFotosSelecionadas()"><span class="glyphicon glyphicon-send"></span> ENVIAR </a>
+    </div>
     <!-- container -->
     <div class="container ">
         <div class="row mt ">
@@ -151,6 +153,15 @@
     <script>
         $(document).ready(function () {
             exibirFotosAoIniciar();
+            $(window).scroll(function () {
+                set = $(document).scrollTop() + "px";
+                jQuery('#float-banner').animate({
+                    top: set
+                }, {
+                    duration: 1000,
+                    queue: false
+                });
+            });
             console.log("pronto carregada a página! Vamos trabalhar js ");
             new AnimOnScroll(document.getElementById('grid'), {
                 minDuration: 0.4,
