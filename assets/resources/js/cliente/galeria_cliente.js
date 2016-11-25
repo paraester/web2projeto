@@ -131,27 +131,38 @@ function zoomFotoLinha(i) {
 }
 
 function alternarEscolhaDaFoto(i) {
-    var div = $("#botao" + i); //uso de seletores CSS por id
-
     console.log("valor que continha " + div.html());
     if (div.html() == "Selecionar") {
-        div.toggle('slow').toggle('slow');
-        div.html("Retirar");
-        jsonClienteX.fotos[i].escolhido = true;
-        div.removeClass('btn-success').addClass('btn-warning');
-        $("#selecionouEstaFoto" + i).toggle('slow');
-        div.fadeOut(500);
+        selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
     } else {
-        div.html("Selecionar");
-        jsonClienteX.fotos[i].escolhido = false;
-        div.removeClass('btn-warning').addClass('btn-success');
-        $("#selecionouEstaFoto" + i).toggle('slow');
+        selecionaOuRetiraFoto(i, deselecionarFoto);
     }
     //salvando cada as fotos selecionada
     var chaveCliente = sessionStorage.getItem("logou");
 
     localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
     // console.log("foi salvo " + div.html());
+}
+var selecionaOuRetiraFoto = function (i, executar) {
+    executar(i);
+}
+
+function selecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.toggle('slow').toggle('slow');
+    div.html("Retirar");
+    jsonClienteX.fotos[i].escolhido = true;
+    div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+    div.fadeOut(500);
+}
+
+function deselecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.html("Selecionar");
+    jsonClienteX.fotos[i].escolhido = false;
+    div.removeClass('btn-warning').addClass('btn-success');
+    $("#selecionouEstaFoto" + i).toggle('slow');
 }
 
 function exibirFotosAoIniciar() {
@@ -221,7 +232,6 @@ function enviarFotosSelecionadas() {
         //}
 
         localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
-
         //apagar do localstorage do cliente ou apenas após 5 dias
         localStorage.removeItem(sessionStorage.getItem("logou"));
 

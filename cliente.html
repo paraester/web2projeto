@@ -142,19 +142,6 @@
         </div>
     </footer>
     <!-- Bootstrap JavaScript -->
-    <script>
-        jQuery(document).ready(function () {
-            $(window).scroll(function () {
-                set = $(document).scrollTop() + "px";
-                jQuery('#float-banner').animate({
-                    top: set
-                }, {
-                    duration: 1000,
-                    queue: false
-                });
-            });
-        });
-    </script>
     <script src="assets/libs/jquery/jquery-3.1.1.min.js"></script>
     <!-- necessario -->
     <script src="assets/libs/bootstrap/js/bootstrap.min.js "></script>
@@ -166,6 +153,15 @@
     <script>
         $(document).ready(function () {
             exibirFotosAoIniciar();
+            $(window).scroll(function () {
+                set = $(document).scrollTop() + "px";
+                jQuery('#float-banner').animate({
+                    top: set
+                }, {
+                    duration: 1000,
+                    queue: false
+                });
+            });
             console.log("pronto carregada a página! Vamos trabalhar js ");
             new AnimOnScroll(document.getElementById('grid'), {
                 minDuration: 0.4,
