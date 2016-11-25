@@ -77,9 +77,40 @@ Problema 4
 
 \subsection{prompt}
 
+	Ver arquivo $galeria_cliente.js$
+	
+\begin{lstlisting}
+
+function enviarFotosSelecionadas() {
+    var confirma = confirm("Confirmar o envio das fotos?!");
+    if (confirma == true) {
+        var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
+        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+        var fotosenviadas = { //comecamos armazenando email do cliente
+            email: email
+        };
+        for (var i = 0; i < jsonClienteX.fotos.length; i++) {
+            if (jsonClienteX.fotos[i].escolhido == true) {
+                fotosenviadas[i] = jsonClienteX.fotos[i].arquivo; //armazenando todos os nomes dos arquivos
+                console.log("enviando fotos" + i + "estava marcada no localstorage");
+            }
+        }
+        var chaveParaAdmin = "FotosSalvasDe" + sessionStorage.getItem("logou");
+        localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
+        localStorage.removeItem(sessionStorage.getItem("logou"));
+        alert("Suas fotos foram enviadas Você será redirecionado para o inicio");
+        deslogar();
+
+    } else {
+        return;
+    }
+}
+\end{lstlisting}
+
 \subsection{alert}
 
 	No arquivo $JavaScript$ chamado $contato.js$ criamos uma função com nome $validaContato()$ conforme segue abaixo para melhor visualização:
+	
 \begin{lstlisting}
 function validaContato() {
     var nome = $$("name").value;
@@ -102,6 +133,39 @@ function validaContato() {
 	Esta função está relacionada a validação dos campos do formulário. E dentro dela utilizamos $alert$ para enviar uma mensagem ao visitante da página.
 
 \subsection{confirm}
+	No arquivo $JavaScript$ chamado $galeria$\_$cliente.js$.
+	Criamos uma função com nome $enviarFotosSelecionadas()$ conforme segue abaixo para melhor visualização:
+	
+\begin{lstlisting}
+function enviarFotosSelecionadas() {
+    var confirma = confirm("Confirmar o envio das fotos?!");
+    if (confirma == true) {
+        var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
+        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+        var fotosenviadas = { //comecamos armazenando email do cliente
+            email: email
+        };
+        for (var i = 0; i < jsonClienteX.fotos.length; i++) {
+            if (jsonClienteX.fotos[i].escolhido == true) {
+                fotosenviadas[i] = jsonClienteX.fotos[i].arquivo; //armazenando todos os nomes dos arquivos
+                console.log("enviando fotos" + i + "estava marcada no localstorage");
+            }
+        }
+        var chaveParaAdmin = "FotosSalvasDe" + sessionStorage.getItem("logou"); //id do cliente sessionStorage.getItem("logou")
+       
+        localStorage.setItem(chaveParaAdmin, JSON.stringify(fotosenviadas));
+
+        localStorage.removeItem(sessionStorage.getItem("logou"));
+
+        alert("Suas fotos foram enviadas Você será redirecionado para o inicio");
+        deslogar();
+
+    } else {
+        return;
+    }
+}
+\end{lstlisting}
+	Observe que na segunda linha da função temos o solicitado.
 
 \section{Funções}
 \subsection{Função anônima com argumento}
@@ -166,6 +230,46 @@ function exibirFotosAoIniciar() {
 
 
 \subsection{Passagem de uma função como parâmetro}
+	Para este item consideremos no arquivo $javascript$ da galeria do cliente a função $alternarEscolhaDaFoto(i)$, dentro dela veja a linha $4$.	
+	
+\begin{lstlisting}	
+function alternarEscolhaDaFoto(i) {
+    console.log("valor que continha " + div.html());
+    if (div.html() == "Selecionar") {
+        selecionaOuRetiraFoto(i, selecionarFoto);
+    } else {
+        selecionaOuRetiraFoto(i, deselecionarFoto);
+    }
+    //salvando cada as fotos selecionada
+    var chaveCliente = sessionStorage.getItem("logou");
+    localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
+}
+var selecionaOuRetiraFoto = function (i, executar) {
+    executar(i);
+}
+
+\end{lstlisting}
+	Na linha $4$ temos a função solicitada que recebe por parâmetro a função $selecionarFoto$ dentro dela aplica o prâmetro $i$ também recebido. Abaixo temos o código da função $selecionarFoto(i)$.
+	
+\begin{lstlisting}
+function selecionarFoto(i) {
+    var div = $("#botao" + i);
+    div.toggle('slow').toggle('slow');
+    div.html("Retirar");
+    jsonClienteX.fotos[i].escolhido = true;
+    div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+    div.fadeOut(500);
+}
+
+function deselecionarFoto(i) {
+    var div = $("#botao" + i);
+    div.html("Selecionar");
+    jsonClienteX.fotos[i].escolhido = false;
+    div.removeClass('btn-warning').addClass('btn-success');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+}	
+	\end{lstlisting}
 
 \section{Eventos}
 
@@ -345,21 +449,15 @@ Uso de seletores CSS - id, classe e tag
 	
 \begin{lstlisting}
 function alternarEscolhaDaFoto(i) {
-    var div = $("#botao" + i);
     console.log("valor que continha " + div.html());
     if (div.html() == "Selecionar") {
-        div.toggle('slow').toggle('slow');
-        div.html("Retirar");
-        jsonClienteX.fotos[i].escolhido = true;
-        div.removeClass('btn-success').addClass('btn-warning');
-        $("#selecionouEstaFoto" + i).toggle('slow');
-        div.fadeOut(500);
+        selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
     } else {
-        div.html("Selecionar");
-        jsonClienteX.fotos[i].escolhido = false;
-        div.removeClass('btn-warning').addClass('btn-success');
-        $("#selecionouEstaFoto" + i).toggle('slow');
+        selecionaOuRetiraFoto(i, deselecionarFoto);
     }
+    var chaveCliente = sessionStorage.getItem("logou");
+
+    localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
 }
 \end{lstlisting}
 \subsection{classe}
@@ -387,21 +485,17 @@ Espeficar o tratador de algum evento via jQuery
 
 \begin{lstlisting}
 function alternarEscolhaDaFoto(i) {
-    var div = $("#botao" + i);
     console.log("valor que continha " + div.html());
     if (div.html() == "Selecionar") {
-        div.toggle('slow').toggle('slow');
-        div.html("Retirar");
-        jsonClienteX.fotos[i].escolhido = true;
-        div.removeClass('btn-success').addClass('btn-warning');
-        $("#selecionouEstaFoto" + i).toggle('slow');
-        div.fadeOut(500);
+        selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
     } else {
-        div.html("Selecionar");
-        jsonClienteX.fotos[i].escolhido = false;
-        div.removeClass('btn-warning').addClass('btn-success');
-        $("#selecionouEstaFoto" + i).toggle('slow');
+        selecionaOuRetiraFoto(i, deselecionarFoto);
     }
+    //salvando cada as fotos selecionada
+    var chaveCliente = sessionStorage.getItem("logou");
+
+    localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
+    // console.log("foi salvo " + div.html());
 }
 \end{lstlisting}
 

@@ -425,3 +425,12 @@
         bottom: 0;
         width: 100%;
     }
+    
+    .float-banner {
+        position: absolute;
+        left: 98%;
+        width: 200px;
+        height: 200px;
+        margin-top: 200px;
+        margin-left: -200px;
+    }
