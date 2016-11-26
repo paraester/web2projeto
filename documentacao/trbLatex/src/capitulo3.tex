@@ -841,7 +841,8 @@ function verSeLogado() {
 }
 \end{lstlisting}
 
-	A função $function verSeLogado()$ será chamada dentro da função $exibirFotosAoIniciar();$ função está que é carregada ao carregar o $html$.
+	A função $verSeLogado()$ será chamada dentro da função $exibirFotosAoIniciar();$.
+	Note que esta função é chamada ao carregar o $html$.
 	
 \begin{lstlisting}
 	function deslogar() {
@@ -858,7 +859,7 @@ function verSeLogado() {
     if (estaLogado == '1267') {
         return true;
     } else {
-        alert("Você precisa fazer o login.");
+        alert("Voca precisa fazer o login.");
         window.location = "index.html";
         return false;
     }
