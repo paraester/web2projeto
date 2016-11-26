@@ -141,7 +141,6 @@ function enviarFotosSelecionadas() {
     var confirma = confirm("Confirmar o envio das fotos?!");
     if (confirma == true) {
         var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
-        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
         var fotosenviadas = { //comecamos armazenando email do cliente
             email: email
         };
@@ -362,10 +361,24 @@ function enviadoContato() {
 
 \subsection{Via getElementsByName()}
 
-
+	Considerar o arquivo $admin.js$
+\begin{lstlisting}
+	function insereSelect() {
+    console.log("quququq");
+    var x = document.getElementsByTagName('select')[0].length;
+    document.getElementsByName("selecionandofotos")[0].innerHTML = "Quantide de clientes: " + x;
+}
+\end{lstlisting}
 
 \subsection{Via getElementsByTagName()}
-
+	Considerar o arquivo $admin.js$
+\begin{lstlisting}
+	function insereSelect() {
+    console.log("quququq");
+    var x = document.getElementsByTagName('select')[0].length;
+    document.getElementsByName("selecionandofotos")[0].innerHTML = "Quantide de clientes: " + x;
+}
+\end{lstlisting}
 
 
 \subsection{Via seletores CSS}

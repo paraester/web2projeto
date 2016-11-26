@@ -10,6 +10,12 @@ function loginCliente() {
         alert("Obrigada por fazer login você será redirecionado (a).");
         window.location = "cliente.html";
         return false;
+    } else if (email == "admin@gmail.com" && password == "projeto") {
+        naoLogou(007);
+        console.log("entrou aqui admin");
+        alert("Admin você será redirecionado (a).");
+        window.location = "admin.html";
+        return false;
     } else {
         tentativas--;
         alert("Voce tem:  " + tentativas + " tentativas;");
@@ -25,5 +31,8 @@ var naoLogou = function (i) {
     var logou;
     if (i == 23) {
         sessionStorage.setItem("logou", "1267");
+    }
+    if (i == 007) {
+        sessionStorage.setItem("logouAdmin", "007700");
     }
 }
