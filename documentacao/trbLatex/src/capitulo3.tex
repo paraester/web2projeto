@@ -183,6 +183,14 @@ var naoLogou = function (i) {
 \subsection{Função anônima sem argumento}
 
 \subsection{Função anônima auto-executável}
+	Ver no arquivo $contato.js$
+
+\begin{lstlisting}
+(function () { 
+    tagDesnegrito();
+});
+
+\end{lstlisting}
 
 \subsection{Função com nome}
 
@@ -298,8 +306,10 @@ function deselecionarFoto(i) {
     </script>
 	\end{lstlisting}
 \subsection{Evento de movimento do mouse}
-
-
+	No arquivo $about.html$ temos:
+\begin{lstlisting}
+	<p onmouseover="tagNegrito()" onmouseout="tagDesnegrito()">
+\end{lstlisting}
 \subsection{Evento de teclado}
  Objetivo:  - usar charCode ou KeyCode.
  
@@ -317,7 +327,30 @@ Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
 
 \subsection{Via acesso direto}
 
- Pelo id do elemento HTML
+ Pelo id do elemento HTML utilizamos a função $loginCliente()$ no arquivo $login.js$
+ \begin{lstlisting}
+ function loginCliente() {
+    //var email = document.getElementById("email").value;
+    var email = window.email.value;
+    var password = document.getElementById("password").value;
+    console.log("entrou aqui" + email + " e " + password);
+    if (email == "teste@gmail.com" && password == "projeto$$") {
+        naoLogou(23);
+        console.log("entrou aqui");
+        alert("Obrigada por fazer login você será redirecionado (a).");
+        window.location = "cliente.html";
+        return false;
+    } else {
+        tentativas--; // Decrementing by one.
+        alert("Voce tem:  " + tentativas + " tentativas;");
+        if (tentativas == 0) {
+            document.getElementById("email").disabled = true;
+            document.getElementById("password").disabled = true;
+            document.getElementById("submit").disabled = true;
+            return false;
+        }
+    }
+}
  
 \subsection{Via getElementByID()}
 	Ver arquivo $contato.html$ a função $enviadoContato()$, conforme código abaixo:
@@ -468,7 +501,25 @@ Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou s
 
 \section{Objetos Nativos }
 \subsection{Manipulação de array}
-Usar métodos para manipulação de array
+	Usar métodos para manipulação de array - PAra este item observar o Array fotos dentro do objeto $jsonClientX$
+
+\begin{lstlisting}	
+	var jsonClienteX = {
+    pasta: "assets/resources/img/clients/cliente/",
+    extensao: ".jpg",
+    fotos: [
+        {
+            arquivo: '2',
+            escolhido: false
+        },
+        {
+            arquivo: '20',
+            escolhido: false
+        },
+	],
+}
+\end{lstlisting}
+
 \subsection{Manipulação de string}
 Usar métodos para manipulação de string
 
@@ -605,8 +656,38 @@ function deselecionarFoto(i) {
 \end{lstlisting}
 
 \subsubsection{classe}
-\subsubsection{tag}
+	Ver linha $6$.
+\begin{lstlisting}
+function selecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.toggle('slow').toggle('slow');
+    div.html("Retirar");
+    jsonClienteX.fotos[i].escolhido = true;
+    div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+    div.fadeOut(500);
+}
+\end{lstlisting}
 
+\subsubsection{tag}
+	Ver no arquivo $contato.js$ a função faz a troca de cor da letra das tags $<p>$.
+\begin{lstlisting}
+	function tagNegrito() {
+    $("p").css("color", "black");
+}
+
+
+function tagDesnegrito() {
+    $("p").css("color", "gray");
+
+}
+
+(function () { //função auto-executável
+    tagDesnegrito();
+    //se houver algum css negrito remover
+});
+
+\end{lstlisting}
 \subsection{Seletores hierarquicos}
 Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo
 \subsection{Efeitos fade ou slide}
@@ -647,7 +728,6 @@ function alternarEscolhaDaFoto(i) {
     var chaveCliente = sessionStorage.getItem("logou");
 
     localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
-    // console.log("foi salvo " + div.html());
 }
 \end{lstlisting}
 

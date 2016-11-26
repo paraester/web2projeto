@@ -24,7 +24,6 @@ function showBotao(i) {
 
 function escondeBotaoSelecionar(i) {
     var div = document.getElementById("botao" + i);
-
     if (div.style.display === "block") {
         div.style.display = "none";
     }
@@ -153,6 +152,7 @@ function selecionarFoto(i) {
     div.html("Retirar");
     jsonClienteX.fotos[i].escolhido = true;
     div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
     $("#selecionouEstaFoto" + i).toggle('slow');
     div.fadeOut(500);
 }

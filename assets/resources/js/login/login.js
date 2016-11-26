@@ -1,6 +1,7 @@
 var tentativas = 3; // contar o número de tentativas.
 function loginCliente() {
-    var email = document.getElementById("email").value;
+    //var email = document.getElementById("email").value;
+    var email = window.email.value;
     var password = document.getElementById("password").value;
     console.log("entrou aqui" + email + " e " + password);
     if (email == "teste@gmail.com" && password == "projeto$$") {
