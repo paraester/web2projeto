@@ -73,4 +73,4 @@
 \contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{33}
 \contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{33}
 \contentsline {chapter}{Bibliography}{34}
-\contentsline {chapter}{REFER\^ENCIAS}{34}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Refer\IeC {\^e}ncias}}{34}
