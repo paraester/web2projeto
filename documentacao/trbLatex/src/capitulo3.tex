@@ -324,7 +324,6 @@ Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
 \subsection{Propagação de eventos no modelo bolha}
 
 \section{Acesso aos elementos DOM do HTML }
-
 \subsection{Via acesso direto}
 
  Pelo id do elemento HTML utilizamos a função $loginCliente()$ no arquivo $login.js$
@@ -336,13 +335,12 @@ Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
     console.log("entrou aqui" + email + " e " + password);
     if (email == "teste@gmail.com" && password == "projeto$$") {
         naoLogou(23);
-        console.log("entrou aqui");
-        alert("Obrigada por fazer login você será redirecionado (a).");
+        alert("Obrigada por fazer login voce sera redirecionado (a).");
         window.location = "cliente.html";
         return false;
     } else {
-        tentativas--; // Decrementing by one.
-        alert("Voce tem:  " + tentativas + " tentativas;");
+        tentativas--;
+        alert("Voce tem: " + tentativas + " tentativas;");
         if (tentativas == 0) {
             document.getElementById("email").disabled = true;
             document.getElementById("password").disabled = true;
@@ -351,7 +349,8 @@ Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
         }
     }
 }
- 
+ \end{lstlisting}
+
 \subsection{Via getElementByID()}
 	Ver arquivo $contato.html$ a função $enviadoContato()$, conforme código abaixo:
 	

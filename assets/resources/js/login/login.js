@@ -11,7 +11,7 @@ function loginCliente() {
         window.location = "cliente.html";
         return false;
     } else {
-        tentativas--; // Decrementing by one.
+        tentativas--;
         alert("Voce tem:  " + tentativas + " tentativas;");
         if (tentativas == 0) {
             document.getElementById("email").disabled = true;
