@@ -388,7 +388,7 @@ function deselecionarFoto(i) {
 \end{lstlisting}
 \subsection{Evento de teclado}
  Objetivo:  - usar charCode ou KeyCode.
- 
+ 	Este item foi retirado conforme combinado em sala de aula.
  
 \subsection{Eventos de formulário}
 	Objetivo: onfocus e onblur. Verificar arquivo $contato.js$
@@ -494,7 +494,7 @@ function validarMensage(id, txt) {
 \end{lstlisting}
 
 \subsection{Propagação de eventos no modelo bolha}
-
+ 	Este item foi retirado conforme combinado em sala de aula.
 \section{Acesso aos elementos DOM do HTML }
 \subsection{Via acesso direto}
 
@@ -604,20 +604,6 @@ $onclick$ - Ver no arquivo $galeria$\_$cliente.js$ a seguinte linha:
 
 	Esta linha irá criar o botão Selecionar. Nela é mostrado uma ação para $onclick$ que chama a função $alternarEscolhaDaFoto(i)$ - I $i$ é um parâmetro referente a foto que estará sendo mostrada.
 	
-	Também escolhemos mostrar o $jQuery$ $mouseover()$ $Method$ na id $\#mouseover$ do arquivo $contato.html$.
-\begin{lstlisting}		
-    <script>
-        $(document).ready(function () {
-            $("#mouseover").mouseover(function () {
-                $("#mouseover").css("background-color", "white");
-                $("#mouseover").css("color", "black");
-            });
-            $("#mouseover").mouseout(function () {
-                $("#mouseover").css("background-color", "#f2f2f2");
-            });
-        });
-    </script>
-\end{lstlisting}
 
 \subsection{Modo tradicional}
 Objetivo: especificar o tratador de evento no carregamento da página HTML no modo tradicional.
@@ -698,7 +684,7 @@ window.onload = function () {
 \subsection{Operador this}
  Objetivo: usar o operador this em funções tratadoras de eventos.
  
- 
+ 	Este item foi retirado conforme combinado em sala de aula.
 
 
 \section{Formulário}
@@ -841,6 +827,7 @@ function verFotosSelecionadas() {
 	var jsonClienteX = {
     pasta: "assets/resources/img/clients/cliente/",
     extensao: ".jpg",
+    qtdeFotos: 0,
     fotos: [
         {
             arquivo: '2',
@@ -923,8 +910,8 @@ function verFotosSelecionadas() {
 \end{lstlisting}
 
 \subsection{Herança}
-Usar herança prototipal
-
+Usar herança prototipal.
+ 	Este item foi retirado conforme combinado em sala de aula.
 
 \section{jQuery}
 \subsection{Seletores CSS}
@@ -1002,7 +989,9 @@ function tagDesnegrito() {
 
 \end{lstlisting}
 \subsection{Seletores hierarquicos}
-Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo
+Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo.
+ 	Este item foi retirado conforme combinado em sala de aula.
+
 \subsection{Efeitos fade ou slide}
 
 	Efeito utilizado $fadeout$.
@@ -1021,7 +1010,23 @@ function selecionarFoto(i) {
 \end{lstlisting}
 
 \subsection{Tratador de algum evento}
-Espeficar o tratador de algum evento via jQuery
+Espeficar o tratador de algum evento via jQuery. Escolhemos mostrar o $jQuery$ $mouseover()$ $Method$ na id $\#mouseover$ do arquivo $contato.html$.
+\begin{lstlisting}		
+    <script>
+        $(document).ready(function () {
+            $("#mouseover").mouseover(function () {
+                $("#mouseover").css("background-color", "white");
+                $("#mouseover").css("color", "black");
+            });
+            $("#mouseover").mouseout(function () {
+                $("#mouseover").css("background-color", "#f2f2f2");
+            });
+        });
+    </script>
+\end{lstlisting}
+
+
+
 \subsection{Manipulação CSS}
 	Objetivo: manipulação do CSS via função $css()$ e $addClass()$/$removeClass()$
 
