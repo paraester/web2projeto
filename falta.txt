@@ -1,22 +1,22 @@
-3.4.2 EVENTO DE MOVIMENTO DO MOUSE
-3.4.3 EVENTO DE TECLADO - Objetivo: - usar charCode ou KeyCode.
-3.4.4 EVENTOS DE FORMULÁRIO -Objetivo: onfocus e onblur.
+3.4.2 EVENTO DE MOVIMENTO DO MOUSE <--- feito (menu do admin)
+3.4.3 EVENTO DE TECLADO - Objetivo: - usar charCode ou KeyCode. <--- não precisa
+3.4.4 EVENTOS DE FORMULÁRIO -Objetivo: onfocus e onblur. <-- feito (contato.)
 3.4.5 OBJETO EVENT - Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
 3.4.6 PROPAGAÇÃO DE EVENTOS NO MODELO BOLHA
-3.5 ACESSO AOS ELEMENTOS DOM DO HTML
-3.5.1 VIA ACESSO DIRETO -Pelo id do elemento HTML
+3.5 ACESSO AOS ELEMENTOS DOM DO HTML <-- feito 
+3.5.1 VIA ACESSO DIRETO -Pelo id do elemento HTML <-- feito (contato)
 3.5.3 VIA GETELEMENTSBYNAME()
 3.5.4 VIA GETELEMENTSBYTAGNAME()
-3.6.2 TRatadores de evento MODO TRADICIONAL
-3.6.3 ADDEVENTLISTENER 
+3.6.2 TRatadores de evento MODO TRADICIONAL <--- feito (contato)
+3.6.3 ADDEVENTLISTENER <--- feito (contato)
 3.6.4 OPERADOR THIS
 3.7.4 CHECKBOX, RADIO OU SELECT
 3.8 OBJETOS NATIVOS
 3.8.1 MANIPULAÇÃO DE ARRAY
-3.8.2 MANIPULAÇÃO DE STRING
+3.8.2 MANIPULAÇÃO DE STRING <---- não precisa
 3.10.2 HERANÇA Usar herança prototipal
 3.10.1.2 CLASSE
 3.10.1.3 TAG
 3.10.2 SELETORES HIERARQUICOS Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo
-3.10.4 TRATADOR DE ALGUM EVENTO - Espeficar o tratador de algum evento via jQuery
-3.11.3 LEITURA E ESCRITA DE DADOS SIMPLES - nao entendi o que quer aqui
+3.10.4 TRATADOR DE ALGUM EVENTO - Espeficar o tratador de algum evento via jQuery <-- feito
+3.11.3 LEITURA E ESCRITA DE DADOS SIMPLES - nao entendi o que quer aqui <-- nem eu
