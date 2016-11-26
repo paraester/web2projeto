@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  26 NOV 2016 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.27)  26 NOV 2016 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1262,8 +1262,11 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [14] [15]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-Overfull \hbox (26.6063pt too wide) in paragraph at lines 197--198
+Overfull \hbox (26.6063pt too wide) in paragraph at lines 271--272
 []\OT1/ptm/m/n/12 No ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 c
 ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
  com nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$
@@ -1271,22 +1274,13 @@ ha-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cri-a-mos uma fun[][]ao
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [14]
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [15]
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [16]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
+) [17]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [17]
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [18]
@@ -1295,31 +1289,22 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [19]
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [20]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-Overfull \hbox (5.94174pt too wide) in paragraph at lines 461--462
-[]\OT1/ptm/m/n/12 O ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 ch
-a-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cont[]em a fun[][]ao com
- nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$\OT1/ptm/m/n/12 : 
- []
-
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [21]
@@ -1332,39 +1317,56 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
+Overfull \hbox (5.94174pt too wide) in paragraph at lines 535--536
+[]\OT1/ptm/m/n/12 O ar-quivo $\OML/ztmcm/m/it/12 JavaScript$ \OT1/ptm/m/n/12 ch
+a-mado $\OML/ztmcm/m/it/12 contato:js$ \OT1/ptm/m/n/12 cont[]em a fun[][]ao com
+ nome $\OML/ztmcm/m/it/12 validaContato\OT1/ztmcm/m/n/12 ()$\OT1/ptm/m/n/12 : 
+ []
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [23] [24] [25]
+) [23]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Overfull \hbox (14.07816pt too wide) in paragraph at lines 583--584
+[]\OT1/ptm/m/n/12 Utilizamos um se-lect no ar-quivo $\OML/ztmcm/m/it/12 admin:h
+tml$\OT1/ptm/m/n/12 . Este se-lect []e mon-tado no ar-quivo $\OML/ztmcm/m/it/12
+ javascript$
+ []
+
+[24] (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [25]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Overfull \hbox (33.02208pt too wide) in paragraph at lines 643--644
+[]\OT1/ptm/m/n/12 Usar m[]etodos para manipula[][]ao de string. Para este item 
+ve-ri-fi-car no ar-quivo $\OML/ztmcm/m/it/12 admin[]lientes:js$
+ []
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [26]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [27]
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [28]
-Overfull \hbox (40.12993pt too wide) in paragraph at lines 759--760
-[]\OT1/ptm/m/n/12 Fazemos uso de $\OML/ztmcm/m/it/12 localstorage$ \OT1/ptm/m/n
-/12 na fun[][]ao $\OML/ztmcm/m/it/12 alternarEscolhaDaFoto$ \OT1/ptm/m/n/12 do 
-ar-quivo $\OML/ztmcm/m/it/12 galeria$[]$cliente:js$\OT1/ptm/m/n/12 .
- []
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
+) [27] [28]
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [29]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [30]
@@ -1373,8 +1375,29 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [31]
+Overfull \hbox (40.12993pt too wide) in paragraph at lines 878--879
+[]\OT1/ptm/m/n/12 Fazemos uso de $\OML/ztmcm/m/it/12 localstorage$ \OT1/ptm/m/n
+/12 na fun[][]ao $\OML/ztmcm/m/it/12 alternarEscolhaDaFoto$ \OT1/ptm/m/n/12 do 
+ar-quivo $\OML/ztmcm/m/it/12 galeria$[]$cliente:js$\OT1/ptm/m/n/12 .
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [32]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-Overfull \hbox (2.14975pt too wide) in paragraph at lines 863--865
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [33]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [34]
+Overfull \hbox (2.14975pt too wide) in paragraph at lines 982--984
 []\OT1/ptm/m/n/12 A fun[][]ao $\OML/ztmcm/m/it/12 verSeLogado\OT1/ztmcm/m/n/12 
 ()$ \OT1/ptm/m/n/12 ser[]a cha-mada den-tro da fun[][]ao $\OML/ztmcm/m/it/12 ex
 ibirFotosAoIniciar\OT1/ztmcm/m/n/12 ();$\OT1/ptm/m/n/12 . Note
@@ -1382,25 +1405,24 @@ ibirFotosAoIniciar\OT1/ztmcm/m/n/12 ();$\OT1/ptm/m/n/12 . Note
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [31]
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [32])
-(./src/capitulo4.tex [33]
+) [35]
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)) (./src/capitulo4.tex [36]
 Cap\'{\i }tulo 4.
-) [34
+) [37
 
 ] (./src/bibliografia.tex
 Cap\'{\i }tulo 5.
 ) 
 AED: lastpage setting LastPage
-[35
+[38
 
 
 ]
@@ -1414,10 +1436,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 10205 strings out of 493029
- 145584 string characters out of 6136234
- 407619 words of memory out of 5000000
- 13347 multiletter control sequences out of 15000+600000
+ 10310 strings out of 493029
+ 147344 string characters out of 6136234
+ 399619 words of memory out of 5000000
+ 13444 multiletter control sequences out of 15000+600000
  45324 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,9n,58p,1068b,2463s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1430,10 +1452,10 @@ ts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on web2projeto.pdf (36 pages, 1213797 bytes).
+Output written on web2projeto.pdf (39 pages, 1227348 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 176 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

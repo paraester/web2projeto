@@ -13,7 +13,7 @@
     <link href="assets/resources/css/animated.css" rel="stylesheet">
     <link href="assets/resources/css/principal.css" rel="stylesheet">
     <link href="assets/resources/css/contato.css" rel="stylesheet">
-
+    <script src="assets/resources/js/contato/contato.js"></script>
 </head>
 
 <body>
@@ -79,9 +79,8 @@
                     </div>
                     <div class="container">
                         <div class="col-xs-5 col-md-5">
-                            <br/>
-                            <br/> "A natureza é muito poderosa e muito forte. Capturar sua essência não é fácil e seu trabalho se torna uma dança com a luz e o tempo. Ela leva você a um lugar dentro de si mesmo. Uma coisa que você vê nas minhas fotos é que eu não estava com medo de me apaixonar por essas pessoas. Deve haver uma razão para os fotógrafos não serem muito bons em comunicação verbal. Eu acho que eles ficam com preguiça. Quando você é mais jovem a câmera é como um amigo e você pode ir a lugares e sentir como se estivesse com alguém. Quando você vai para tirar uma foto de alguém, a primeira coisa que eles dizem é: o que você quer que eu faça? Todo mundo é muito estranho". Annie Leibovitz
-
+                            <p id="mouseover">"A natureza é muito poderosa e muito forte. Capturar sua essência não é fácil e seu trabalho se torna uma dança com a luz e o tempo. Ela leva você a um lugar dentro de si mesmo. Uma coisa que você vê nas minhas fotos é que eu não estava com medo de me apaixonar por essas pessoas. Deve haver uma razão para os fotógrafos não serem muito bons em comunicação verbal. Eu acho que eles ficam com preguiça. Quando você é mais jovem a câmera é como um amigo e você pode ir a lugares e sentir como se estivesse com alguém. Quando você vai para tirar uma foto de alguém, a primeira coisa que eles dizem é: o que você quer que eu faça? Todo mundo é muito estranho". Annie Leibovitz
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +117,17 @@
     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
     <!-- necessario no menu -->
     <script src="assets/resources/js/main.js"></script>
-    <script src="assets/resources/js/contato/contato.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#mouseover").mouseover(function () {
+                $("#mouseover").css("background-color", "white");
+                $("#mouseover").css("color", "black");
+            });
+            $("#mouseover").mouseout(function () {
+                $("#mouseover").css("background-color", "#f2f2f2");
+            });
+        });
+    </script>
     <!-- necessario no formulario -->
     <!-- necessario no menu -->
 

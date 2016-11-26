@@ -600,9 +600,22 @@ function enviadoContato() {
 
 \end{lstlisting}
 \subsection{Acesso via hierarquia}
-	Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
-
-
+	Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements.
+	
+	Para este item escolhemos mostrar o $jQuery$ $mouseover()$ $Method$ na id $\#mouseover$ do arquivo $contato.html$.
+\begin{lstlisting}		
+    <script>
+        $(document).ready(function () {
+            $("#mouseover").mouseover(function () {
+                $("#mouseover").css("background-color", "white");
+                $("#mouseover").css("color", "black");
+            });
+            $("#mouseover").mouseout(function () {
+                $("#mouseover").css("background-color", "#f2f2f2");
+            });
+        });
+    </script>
+\end{lstlisting}
 
 \section{Objetos Nativos }
 \subsection{Manipulação de array}
