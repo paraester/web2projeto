@@ -40,37 +40,37 @@
 \contentsline {subsection}{\numberline {3.5.5}Via seletores CSS}{19}
 \contentsline {section}{\numberline {3.6}\MakeUppercase {Tratadores de Evento}}{20}
 \contentsline {subsection}{\numberline {3.6.1}Evento inline}{20}
-\contentsline {subsection}{\numberline {3.6.2}Modo tradicional}{20}
-\contentsline {subsection}{\numberline {3.6.3}addEventListener}{20}
-\contentsline {subsection}{\numberline {3.6.4}Operador this}{20}
+\contentsline {subsection}{\numberline {3.6.2}Modo tradicional}{21}
+\contentsline {subsection}{\numberline {3.6.3}addEventListener}{21}
+\contentsline {subsection}{\numberline {3.6.4}Operador this}{21}
 \contentsline {section}{\numberline {3.7}\MakeUppercase {Formul\IeC {\'a}rio}}{21}
 \contentsline {subsection}{\numberline {3.7.1}Valida\IeC {\c c}\IeC {\~a}o}{21}
-\contentsline {subsection}{\numberline {3.7.2}Propriedade Value}{21}
+\contentsline {subsection}{\numberline {3.7.2}Propriedade Value}{22}
 \contentsline {subsection}{\numberline {3.7.3}innerHtml}{22}
 \contentsline {subsection}{\numberline {3.7.4}checkbox, radio ou select}{22}
-\contentsline {subsection}{\numberline {3.7.5}Acesso via hierarquia}{22}
-\contentsline {section}{\numberline {3.8}\MakeUppercase {Objetos Nativos }}{22}
-\contentsline {subsection}{\numberline {3.8.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{22}
+\contentsline {subsection}{\numberline {3.7.5}Acesso via hierarquia}{23}
+\contentsline {section}{\numberline {3.8}\MakeUppercase {Objetos Nativos }}{23}
+\contentsline {subsection}{\numberline {3.8.1}Manipula\IeC {\c c}\IeC {\~a}o de array}{23}
 \contentsline {subsection}{\numberline {3.8.2}Manipula\IeC {\c c}\IeC {\~a}o de string}{23}
 \contentsline {section}{\numberline {3.9}\MakeUppercase {Objetos}}{23}
 \contentsline {subsection}{\numberline {3.9.1}Criar objeto}{23}
 \contentsline {subsection}{\numberline {3.9.2}Heran\IeC {\c c}a}{25}
-\contentsline {section}{\numberline {3.10}\MakeUppercase {jQuery}}{25}
-\contentsline {subsection}{\numberline {3.10.1}Seletores CSS}{25}
-\contentsline {subsubsection}{\numberline {3.10.1.1}id}{25}
-\contentsline {subsubsection}{\numberline {3.10.1.2}classe}{26}
-\contentsline {subsubsection}{\numberline {3.10.1.3}tag}{26}
+\contentsline {section}{\numberline {3.10}\MakeUppercase {jQuery}}{26}
+\contentsline {subsection}{\numberline {3.10.1}Seletores CSS}{26}
+\contentsline {subsubsection}{\numberline {3.10.1.1}id}{26}
+\contentsline {subsubsection}{\numberline {3.10.1.2}classe}{27}
+\contentsline {subsubsection}{\numberline {3.10.1.3}tag}{27}
 \contentsline {subsection}{\numberline {3.10.2}Seletores hierarquicos}{27}
 \contentsline {subsection}{\numberline {3.10.3}Efeitos fade ou slide}{27}
-\contentsline {subsection}{\numberline {3.10.4}Tratador de algum evento}{27}
-\contentsline {subsection}{\numberline {3.10.5}Manipula\IeC {\c c}\IeC {\~a}o CSS}{27}
+\contentsline {subsection}{\numberline {3.10.4}Tratador de algum evento}{28}
+\contentsline {subsection}{\numberline {3.10.5}Manipula\IeC {\c c}\IeC {\~a}o CSS}{28}
 \contentsline {subsection}{\numberline {3.10.6}Manipula\IeC {\c c}\IeC {\~a}o do conte\IeC {\'u}do}{28}
-\contentsline {section}{\numberline {3.11}\MakeUppercase {Web Storage }}{28}
-\contentsline {subsection}{\numberline {3.11.1}LocalStorage}{28}
-\contentsline {subsection}{\numberline {3.11.2}SessionStorage}{30}
+\contentsline {section}{\numberline {3.11}\MakeUppercase {Web Storage }}{29}
+\contentsline {subsection}{\numberline {3.11.1}LocalStorage}{29}
+\contentsline {subsection}{\numberline {3.11.2}SessionStorage}{31}
 \contentsline {subsection}{\numberline {3.11.3}Leitura e escrita de dados simples}{31}
 \contentsline {subsection}{\numberline {3.11.4}Leitura e escrita de JSON}{32}
-\contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{33}
-\contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{33}
-\contentsline {chapter}{Bibliography}{34}
-\contentsline {chapter}{\numberline {5}\MakeUppercase {Refer\IeC {\^e}ncias}}{34}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{34}
+\contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{34}
+\contentsline {chapter}{Bibliography}{35}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Refer\IeC {\^e}ncias}}{35}
