@@ -1,4 +1,3 @@
-3.3.2 FUNÇÃO ANÔNIMA SEM ARGUMENTO
 3.4.3 EVENTO DE TECLADO - Objetivo: - usar charCode ou KeyCode.
 3.4.4 EVENTOS DE FORMULÁRIO -Objetivo: onfocus e onblur.
 3.4.5 OBJETO EVENT - Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
@@ -7,7 +6,5 @@
 3.6.3 ADDEVENTLISTENER 
 3.6.4 OPERADOR THIS
 3.7.5 FORM ACESSO VIA HIERARQUIA
-3.8.2 MANIPULAÇÃO DE STRING - Já tem ver função da pagina do admin com indexOf
 3.10.2 HERANÇA Usar herança prototipal - CANDIDATO A REMOÇÃO 
-3.10.2 SELETORES HIERARQUICOS Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo
-3.10.4 TRATADOR DE ALGUM EVENTO - Espeficar o tratador de algum evento via jQuery
+3.10.2 SELETORES HIERARQUICOS Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo  - CANDIDATO A REMOÇÃO 

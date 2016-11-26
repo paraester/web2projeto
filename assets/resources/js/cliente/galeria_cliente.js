@@ -173,8 +173,6 @@ function exibirFotosAoIniciar() {
     if (!logou) {
         return;
     }
-
-
     // objeto global do cliente da base de dados na variavel jsonClienteX
     var htmlInner = "";
     for (var i = 0; i < jsonClienteX.fotos.length; i++) {

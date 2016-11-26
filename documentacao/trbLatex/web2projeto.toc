@@ -64,11 +64,11 @@
 \contentsline {subsection}{\numberline {3.10.3}Efeitos fade ou slide}{27}
 \contentsline {subsection}{\numberline {3.10.4}Tratador de algum evento}{28}
 \contentsline {subsection}{\numberline {3.10.5}Manipula\IeC {\c c}\IeC {\~a}o CSS}{28}
-\contentsline {subsection}{\numberline {3.10.6}Manipula\IeC {\c c}\IeC {\~a}o do conte\IeC {\'u}do}{28}
+\contentsline {subsection}{\numberline {3.10.6}Manipula\IeC {\c c}\IeC {\~a}o do conte\IeC {\'u}do}{29}
 \contentsline {section}{\numberline {3.11}\MakeUppercase {Web Storage }}{29}
 \contentsline {subsection}{\numberline {3.11.1}LocalStorage}{29}
 \contentsline {subsection}{\numberline {3.11.2}SessionStorage}{31}
-\contentsline {subsection}{\numberline {3.11.3}Leitura e escrita de dados simples}{31}
+\contentsline {subsection}{\numberline {3.11.3}Leitura e escrita de dados simples}{32}
 \contentsline {subsection}{\numberline {3.11.4}Leitura e escrita de JSON}{32}
 \contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{34}
 \contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{34}
