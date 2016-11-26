@@ -14,7 +14,8 @@
     <link href="assets/libs/pace.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
     <link href="assets/resources/css/admin.css" rel="stylesheet" />
-    <script src="assets/resources/js/admin.js"></script>
+    <script src="assets/resources/js/admin/admin_clientes.js"></script>
+
 </head>
 
 <body class="nav-md" onload="verFotosSelecionadas();">
@@ -94,33 +95,28 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h2>Clientes e suas fotos</h2>
-                            <h3>Lista dos clientes</h3>
+                            <h2>Clientes e suas fotos que foram escolhidas</h2><h4>Lista código dos clientes</h4>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                
+                                <p name="selecionandofotos"></p>
 
-                            <select id="selectClientesComFotos" size="1">
+                                <select id="selectClientesComFotos" size="1">
+                                </select>
+                                Clique no botão
+                                <button onclick="mostraFotosDoClienteSelecionado()">VER FOTOS SELECIONADAS</button>
+                            </div>
 
-                            </select>
-
-                            <p>Clique no botão</p>
-
-                            <button onclick="insereSelect()">VER FOTOS SELECIONADAS</button>
-
-                            <p name="selecionandofotos"></p>
                         </div>
                     </div>
+
                     <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
-                                <div class="x_title">
-
+                                <div class="x_title"><hr>
+                                    <div id="resultadosBusca"><hr></div>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <div class="clearfix">
-
-
-
-                                            <script>
-                                            </script>
                                         </div>
                                     </ul>
                                 </div>
@@ -133,6 +129,7 @@
         </div>
     </div>
     <script src="assets/libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="assets/resources/js/admin/admin.js"></script>
 
 </body>
 

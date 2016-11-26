@@ -35,6 +35,7 @@ function escondeBotaoSelecionar(i) {
 var jsonClienteX = {
     pasta: "assets/resources/img/clients/cliente/",
     extensao: ".jpg",
+    qtdeFotos: 0,
     fotos: [
         {
             arquivo: '2',
@@ -130,6 +131,7 @@ function zoomFotoLinha(i) {
 }
 
 function alternarEscolhaDaFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
     console.log("valor que continha " + div.html());
     if (div.html() == "Selecionar") {
         selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
@@ -153,8 +155,8 @@ function selecionarFoto(i) {
     jsonClienteX.fotos[i].escolhido = true;
     div.removeClass('btn-success').addClass('btn-warning');
     $("#selecionouEstaFoto" + i).toggle('slow');
-    $("#selecionouEstaFoto" + i).toggle('slow');
     div.fadeOut(500);
+    jsonClienteX.qtdeFotos++;
 }
 
 function deselecionarFoto(i) {
@@ -163,6 +165,7 @@ function deselecionarFoto(i) {
     jsonClienteX.fotos[i].escolhido = false;
     div.removeClass('btn-warning').addClass('btn-success');
     $("#selecionouEstaFoto" + i).toggle('slow');
+    jsonClienteX.qtdeFotos--;
 }
 
 function exibirFotosAoIniciar() {
@@ -204,6 +207,7 @@ function exibirComFotosMarcadasAnteriormente() {
             jsonClienteX.fotos[i].escolhido = true;
             div.removeClass('btn-success').addClass('btn-warning');
             $("#selecionouEstaFoto" + i).toggle();
+            jsonClienteX.qtdeFotos++;
         }
     }
     console.log("exibirComFotosMarcadasAnteriormente" + i + "fim");
@@ -218,7 +222,8 @@ function enviarFotosSelecionadas() {
         var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
         //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
         var fotosenviadas = { //comecamos armazenando email do cliente
-            email: email
+            email: email,
+            qtdeFotos: jsonClienteX.qtdeFotos
         };
         for (var i = 0; i < jsonClienteX.fotos.length; i++) {
             if (jsonClienteX.fotos[i].escolhido == true) {
