@@ -840,6 +840,7 @@ a:focus {
 .nav-sm footer {
     margin-left: 70px;
 }
+
 #selectClientesComFotos {
     background: #ccc;
     border: none;
@@ -857,22 +858,16 @@ a:focus {
     height: auto;
     padding: 0px;
     width: auto;
-    padding-left:10px;
+}
 
-}
-#resultadosBusca ul {
+ul {
     list-style: none;
-    
 }
-#resultadosBusca li {
+
+li {
     list-style: none;
     background: #cce5ff;
     padding: 10px;
     margin: 5px;
-    margin-left: 25px;
-    padding-left:40px;
-    overflow: hidden;    
-}
-#resultadosBusca ul li {
-    overflow: hidden;    
+    margin-left: 35px;
 }

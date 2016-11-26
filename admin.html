@@ -2,132 +2,142 @@
 <html lang="pt">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudioE</title>
-  <!-- Bootstrap-->
-  <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-  <!--    <link href="assets/resources/css/principal.css" rel="stylesheet">-->
-  <link href="assets/resources/css/home.css" rel="stylesheet">
-  <link href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="assets/libs/pace.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudioE</title>
+    <!-- Bootstrap-->
+    <link href="assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--    <link href="assets/resources/css/principal.css" rel="stylesheet">-->
+    <link href="assets/resources/css/home.css" rel="stylesheet">
+    <link href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/libs/pace.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
+    <link href="assets/resources/css/admin.css" rel="stylesheet" />
+    <script src="assets/resources/js/admin/admin_clientes.js"></script>
 
-  <link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
-  <link href="assets/resources/css/admin.css" rel="stylesheet" />
 </head>
 
-<body class="nav-md">
+<body class="nav-md" onload="verFotosSelecionadas();">
 
-  <div class="container body">
+    <div class="container body">
 
-    <div class="main_container">
+        <div class="main_container">
 
-      <div class="col-md-3 left_col">
-        <div class="left_col scroll-view">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
 
-          <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Studio E</span></a>
-          </div>
-          <div class="clearfix"></div>
-
-          <!-- menu prile quick info -->
-          <div class="profile">
-            <div class="profile_pic">
-              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
-            </div>
-            <div class="profile_info">
-              <span>Bem-vindo,</span>
-              <h2> ----- </h2>
-            </div>
-          </div>
-          <!-- /menu prile quick info -->
-
-          <br />
-
-          <!-- sidebar menu -->
-          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-            <div class="menu_section">
-              <h3>General</h3>
-              <ul class="nav side-menu">
-                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><a href="index.html">Escolher Fotos</a></li>
-                    <li><a href="index2.html">Dashboard2</a></li>
-                    <li><a href="index3.html">Dashboard3</a></li>
-                  </ul>
-                </li>
-                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><a href="form.html">General Form</a>
-                    </li>
-                    <li><a href="form_advanced.html">Advanced Components</a>
-                    </li>
-                    <li><a href="form_validation.html">Form Validation</a>
-                    </li>
-                    <li><a href="form_wizards.html">Form Wizard</a>
-                    </li>
-                    <li><a href="form_upload.html">Form Upload</a>
-                    </li>
-                    <li><a href="form_buttons.html">Form Buttons</a>
-                    </li>
-                  </ul>
-                </li>
-
-
-              </ul>
-            </div>
-            <div class="menu_section">
-
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="top_nav">
-        <div class="nav_menu">
-          <nav class="" role="navigation">
-            <div class="nav toggle">
-              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-            </div>
-          </nav>
-        </div>
-      </div>
-
-      <!-- page content -->
-      <div class="right_col" role="main">
-        <div class="">
-          <div class="page-title">
-            <div class="title_left">
-              <h3>Tela Inicial</h3>
-            </div>
-          </div>
-
-          <div class="clearfix"></div>
-
-          <div class="row">
-
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Plain Page</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Studio E</span></a>
+                    </div>
                     <div class="clearfix"></div>
+
+                    <!-- menu prile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Bem-vindo,</span>
+                            <h2> ----- </h2>
+                        </div>
+                    </div>
+                    <!-- /menu prile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="index.html">Página StudioE</a></li>
+                                        <li><a href="admin.html">Clientes</a></li>
+                                        <li><a href="index.html" onclick="deslogar();">Sair</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="form.html">General Form</a>
+                                        </li>
+                                        <li><a href="form_advanced.html">Advanced Components</a>
+                                        </li>
+                                        <li><a href="form_validation.html">Form Validation</a>
+                                        </li>
+                                        <li><a href="form_wizards.html">Form Wizard</a>
+                                        </li>
+                                        <li><a href="form_upload.html">Form Upload</a>
+                                        </li>
+                                        <li><a href="form_buttons.html">Form Buttons</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- sidebar menu -->
                 </div>
-              </div>
             </div>
-          </div>
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav class="" role="navigation">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h2>Clientes e suas fotos que foram escolhidas</h2>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <p name="selecionandofotos"></p>
+                                Lista código dos clientes
+                                <select id="selectClientesComFotos" size="1">
+                                </select>
+                                Clique no botão
+                                <button onclick="mostraFotosDoClienteSelecionado()">VER FOTOS SELECIONADAS</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <hr>
+                                    <div id="resultadosBusca">
+                                        <hr>
+                                    </div>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <div class="clearfix">
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
         </div>
-      </div>
-      <!-- /page content -->
     </div>
-  </div>
+    <script src="assets/libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="assets/resources/js/admin/admin.js"></script>
+    <script>
+        $(document).ready(function () {
+            verSeLogado();
+            console.log("página admin carregada! Vamos trabalhar js ");
 
-
-  <script src="assets/libs/jquery/jquery-3.1.1.min.js"></script>
-  <script src="assets/resources/js/admin.js"></script>
+        });
+    </script>
 
 </body>
 

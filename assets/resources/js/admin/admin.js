@@ -24,12 +24,12 @@ $(function () {
         $RIGHT_COL.css('min-height', contentHeight);
     };
 
-    $SIDEBAR_MENU.find('a').on('click', function(ev) {
+    $SIDEBAR_MENU.find('a').on('click', function (ev) {
         var $li = $(this).parent();
 
         if ($li.is('.active')) {
             $li.removeClass('active');
-            $('ul:first', $li).slideUp(function() {
+            $('ul:first', $li).slideUp(function () {
                 setContentHeight();
             });
         } else {
@@ -38,17 +38,17 @@ $(function () {
                 $SIDEBAR_MENU.find('li').removeClass('active');
                 $SIDEBAR_MENU.find('li ul').slideUp();
             }
-            
+
             $li.addClass('active');
 
-            $('ul:first', $li).slideDown(function() {
+            $('ul:first', $li).slideDown(function () {
                 setContentHeight();
             });
         }
     });
 
     // menu responsivo
-    $MENU_TOGGLE.on('click', function() {
+    $MENU_TOGGLE.on('click', function () {
         if ($BODY.hasClass('nav-md')) {
             $BODY.removeClass('nav-md').addClass('nav-sm');
             $LEFT_COL.removeClass('scroll-view').removeAttr('style');
@@ -63,7 +63,6 @@ $(function () {
                 $SIDEBAR_MENU.find('li.active-sm').addClass('active').removeClass('active-sm');
             }
         }
-
         setContentHeight();
     });
 
@@ -72,12 +71,12 @@ $(function () {
 
     $SIDEBAR_MENU.find('a').filter(function () {
         return this.href == URL;
-    }).parent('li').addClass('current-page').parents('ul').slideDown(function() {
+    }).parent('li').addClass('current-page').parents('ul').slideDown(function () {
         setContentHeight();
     }).parent().addClass('active');
 
     // organiza a diminsão do conteúdo.
-    $(window).smartresize(function(){  
+    $(window).smartresize(function () {
         setContentHeight();
     });
 

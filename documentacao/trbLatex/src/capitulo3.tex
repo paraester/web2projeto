@@ -87,7 +87,8 @@ function enviarFotosSelecionadas() {
         var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
         //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
         var fotosenviadas = { //comecamos armazenando email do cliente
-            email: email
+            email: email,
+            qtdeFotos: jsonClienteX.qtdeFotos
         };
         for (var i = 0; i < jsonClienteX.fotos.length; i++) {
             if (jsonClienteX.fotos[i].escolhido == true) {
@@ -141,7 +142,6 @@ function enviarFotosSelecionadas() {
     var confirma = confirm("Confirmar o envio das fotos?!");
     if (confirma == true) {
         var email = prompt("Por favor coloque um email para que possamos lhe comunicar sobre a entrega: ");
-        //$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
         var fotosenviadas = { //comecamos armazenando email do cliente
             email: email
         };
@@ -181,8 +181,90 @@ var naoLogou = function (i) {
 \end{lstlisting}
 
 \subsection{Função anônima sem argumento}
+	Verificar o arquivo $admin.js$ 
+\begin{lstlisting}
+$(function () {
+    var setContentHeight = function () {
+        // reseta altura
+        $RIGHT_COL.css('min-height', $(window).height());
 
+        var bodyHeight = $BODY.height(),
+            leftColHeight = $LEFT_COL.eq(1).height() + $SIDEBAR_FOOTER.height(),
+            contentHeight = bodyHeight < leftColHeight ? leftColHeight : bodyHeight;
+
+        // configura página de conteúdo
+        contentHeight -= $NAV_MENU.height() + $FOOTER.height();
+
+        $RIGHT_COL.css('min-height', contentHeight);
+    };
+
+    $SIDEBAR_MENU.find('a').on('click', function (ev) {
+        var $li = $(this).parent();
+
+        if ($li.is('.active')) {
+            $li.removeClass('active');
+            $('ul:first', $li).slideUp(function () {
+                setContentHeight();
+            });
+        } else {
+            // previse que o menu seja fechado estando nos itens de menus filhos.
+            if (!$li.parent().is('.child_menu')) {
+                $SIDEBAR_MENU.find('li').removeClass('active');
+                $SIDEBAR_MENU.find('li ul').slideUp();
+            }
+
+            $li.addClass('active');
+
+            $('ul:first', $li).slideDown(function () {
+                setContentHeight();
+            });
+        }
+    });
+
+    // menu responsivo
+    $MENU_TOGGLE.on('click', function () {
+        if ($BODY.hasClass('nav-md')) {
+            $BODY.removeClass('nav-md').addClass('nav-sm');
+            $LEFT_COL.removeClass('scroll-view').removeAttr('style');
+
+            if ($SIDEBAR_MENU.find('li').hasClass('active')) {
+                $SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
+            }
+        } else {
+            $BODY.removeClass('nav-sm').addClass('nav-md');
+
+            if ($SIDEBAR_MENU.find('li').hasClass('active-sm')) {
+                $SIDEBAR_MENU.find('li.active-sm').addClass('active').removeClass('active-sm');
+            }
+        }
+        setContentHeight();
+    });
+
+    // vefica se o meno esta ativo ou não e qual pagina está
+    $SIDEBAR_MENU.find('a[href="' + URL + '"]').parent('li').addClass('current-page');
+
+    $SIDEBAR_MENU.find('a').filter(function () {
+        return this.href == URL;
+    }).parent('li').addClass('current-page').parents('ul').slideDown(function () {
+        setContentHeight();
+    }).parent().addClass('active');
+
+    // organiza a diminsão do conteúdo.
+    $(window).smartresize(function () {
+        setContentHeight();
+    });
+
+});	
+\end{lstlisting}	
 \subsection{Função anônima auto-executável}
+	Ver no arquivo $contato.js$
+
+\begin{lstlisting}
+(function () { 
+    tagDesnegrito();
+});
+
+\end{lstlisting}
 
 \subsection{Função com nome}
 
@@ -253,21 +335,23 @@ var selecionaOuRetiraFoto = function (i, executar) {
 	
 \begin{lstlisting}
 function selecionarFoto(i) {
-    var div = $("#botao" + i);
+    var div = $("#botao" + i); //uso de seletores CSS por id
     div.toggle('slow').toggle('slow');
     div.html("Retirar");
     jsonClienteX.fotos[i].escolhido = true;
     div.removeClass('btn-success').addClass('btn-warning');
     $("#selecionouEstaFoto" + i).toggle('slow');
     div.fadeOut(500);
+    jsonClienteX.qtdeFotos++;
 }
 
 function deselecionarFoto(i) {
-    var div = $("#botao" + i);
+    var div = $("#botao" + i); //uso de seletores CSS por id
     div.html("Selecionar");
     jsonClienteX.fotos[i].escolhido = false;
     div.removeClass('btn-warning').addClass('btn-success');
     $("#selecionouEstaFoto" + i).toggle('slow');
+    jsonClienteX.qtdeFotos--;
 }	
 	\end{lstlisting}
 
@@ -298,8 +382,10 @@ function deselecionarFoto(i) {
     </script>
 	\end{lstlisting}
 \subsection{Evento de movimento do mouse}
-
-
+	No arquivo $about.html$ temos:
+\begin{lstlisting}
+	<p onmouseover="tagNegrito()" onmouseout="tagDesnegrito()">
+\end{lstlisting}
 \subsection{Evento de teclado}
  Objetivo:  - usar charCode ou KeyCode.
  
@@ -314,11 +400,33 @@ Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
 \subsection{Propagação de eventos no modelo bolha}
 
 \section{Acesso aos elementos DOM do HTML }
-
 \subsection{Via acesso direto}
 
- Pelo id do elemento HTML
- 
+ Pelo id do elemento HTML utilizamos a função $loginCliente()$ no arquivo $login.js$
+ \begin{lstlisting}
+ function loginCliente() {
+    //var email = document.getElementById("email").value;
+    var email = window.email.value;
+    var password = document.getElementById("password").value;
+    console.log("entrou aqui" + email + " e " + password);
+    if (email == "teste@gmail.com" && password == "projeto$$") {
+        naoLogou(23);
+        alert("Obrigada por fazer login voce sera redirecionado (a).");
+        window.location = "cliente.html";
+        return false;
+    } else {
+        tentativas--;
+        alert("Voce tem: " + tentativas + " tentativas;");
+        if (tentativas == 0) {
+            document.getElementById("email").disabled = true;
+            document.getElementById("password").disabled = true;
+            document.getElementById("submit").disabled = true;
+            return false;
+        }
+    }
+}
+ \end{lstlisting}
+
 \subsection{Via getElementByID()}
 	Ver arquivo $contato.html$ a função $enviadoContato()$, conforme código abaixo:
 	
@@ -330,10 +438,24 @@ function enviadoContato() {
 
 \subsection{Via getElementsByName()}
 
-
+	Considerar o arquivo $admin.js$
+\begin{lstlisting}
+	function insereSelect() {
+    console.log("quququq");
+    var x = document.getElementsByTagName('select')[0].length;
+    document.getElementsByName("selecionandofotos")[0].innerHTML = "Quantide de clientes: " + x;
+}
+\end{lstlisting}
 
 \subsection{Via getElementsByTagName()}
-
+	Considerar o arquivo $admin.js$
+\begin{lstlisting}
+	function insereSelect() {
+    console.log("quququq");
+    var x = document.getElementsByTagName('select')[0].length;
+    document.getElementsByName("selecionandofotos")[0].innerHTML = "Quantide de clientes: " + x;
+}
+\end{lstlisting}
 
 
 \subsection{Via seletores CSS}
@@ -458,20 +580,84 @@ function enviadoContato() {
 
 
 \subsection{checkbox, radio ou select}
-Manipulação de elemento de listagem, como checkbox, radio ou select
+	Utilizamos um select no arquivo $admin.html$. Este select é montado no arquivo $javascript$ $admin_clientes.js$ e o objetivo deste select é monstrar ao administrador todos os clientes que possuem fotos para serem tratadas/editadas. Estas fotos foram selecionadas pelo cliente anteriormente.
+\begin{lstlisting}	
+	function verFotosSelecionadas() {
+    var variaveleSelect = $('select');
+    for (chave in localStorage) {
+        if (chave.indexOf("FotosSalvasDe") >= 0) { //esta é a chave de um cliente que enviou fotos
+            console.log("dentro do if");
+            var chaveDoCliente = chave.replace("FotosSalvasDe", "");
+            console.log("dentro do if chaveDoCliente" + chaveDoCliente);
+            //botar no select
+            variaveleSelect.append('<option val="' + chaveDoCliente + '">' + chaveDoCliente + '</option>');
+        }
+    }
+    console.log("quantidade de clientes");
+    var x = document.getElementsByTagName('select')[0].length;
+    document.getElementsByName("selecionandofotos")[0].innerHTML = "Quantide de clientes: " + x;
+}
 
-
+\end{lstlisting}
 \subsection{Acesso via hierarquia}
-Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
-
-
+	Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements.
+	
+	Para este item escolhemos mostrar o $jQuery$ $mouseover()$ $Method$ na id $\#mouseover$ do arquivo $contato.html$.
+\begin{lstlisting}		
+    <script>
+        $(document).ready(function () {
+            $("#mouseover").mouseover(function () {
+                $("#mouseover").css("background-color", "white");
+                $("#mouseover").css("color", "black");
+            });
+            $("#mouseover").mouseout(function () {
+                $("#mouseover").css("background-color", "#f2f2f2");
+            });
+        });
+    </script>
+\end{lstlisting}
 
 \section{Objetos Nativos }
 \subsection{Manipulação de array}
-Usar métodos para manipulação de array
-\subsection{Manipulação de string}
-Usar métodos para manipulação de string
+	Usar métodos para manipulação de array - Para este item observar o Array fotos dentro do objeto $jsonClientX$
 
+\begin{lstlisting}	
+	var jsonClienteX = {
+    pasta: "assets/resources/img/clients/cliente/",
+    extensao: ".jpg",
+    qtdeFotos: 0,
+    fotos: [
+        {
+            arquivo: '2',
+            escolhido: false
+        },
+        {
+            arquivo: '20',
+            escolhido: false
+        },
+	],
+}
+\end{lstlisting}
+
+\subsection{Manipulação de string}
+Usar métodos para manipulação de string. Para este item verificar no arquivo $admin_clientes.js$ a função $verFotosSelecionadas()$, utilizamos $indexOf$ (linha $4$):
+\begin{lstlisting}	
+function verFotosSelecionadas() {
+    var variaveleSelect = $('select');
+    for (chave in localStorage) {
+        if (chave.indexOf("FotosSalvasDe") >= 0) { //esta é a chave de um cliente que enviou fotos
+            console.log("dentro do if");
+            var chaveDoCliente = chave.replace("FotosSalvasDe", "");
+            console.log("dentro do if chaveDoCliente" + chaveDoCliente);
+            //botar no select
+            variaveleSelect.append('<option val="' + chaveDoCliente + '">' + chaveDoCliente + '</option>');
+        }
+    }
+    console.log("quantidade de clientes");
+    var x = document.getElementsByTagName('select')[0].length;
+    document.getElementsByName("selecionandofotos")[0].innerHTML = "Quantide de clientes: " + x;
+}
+\end{lstlisting}
 \section{Objetos}
 \subsection{Criar objeto}
 	Criar objeto usando função construtora ou notação literal
@@ -566,7 +752,9 @@ Usar herança prototipal
 
 \section{jQuery}
 \subsection{Seletores CSS}
-	Uso de seletores CSS - id, classe e tag
+
+	Uso de seletores CSS - id, classe e tag. Os subitem abaixo nos mostram como foram utilizados os seletores solicitados.
+	
 \subsubsection{id}
 	Verificar a linha $6$ abaixo:
 		\begin{lstlisting}
@@ -605,8 +793,38 @@ function deselecionarFoto(i) {
 \end{lstlisting}
 
 \subsubsection{classe}
-\subsubsection{tag}
+	Ver linha $6$.
+\begin{lstlisting}
+function selecionarFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
+    div.toggle('slow').toggle('slow');
+    div.html("Retirar");
+    jsonClienteX.fotos[i].escolhido = true;
+    div.removeClass('btn-success').addClass('btn-warning');
+    $("#selecionouEstaFoto" + i).toggle('slow');
+    div.fadeOut(500);
+}
+\end{lstlisting}
 
+\subsubsection{tag}
+	Ver no arquivo $contato.js$ a função faz a troca de cor da letra das tags $<p>$.
+\begin{lstlisting}
+	function tagNegrito() {
+    $("p").css("color", "black");
+}
+
+
+function tagDesnegrito() {
+    $("p").css("color", "gray");
+
+}
+
+(function () { //função auto-executável
+    tagDesnegrito();
+    //se houver algum css negrito remover
+});
+
+\end{lstlisting}
 \subsection{Seletores hierarquicos}
 Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo
 \subsection{Efeitos fade ou slide}
@@ -637,6 +855,7 @@ Espeficar o tratador de algum evento via jQuery
 
 \begin{lstlisting}
 function alternarEscolhaDaFoto(i) {
+    var div = $("#botao" + i); //uso de seletores CSS por id
     console.log("valor que continha " + div.html());
     if (div.html() == "Selecionar") {
         selecionaOuRetiraFoto(i, selecionarFoto); //passagem de uma função por parâmetro
@@ -647,14 +866,14 @@ function alternarEscolhaDaFoto(i) {
     var chaveCliente = sessionStorage.getItem("logou");
 
     localStorage.setItem(chaveCliente, JSON.stringify(jsonClienteX));
-    // console.log("foi salvo " + div.html());
 }
 \end{lstlisting}
 
 \subsection{Manipulação do conteúdo}
 	Objetivo: manipulação do conteúdo de um $input$ e $div$ usando $jQuery$.
 
-\section{Web Storage }
+\section{Web Storage } 
+	Abaixo todos os subitens solicitados.
 \subsection{LocalStorage}
 	Fazemos uso de $localstorage$ na função $alternarEscolhaDaFoto$ do arquivo $galeria$\_$cliente.js$. Conforme observamos nas linhas de código abaixo:
 	
@@ -677,7 +896,7 @@ function alternarEscolhaDaFoto(i) {
 	A função $exibirComFotosMarcadasAnteriormente$ faz uso do localstorage também. Desta forma com a finalidade de recuperar os dados armazenados:
 \begin{lstlisting}	
 	
-	function exibirComFotosMarcadasAnteriormente() {
+function exibirComFotosMarcadasAnteriormente() {
     //pra carregar com eventuais fotos selecionadass anteriormente
     var chaveCliente = sessionStorage.getItem("logou");
     if (!localStorage.getItem(chaveCliente)) {
@@ -693,6 +912,7 @@ function alternarEscolhaDaFoto(i) {
             jsonClienteX.fotos[i].escolhido = true;
             div.removeClass('btn-success').addClass('btn-warning');
             $("#selecionouEstaFoto" + i).toggle();
+            jsonClienteX.qtdeFotos++;
         }
     }
     console.log("exibirComFotosMarcadasAnteriormente" + i + "fim");
@@ -759,7 +979,8 @@ function verSeLogado() {
 }
 \end{lstlisting}
 
-	A função $function verSeLogado()$ será chamada dentro da função $exibirFotosAoIniciar();$ função está que é carregada ao carregar o $html$.
+	A função $verSeLogado()$ será chamada dentro da função $exibirFotosAoIniciar();$.
+	Note que esta função é chamada ao carregar o $html$.
 	
 \begin{lstlisting}
 	function deslogar() {
@@ -768,6 +989,30 @@ function verSeLogado() {
 }
 \end{lstlisting}
 \subsection{Leitura e escrita de dados simples}
+	Leitura:
+\begin{lstlisting}	
+function verSeLogado() {
+    var estaLogado = sessionStorage.getItem('logou');
+    console.log("esta logado " + estaLogado);
+    if (estaLogado == '1267') {
+        return true;
+    } else {
+        alert("Voca precisa fazer o login.");
+        window.location = "index.html";
+        return false;
+    }
+    return false;
+}
+\end{lstlisting}
+	Escrita:
+\begin{lstlisting}	
+	var naoLogou = function (i) {
+    var logou;
+    if (i == 23) {
+        sessionStorage.setItem("logou", "1267");
+    }
+}
+\end{lstlisting}
 \subsection{Leitura e escrita de JSON}
 	Observe (linha $9$) que na função $enviarFotosSelecionadas$ temos a escrita e leitura de JSON:
 	

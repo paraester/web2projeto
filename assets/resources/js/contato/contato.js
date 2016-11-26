@@ -3,12 +3,11 @@ var $$ = function (id) {
 }
 
 function validaContato() {
-  var nome = $$("name").value;
-  var email = $$("email").value;
-  var message = $$("message").value;
+    var nome = $$("name").value;
+    var email = $$("email").value;
+    var message = $$("message").value;
 
-  nome.addEventListener('blur', function() {
-    if ((nome === null) || (nome === "")) {
+  if ((nome === null) || (nome === "")) {
       document.alert("Preencha o campo nome");
       return false;
     }
@@ -84,3 +83,19 @@ window.onload = function() {
   
   
 }
+
+function tagNegrito() {
+    $("p").css("color", "black");
+}
+
+
+function tagDesnegrito() {
+    $("p").css("color", "gray");
+
+}
+
+(function () { //função auto-executável
+    tagDesnegrito();
+    //se houver algum css negrito remover
+});
+
