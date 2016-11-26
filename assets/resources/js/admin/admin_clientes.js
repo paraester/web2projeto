@@ -3,9 +3,9 @@ function mostraFotosDoClienteSelecionado() {
     var chaveDoCliente = $("select option:selected").text();
     var x = document.getElementById('resultadosBusca');
     var fotos = JSON.parse(localStorage.getItem('FotosSalvasDe' + chaveDoCliente));
-    var lista = "<br>Email: " + fotos.email + "<hr>";
+    var lista = "<br>Cód cliente: " + chaveDoCliente + espaco + " Email: " + fotos.email + "<hr>";
     var qtdeFotos = parseInt(fotos.qtdeFotos, 10);
-    
+
     var coluna = 0;
     lista += "<ul><li>";
     for (chave in fotos) {
@@ -23,8 +23,8 @@ function mostraFotosDoClienteSelecionado() {
 
     }
     lista += "</li></ul><hr>" + "Quantidade de fotos: " + qtdeFotos + "<hr>";
-     x.innerHTML = lista;
-     
+    x.innerHTML = lista;
+
 }
 
 function verFotosSelecionadas() {
@@ -59,6 +59,7 @@ function verSeLogado() {
 }
 
 function deslogar() {
+    alert("Bye Bye");
     sessionStorage.removeItem("logouAdmin");
     window.location = "index.html";
 }

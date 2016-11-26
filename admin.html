@@ -53,9 +53,9 @@
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="index.html">Escolher Fotos</a></li>
-                                        <li><a href="index2.html">Clientes</a></li>
-                                        <!-- <li><a href="index3.html">Dashboard3</a></li>-->
+                                        <li><a href="index.html">Página StudioE</a></li>
+                                        <li><a href="admin.html">Clientes</a></li>
+                                        <li><a href="index.html" onclick="deslogar();">Sair</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -95,11 +95,10 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h2>Clientes e suas fotos que foram escolhidas</h2><h4>Lista código dos clientes</h4>
+                            <h2>Clientes e suas fotos que foram escolhidas</h2>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                
                                 <p name="selecionandofotos"></p>
-
+                                Lista código dos clientes
                                 <select id="selectClientesComFotos" size="1">
                                 </select>
                                 Clique no botão
@@ -113,8 +112,11 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
-                                <div class="x_title"><hr>
-                                    <div id="resultadosBusca"><hr></div>
+                                <div class="x_title">
+                                    <hr>
+                                    <div id="resultadosBusca">
+                                        <hr>
+                                    </div>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <div class="clearfix">
                                         </div>
@@ -130,6 +132,13 @@
     </div>
     <script src="assets/libs/jquery/jquery-3.1.1.min.js"></script>
     <script src="assets/resources/js/admin/admin.js"></script>
+    <script>
+        $(document).ready(function () {
+            verSeLogado();
+            console.log("página admin carregada! Vamos trabalhar js ");
+
+        });
+    </script>
 
 </body>
 
