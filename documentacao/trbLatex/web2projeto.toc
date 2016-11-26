@@ -69,7 +69,7 @@
 \contentsline {subsection}{\numberline {3.11.1}LocalStorage}{28}
 \contentsline {subsection}{\numberline {3.11.2}SessionStorage}{30}
 \contentsline {subsection}{\numberline {3.11.3}Leitura e escrita de dados simples}{31}
-\contentsline {subsection}{\numberline {3.11.4}Leitura e escrita de JSON}{31}
+\contentsline {subsection}{\numberline {3.11.4}Leitura e escrita de JSON}{32}
 \contentsline {chapter}{\numberline {4}\MakeUppercase {C\IeC {\'o}digo}}{33}
 \contentsline {section}{\numberline {4.1}\MakeUppercase {Abordagem}}{33}
 \contentsline {chapter}{Bibliography}{34}

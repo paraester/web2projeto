@@ -616,7 +616,9 @@ Usar herança prototipal
 
 \section{jQuery}
 \subsection{Seletores CSS}
-	Uso de seletores CSS - id, classe e tag
+
+	Uso de seletores CSS - id, classe e tag. Os subitem abaixo nos mostram como foram utilizados os seletores solicitados.
+	
 \subsubsection{id}
 	Verificar a linha $6$ abaixo:
 		\begin{lstlisting}
@@ -733,7 +735,8 @@ function alternarEscolhaDaFoto(i) {
 \subsection{Manipulação do conteúdo}
 	Objetivo: manipulação do conteúdo de um $input$ e $div$ usando $jQuery$.
 
-\section{Web Storage }
+\section{Web Storage } 
+	Abaixo todos os subitens solicitados.
 \subsection{LocalStorage}
 	Fazemos uso de $localstorage$ na função $alternarEscolhaDaFoto$ do arquivo $galeria$\_$cliente.js$. Conforme observamos nas linhas de código abaixo:
 	
@@ -847,6 +850,30 @@ function verSeLogado() {
 }
 \end{lstlisting}
 \subsection{Leitura e escrita de dados simples}
+	Leitura:
+\begin{lstlisting}	
+function verSeLogado() {
+    var estaLogado = sessionStorage.getItem('logou');
+    console.log("esta logado " + estaLogado);
+    if (estaLogado == '1267') {
+        return true;
+    } else {
+        alert("Você precisa fazer o login.");
+        window.location = "index.html";
+        return false;
+    }
+    return false;
+}
+\end{lstlisting}
+	Escrita:
+\begin{lstlisting}	
+	var naoLogou = function (i) {
+    var logou;
+    if (i == 23) {
+        sessionStorage.setItem("logou", "1267");
+    }
+}
+\end{lstlisting}
 \subsection{Leitura e escrita de JSON}
 	Observe (linha $9$) que na função $enviarFotosSelecionadas$ temos a escrita e leitura de JSON:
 	
