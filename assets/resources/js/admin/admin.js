@@ -66,7 +66,7 @@ $(function () {
         setContentHeight();
     });
 
-    // vefica se o meno esta ativo ou não e qual pagina está
+    // vefica se o menu esta ativo ou não e qual pagina está
     $SIDEBAR_MENU.find('a[href="' + URL + '"]').parent('li').addClass('current-page');
 
     $SIDEBAR_MENU.find('a').filter(function () {

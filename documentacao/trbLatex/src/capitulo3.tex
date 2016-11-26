@@ -391,11 +391,107 @@ function deselecionarFoto(i) {
  
  
 \subsection{Eventos de formulário}
-Objetivo: onfocus e onblur.
+	Objetivo: onfocus e onblur. Verificar arquivo $contato.js$
+	
+ \begin{lstlisting}
+  window.onload = function() {
+  var input_name = document.forms[0].name;
+  var input_email = document.forms[0].email;
+  var input_msg = document.forms[0].message;
 
+  input_name.addEventListener('blur', function() {
+    if (input_name.value == "")
+      input_name.value = "Você esqueceu de preencher-me";
+  });
 
+  input_email.addEventListener('blur', function() {
+    if (input_email.value == "")
+      input_email.value = "Você esqueceu de preencher-me";
+  });
+
+   input_msg.addEventListener('blur', function() {
+    if (input_msg.value == "")
+      input_msg.value = "Você esqueceu de preencher-me";
+  });
+
+  input_name.addEventListener('focus', function() {
+    input_name.style.color = '#fff';
+    input_name.style.background = '#0080ff';
+
+    input_email.style.color = '#000';
+    input_email.style.background = '#fff';
+
+    input_msg.style.color = '#000';
+    input_msg.style.background = '#fff';
+  });
+
+  input_email.addEventListener('focus', function() {
+    input_name.style.color = '#000';
+    input_name.style.background = '#fff';
+
+    input_email.style.color = '#fff';
+    input_email.style.background = '#0080ff';
+
+    input_msg.style.color = '#000';
+    input_msg.style.background = '#fff';
+  });
+
+  input_msg.addEventListener('focus', function() {
+    input_msg.style.color = '#fff';
+    input_msg.style.background = '#0080ff';
+
+    input_email.style.color = '#000';
+    input_email.style.background = '#fff';
+
+    input_name.style.color = '#000';
+    input_name.style.background = '#fff';
+  });
+ \end{lstlisting}
 \subsection{objeto event}
-Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro
+Obejtivo: Imprimir alguma propriedade do objeto event recebido como parâmetro. Ao começar a preencher o formulário da página $contato.html$ estaremos fazendo uso do $event$ para reescrever próximo a tag $<span>$ tudo o que foi digitado no campo.
+
+ \begin{lstlisting}
+function validarString(campo, event) {
+    var id = event.target.id;
+    if (campo == "nome") {
+        //trate nome
+        validarNome(id, event.target.value);
+    } else if (campo == "email") {
+        //trate nome
+        validarEmail(id, event.target.value);
+    } else if (campo == "mensagem") {
+        //trate nome
+        validarMensage(id, event.target.value);
+    }
+}
+
+function validarNome(id, txt) {
+    var mensage = $('#lb' + id);
+    if (txt.length > 30) {
+        mensage.html(txt.substr(0, 25) + " ... " + txt.substr(txt.length - 4, 4));
+    } else {
+        mensage.html(txt);
+    }
+}
+
+function validarEmail(id, txt) {
+    var mensage = $('#lb' + id);
+    if (txt.length > 18) {
+        mensage.html(txt.substr(0, 14) + " ... " + txt.substr(txt.length - 4, 4));
+    } else {
+        mensage.html(txt);
+    }
+}
+
+function validarMensage(id, txt) {
+    var mensage = $('#lb' + id);
+    if (txt.length > 30) {
+        mensage.html(txt.substr(0, 24) + " ... " + txt.substr(txt.length - 4, 4));
+    } else {
+        mensage.html(txt);
+    }
+}
+\end{lstlisting}
 
 \subsection{Propagação de eventos no modelo bolha}
 
@@ -507,13 +603,97 @@ $onclick$ - Ver no arquivo $galeria$\_$cliente.js$ a seguinte linha:
 \end{lstlisting}
 
 	Esta linha irá criar o botão Selecionar. Nela é mostrado uma ação para $onclick$ que chama a função $alternarEscolhaDaFoto(i)$ - I $i$ é um parâmetro referente a foto que estará sendo mostrada.
+	
+	Também escolhemos mostrar o $jQuery$ $mouseover()$ $Method$ na id $\#mouseover$ do arquivo $contato.html$.
+\begin{lstlisting}		
+    <script>
+        $(document).ready(function () {
+            $("#mouseover").mouseover(function () {
+                $("#mouseover").css("background-color", "white");
+                $("#mouseover").css("color", "black");
+            });
+            $("#mouseover").mouseout(function () {
+                $("#mouseover").css("background-color", "#f2f2f2");
+            });
+        });
+    </script>
+\end{lstlisting}
 
 \subsection{Modo tradicional}
 Objetivo: especificar o tratador de evento no carregamento da página HTML no modo tradicional.
 
+Verificar arquivo $contato.js$
+	
+ \begin{lstlisting}
+  window.onload = function() {
+    var input_name = document.forms[0].name;
+    var input_email = document.forms[0].email;
+    var input_msg = document.forms[0].mensage;
+...
+  });
+ \end{lstlisting}
+
+
 
 \subsection{addEventListener}
  Objetivo: especificar o tratador de evento no carregamento da página HTML com a função addEventListener.
+	Verificar arquivo $contato.js$
+ \begin{lstlisting}
+window.onload = function () {
+    var input_name = document.forms[0].name;
+    var input_email = document.forms[0].email;
+    var input_msg = document.forms[0].mensage;
+
+    input_name.addEventListener('blur', function (e) {
+        if (input_name.value == "")
+            $("#lbname").html("Você esqueceu de preencher nome");
+    });
+
+    input_email.addEventListener('blur', function () {
+        if (input_email.value == "")
+            $("#lbemail").html("Você esqueceu de preencher email");
+    });
+
+    input_msg.addEventListener('blur', function () {
+        if (input_msg.value == "")
+            $("#lbmensage").html("Você esqueceu de preencher a mensagem");
+    });
+
+    input_name.addEventListener('focus', function () {
+        input_name.style.color = '#fff';
+        input_name.style.background = '#0080ff';
+
+        input_email.style.color = '#000';
+        input_email.style.background = '#fff';
+
+        input_msg.style.color = '#000';
+        input_msg.style.background = '#fff';
+    });
+
+    input_email.addEventListener('focus', function () {
+        input_name.style.color = '#000';
+        input_name.style.background = '#fff';
+
+        input_email.style.color = '#fff';
+        input_email.style.background = '#0080ff';
+
+        input_msg.style.color = '#000';
+        input_msg.style.background = '#fff';
+    });
+
+    input_msg.addEventListener('focus', function () {
+        input_msg.style.color = '#fff';
+        input_msg.style.background = '#0080ff';
+
+        input_email.style.color = '#000';
+        input_email.style.background = '#fff';
+
+        input_name.style.color = '#000';
+        input_name.style.background = '#fff';
+    });
+}
+ \end{lstlisting} 
+ 
  
 \subsection{Operador this}
  Objetivo: usar o operador this em funções tratadoras de eventos.
@@ -601,21 +781,17 @@ function enviadoContato() {
 \end{lstlisting}
 \subsection{Acesso via hierarquia}
 	Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements.
+ Verificar arquivo $contato.js$
 	
-	Para este item escolhemos mostrar o $jQuery$ $mouseover()$ $Method$ na id $\#mouseover$ do arquivo $contato.html$.
-\begin{lstlisting}		
-    <script>
-        $(document).ready(function () {
-            $("#mouseover").mouseover(function () {
-                $("#mouseover").css("background-color", "white");
-                $("#mouseover").css("color", "black");
-            });
-            $("#mouseover").mouseout(function () {
-                $("#mouseover").css("background-color", "#f2f2f2");
-            });
-        });
-    </script>
-\end{lstlisting}
+ \begin{lstlisting}
+  window.onload = function() {
+  var input_name = document.forms[0].name;
+  var input_email = document.forms[0].email;
+  var input_msg = document.forms[0].message;
+
+  
+ \end{lstlisting}	
+	
 
 \section{Objetos Nativos }
 \subsection{Manipulação de array}

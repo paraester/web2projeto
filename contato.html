@@ -67,12 +67,12 @@
                         <div class="contact-form" id="contact-form">
                             <form id="contact-form" class="validate-form" method="post" onsubmit="return validaContato()">
                                 <input type="hidden" name="subject" id="subject" value="studioecontato">
-                                <label for="nome">NOME</label>
-                                <input type="text" name="name" id="name" class="required">
-                                <label for="email">E-MAIL</label>
-                                <input type="text" name="email" id="email" class="required email">
-                                <label for="mensagem">MENSAGEM</label>
-                                <textarea name="message" id="message" class="required"></textarea>
+                                <label for="nome">NOME: <span id="lbname"></span></label>
+                                <input type="text" name="name" id="name" onkeyup="validarString('nome', event);" class="required">
+                                <label for="email">E-MAIL: <span id="lbemail"></span></label>
+                                <input type="text" name="email" id="email" onkeyup="validarString('email', event);" class="required email">
+                                <label for="mensage">MENSAGEM: <span id="lbmensage"></span></label>
+                                <textarea name="mensage" id="mensage" onkeyup="validarString('mensagem', event);" class="required"></textarea>
                                 <input type="submit" name="btnEnviar" value="enviar" class="submit button" />
                             </form>
                         </div>
