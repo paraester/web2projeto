@@ -1,6 +1,0 @@
-
-3.6.4 OPERADOR THIS - CANDIDATO A REMOÇÃO - devido a cascata solicitada
-3.4.3 EVENTO DE TECLADO - Objetivo: - usar charCode ou KeyCode.  - CANDIDATO A REMOÇÃO 
-3.10.2 HERANÇA Usar herança prototipal - CANDIDATO A REMOÇÃO 
-3.10.2 SELETORES HIERARQUICOS Uso de seletores hierarquicos - ancestral/descendente, pai/filho, anterior/proximo  - CANDIDATO A REMOÇÃO 
-3.4.6 PROPAGAÇÃO DE EVENTOS NO MODELO BOLHA  - CANDIDATO A REMOÇÃO 
